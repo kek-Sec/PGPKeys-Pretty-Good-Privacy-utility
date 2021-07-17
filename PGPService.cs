@@ -159,5 +159,38 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             return null;
         }
         #endregion
+
+        #region verify
+
+        /// <summary>
+        /// Verify file sign
+        /// </summary>
+        /// <param name="filepath">The file to verify</param>
+        /// <returns>True for verified false for not verified or failed</returns>
+        public async Task<bool> VerifyFile(string filepath)
+        {
+            await Task.Run(() =>
+            {
+                FileInfo inputFile = new FileInfo(filepath);
+
+                return pgp.VerifyFileAsync(inputFile);
+            });
+            return false;
+        }
+
+        /// <summary>
+        /// Verify string sign
+        /// </summary>
+        /// <param name="signed_str">The string to verify</param>
+        /// <returns>True for verified false for not verified or failed</returns>
+        public async Task<bool> VerifyString(string signed_str)
+        {
+            await Task.Run(() =>
+            {
+                return pgp.VerifyArmoredStringAsync(signed_str);
+            });
+            return false;
+        }
+        #endregion 
     }
 }
