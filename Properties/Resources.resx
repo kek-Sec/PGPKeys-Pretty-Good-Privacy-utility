@@ -124,6 +124,9 @@
   <data name="save-512x512-1784384" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save-512x512-1784384.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="setting-512x512-1214292" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting-512x512-1214292.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="044-unlock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\044-unlock2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,6 +141,9 @@
   </data>
   <data name="025-lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\025-lock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2849804_copy_document_paper_file_multimedia_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2849804_copy_document_paper_file_multimedia_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="message-box-512x512-2194194" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\message-box-512x512-2194194.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +163,7 @@
   <data name="017-fingerprint" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\017-fingerprint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="setting-512x512-1214292" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting-512x512-1214292.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2849804_paste_document_paper_file_multimedia_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2849804_paste_document_paper_file_multimedia_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

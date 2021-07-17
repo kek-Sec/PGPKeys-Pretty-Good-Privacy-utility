@@ -133,6 +133,26 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2849804_copy_document_paper_file_multimedia_icon {
+            get {
+                object obj = ResourceManager.GetObject("2849804_copy_document_paper_file_multimedia_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2849804_paste_document_paper_file_multimedia_icon {
+            get {
+                object obj = ResourceManager.GetObject("2849804_paste_document_paper_file_multimedia_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_new_512x512_1214356 {
             get {
                 object obj = ResourceManager.GetObject("add-new-512x512-1214356", resourceCulture);

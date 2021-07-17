@@ -63,6 +63,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.generateKeyPairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.keychain_listbox = new System.Windows.Forms.ListBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.keychain_paste_btn = new System.Windows.Forms.Button();
+            this.keychain_copy_btn = new System.Windows.Forms.Button();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -74,6 +77,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel2.SuspendLayout();
             this.keychain_toolstrip.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainForm_tabControl
@@ -119,6 +123,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.groupBox1);
             this.panel7.Location = new System.Drawing.Point(225, 303);
             this.panel7.Name = "panel7";
@@ -395,6 +400,35 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_listbox.Size = new System.Drawing.Size(212, 592);
             this.keychain_listbox.TabIndex = 0;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.keychain_paste_btn);
+            this.panel8.Controls.Add(this.keychain_copy_btn);
+            this.panel8.Location = new System.Drawing.Point(183, 254);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(175, 66);
+            this.panel8.TabIndex = 6;
+            // 
+            // keychain_paste_btn
+            // 
+            this.keychain_paste_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
+            this.keychain_paste_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_paste_btn.Location = new System.Drawing.Point(90, 3);
+            this.keychain_paste_btn.Name = "keychain_paste_btn";
+            this.keychain_paste_btn.Size = new System.Drawing.Size(81, 60);
+            this.keychain_paste_btn.TabIndex = 2;
+            this.keychain_paste_btn.UseVisualStyleBackColor = true;
+            // 
+            // keychain_copy_btn
+            // 
+            this.keychain_copy_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon;
+            this.keychain_copy_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_copy_btn.Location = new System.Drawing.Point(3, 3);
+            this.keychain_copy_btn.Name = "keychain_copy_btn";
+            this.keychain_copy_btn.Size = new System.Drawing.Size(81, 60);
+            this.keychain_copy_btn.TabIndex = 0;
+            this.keychain_copy_btn.UseVisualStyleBackColor = true;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -420,6 +454,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_toolstrip.ResumeLayout(false);
             this.keychain_toolstrip.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -459,6 +494,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox keychain_clipboard_rtb;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button keychain_paste_btn;
+        private System.Windows.Forms.Button keychain_copy_btn;
     }
 }
 
