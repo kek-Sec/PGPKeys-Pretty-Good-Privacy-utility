@@ -93,6 +93,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _023_key1 {
+            get {
+                object obj = ResourceManager.GetObject("023-key1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _025_lock {
             get {
                 object obj = ResourceManager.GetObject("025-lock", resourceCulture);

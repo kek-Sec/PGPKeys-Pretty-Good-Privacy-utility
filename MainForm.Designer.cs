@@ -80,8 +80,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.generator_toolstrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.generator_output_rtb = new System.Windows.Forms.RichTextBox();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -103,7 +103,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.generator_toolstrip.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainForm_tabControl
@@ -493,7 +493,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // Generator_tab
             // 
             this.Generator_tab.Controls.Add(this.panel9);
-            this.Generator_tab.Controls.Add(this.generator_toolstrip);
             this.Generator_tab.Location = new System.Drawing.Point(4, 30);
             this.Generator_tab.Name = "Generator_tab";
             this.Generator_tab.Padding = new System.Windows.Forms.Padding(3);
@@ -505,11 +504,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.groupBox6);
             this.panel9.Controls.Add(this.groupBox5);
             this.panel9.Controls.Add(this.Options_groupbox);
-            this.panel9.Location = new System.Drawing.Point(6, 31);
+            this.panel9.Location = new System.Drawing.Point(6, 6);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1040, 602);
+            this.panel9.Size = new System.Drawing.Size(1040, 627);
             this.panel9.TabIndex = 1;
             // 
             // groupBox5
@@ -643,24 +643,27 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.radioButton1.Text = "4096";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // generator_toolstrip
+            // groupBox6
             // 
-            this.generator_toolstrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton3});
-            this.generator_toolstrip.Location = new System.Drawing.Point(3, 3);
-            this.generator_toolstrip.Name = "generator_toolstrip";
-            this.generator_toolstrip.Size = new System.Drawing.Size(1046, 25);
-            this.generator_toolstrip.TabIndex = 0;
-            this.generator_toolstrip.Text = "toolStrip1";
+            this.groupBox6.Controls.Add(this.generator_output_rtb);
+            this.groupBox6.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox6.Location = new System.Drawing.Point(-10, 284);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(1060, 343);
+            this.groupBox6.TabIndex = 2;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Output";
             // 
-            // toolStripDropDownButton3
+            // generator_output_rtb
             // 
-            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
-            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton3.Text = "toolStripDropDownButton3";
+            this.generator_output_rtb.BackColor = System.Drawing.SystemColors.InfoText;
+            this.generator_output_rtb.Enabled = false;
+            this.generator_output_rtb.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.generator_output_rtb.Location = new System.Drawing.Point(13, 33);
+            this.generator_output_rtb.Name = "generator_output_rtb";
+            this.generator_output_rtb.Size = new System.Drawing.Size(1040, 310);
+            this.generator_output_rtb.TabIndex = 0;
+            this.generator_output_rtb.Text = "Generation output..";
             // 
             // Main_Form
             // 
@@ -689,7 +692,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_toolstrip.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.Generator_tab.ResumeLayout(false);
-            this.Generator_tab.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.Options_groupbox.ResumeLayout(false);
@@ -701,8 +703,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.generator_toolstrip.ResumeLayout(false);
-            this.generator_toolstrip.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -746,8 +747,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Button keychain_paste_btn;
         private System.Windows.Forms.Button keychain_copy_btn;
         private System.Windows.Forms.TabPage Generator_tab;
-        private System.Windows.Forms.ToolStrip generator_toolstrip;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.GroupBox Options_groupbox;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -761,6 +760,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.TextBox generator_email_txt;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RichTextBox generator_output_rtb;
     }
 }
 
