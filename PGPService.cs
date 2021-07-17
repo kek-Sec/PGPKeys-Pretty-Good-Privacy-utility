@@ -173,7 +173,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             {
                 FileInfo inputFile = new FileInfo(filepath);
 
-                return pgp.VerifyFileAsync(inputFile);
+                return pgp.VerifyClearFileAsync(inputFile);
             });
             return false;
         }
@@ -187,7 +187,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             await Task.Run(() =>
             {
-                return pgp.VerifyArmoredStringAsync(signed_str);
+                return pgp.VerifyClearArmoredStringAsync(signed_str);
             });
             return false;
         }
