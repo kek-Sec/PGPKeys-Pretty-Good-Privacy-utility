@@ -82,6 +82,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.generator_output_rtb = new System.Windows.Forms.RichTextBox();
+            this.clipboard_tab = new System.Windows.Forms.TabPage();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -111,6 +112,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.MainForm_tabControl.Controls.Add(this.Dashboard_page);
             this.MainForm_tabControl.Controls.Add(this.keychain_page);
             this.MainForm_tabControl.Controls.Add(this.Generator_tab);
+            this.MainForm_tabControl.Controls.Add(this.clipboard_tab);
             this.MainForm_tabControl.Location = new System.Drawing.Point(4, 3);
             this.MainForm_tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.MainForm_tabControl.Name = "MainForm_tabControl";
@@ -523,7 +525,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._007_credit_card;
+            this.button1.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._023_key1;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -658,12 +660,23 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.generator_output_rtb.BackColor = System.Drawing.SystemColors.InfoText;
             this.generator_output_rtb.Enabled = false;
+            this.generator_output_rtb.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.generator_output_rtb.ForeColor = System.Drawing.SystemColors.Highlight;
             this.generator_output_rtb.Location = new System.Drawing.Point(13, 33);
             this.generator_output_rtb.Name = "generator_output_rtb";
             this.generator_output_rtb.Size = new System.Drawing.Size(1040, 310);
             this.generator_output_rtb.TabIndex = 0;
             this.generator_output_rtb.Text = "Generation output..";
+            // 
+            // clipboard_tab
+            // 
+            this.clipboard_tab.Location = new System.Drawing.Point(4, 30);
+            this.clipboard_tab.Name = "clipboard_tab";
+            this.clipboard_tab.Size = new System.Drawing.Size(1052, 845);
+            this.clipboard_tab.TabIndex = 3;
+            this.clipboard_tab.Text = "Clipboard";
+            this.clipboard_tab.ToolTipText = "Rich clipboard component";
+            this.clipboard_tab.UseVisualStyleBackColor = true;
             // 
             // Main_Form
             // 
@@ -762,6 +775,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RichTextBox generator_output_rtb;
+        private System.Windows.Forms.TabPage clipboard_tab;
     }
 }
 
