@@ -34,6 +34,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.Dashboard_page = new System.Windows.Forms.TabPage();
             this.keychain_page = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.keychain_paste_btn = new System.Windows.Forms.Button();
+            this.keychain_copy_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.keychain_clipboard_rtb = new System.Windows.Forms.RichTextBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -63,12 +66,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.generateKeyPairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.keychain_listbox = new System.Windows.Forms.ListBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.keychain_paste_btn = new System.Windows.Forms.Button();
-            this.keychain_copy_btn = new System.Windows.Forms.Button();
+            this.Generator_tab = new System.Windows.Forms.TabPage();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -77,13 +81,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel2.SuspendLayout();
             this.keychain_toolstrip.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.Generator_tab.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainForm_tabControl
             // 
             this.MainForm_tabControl.Controls.Add(this.Dashboard_page);
             this.MainForm_tabControl.Controls.Add(this.keychain_page);
+            this.MainForm_tabControl.Controls.Add(this.Generator_tab);
             this.MainForm_tabControl.Location = new System.Drawing.Point(4, 3);
             this.MainForm_tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.MainForm_tabControl.Name = "MainForm_tabControl";
@@ -130,6 +136,35 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel7.Size = new System.Drawing.Size(553, 326);
             this.panel7.TabIndex = 7;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.keychain_paste_btn);
+            this.panel8.Controls.Add(this.keychain_copy_btn);
+            this.panel8.Location = new System.Drawing.Point(183, 254);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(175, 66);
+            this.panel8.TabIndex = 6;
+            // 
+            // keychain_paste_btn
+            // 
+            this.keychain_paste_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
+            this.keychain_paste_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_paste_btn.Location = new System.Drawing.Point(90, 3);
+            this.keychain_paste_btn.Name = "keychain_paste_btn";
+            this.keychain_paste_btn.Size = new System.Drawing.Size(81, 60);
+            this.keychain_paste_btn.TabIndex = 2;
+            this.keychain_paste_btn.UseVisualStyleBackColor = true;
+            // 
+            // keychain_copy_btn
+            // 
+            this.keychain_copy_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon;
+            this.keychain_copy_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_copy_btn.Location = new System.Drawing.Point(3, 3);
+            this.keychain_copy_btn.Name = "keychain_copy_btn";
+            this.keychain_copy_btn.Size = new System.Drawing.Size(81, 60);
+            this.keychain_copy_btn.TabIndex = 0;
+            this.keychain_copy_btn.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.keychain_clipboard_rtb);
@@ -159,6 +194,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // keychain_logger_rtb
             // 
             this.keychain_logger_rtb.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.keychain_logger_rtb.Enabled = false;
             this.keychain_logger_rtb.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_logger_rtb.Location = new System.Drawing.Point(3, 3);
             this.keychain_logger_rtb.Name = "keychain_logger_rtb";
@@ -400,34 +436,36 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_listbox.Size = new System.Drawing.Size(212, 592);
             this.keychain_listbox.TabIndex = 0;
             // 
-            // panel8
+            // Generator_tab
             // 
-            this.panel8.Controls.Add(this.keychain_paste_btn);
-            this.panel8.Controls.Add(this.keychain_copy_btn);
-            this.panel8.Location = new System.Drawing.Point(183, 254);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(175, 66);
-            this.panel8.TabIndex = 6;
+            this.Generator_tab.Controls.Add(this.toolStrip1);
+            this.Generator_tab.Location = new System.Drawing.Point(4, 30);
+            this.Generator_tab.Name = "Generator_tab";
+            this.Generator_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.Generator_tab.Size = new System.Drawing.Size(1052, 845);
+            this.Generator_tab.TabIndex = 2;
+            this.Generator_tab.Text = "Generator";
+            this.Generator_tab.ToolTipText = "Generate new key pair";
+            this.Generator_tab.UseVisualStyleBackColor = true;
             // 
-            // keychain_paste_btn
+            // toolStrip1
             // 
-            this.keychain_paste_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
-            this.keychain_paste_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.keychain_paste_btn.Location = new System.Drawing.Point(90, 3);
-            this.keychain_paste_btn.Name = "keychain_paste_btn";
-            this.keychain_paste_btn.Size = new System.Drawing.Size(81, 60);
-            this.keychain_paste_btn.TabIndex = 2;
-            this.keychain_paste_btn.UseVisualStyleBackColor = true;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1046, 25);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // keychain_copy_btn
+            // toolStripDropDownButton3
             // 
-            this.keychain_copy_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon;
-            this.keychain_copy_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.keychain_copy_btn.Location = new System.Drawing.Point(3, 3);
-            this.keychain_copy_btn.Name = "keychain_copy_btn";
-            this.keychain_copy_btn.Size = new System.Drawing.Size(81, 60);
-            this.keychain_copy_btn.TabIndex = 0;
-            this.keychain_copy_btn.UseVisualStyleBackColor = true;
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton3.Text = "toolStripDropDownButton3";
             // 
             // Main_Form
             // 
@@ -445,6 +483,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_page.ResumeLayout(false);
             this.keychain_page.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -454,7 +493,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_toolstrip.ResumeLayout(false);
             this.keychain_toolstrip.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
+            this.Generator_tab.ResumeLayout(false);
+            this.Generator_tab.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -497,6 +539,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button keychain_paste_btn;
         private System.Windows.Forms.Button keychain_copy_btn;
+        private System.Windows.Forms.TabPage Generator_tab;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
     }
 }
 
