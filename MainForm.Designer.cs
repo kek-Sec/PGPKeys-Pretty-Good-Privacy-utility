@@ -40,10 +40,18 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.keychain_listbox = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.keychain_publickey_status = new System.Windows.Forms.Button();
+            this.keychain_privatekey_status = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.keychain_emcrypt_btn = new System.Windows.Forms.Button();
+            this.keychain_decrypt_btn = new System.Windows.Forms.Button();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainForm_tabControl
@@ -71,6 +79,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // keychain_page
             // 
+            this.keychain_page.Controls.Add(this.panel3);
+            this.keychain_page.Controls.Add(this.panel2);
             this.keychain_page.Controls.Add(this.toolStrip1);
             this.keychain_page.Controls.Add(this.panel1);
             this.keychain_page.Location = new System.Drawing.Point(4, 30);
@@ -140,6 +150,64 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_listbox.Size = new System.Drawing.Size(212, 592);
             this.keychain_listbox.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.keychain_privatekey_status);
+            this.panel2.Controls.Add(this.keychain_publickey_status);
+            this.panel2.Location = new System.Drawing.Point(222, 28);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(826, 56);
+            this.panel2.TabIndex = 2;
+            // 
+            // keychain_publickey_status
+            // 
+            this.keychain_publickey_status.Enabled = false;
+            this.keychain_publickey_status.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.keychain_publickey_status.Location = new System.Drawing.Point(0, 0);
+            this.keychain_publickey_status.Name = "keychain_publickey_status";
+            this.keychain_publickey_status.Size = new System.Drawing.Size(413, 56);
+            this.keychain_publickey_status.TabIndex = 0;
+            this.keychain_publickey_status.Text = "PUBLIC KEY";
+            this.keychain_publickey_status.UseVisualStyleBackColor = true;
+            // 
+            // keychain_privatekey_status
+            // 
+            this.keychain_privatekey_status.Enabled = false;
+            this.keychain_privatekey_status.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.keychain_privatekey_status.Location = new System.Drawing.Point(412, 0);
+            this.keychain_privatekey_status.Name = "keychain_privatekey_status";
+            this.keychain_privatekey_status.Size = new System.Drawing.Size(414, 56);
+            this.keychain_privatekey_status.TabIndex = 1;
+            this.keychain_privatekey_status.Text = "PRIVATE KEY";
+            this.keychain_privatekey_status.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.keychain_decrypt_btn);
+            this.panel3.Controls.Add(this.keychain_emcrypt_btn);
+            this.panel3.Location = new System.Drawing.Point(222, 90);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(413, 206);
+            this.panel3.TabIndex = 3;
+            // 
+            // keychain_emcrypt_btn
+            // 
+            this.keychain_emcrypt_btn.Location = new System.Drawing.Point(3, 3);
+            this.keychain_emcrypt_btn.Name = "keychain_emcrypt_btn";
+            this.keychain_emcrypt_btn.Size = new System.Drawing.Size(202, 200);
+            this.keychain_emcrypt_btn.TabIndex = 0;
+            this.keychain_emcrypt_btn.Text = "ENCRYPT";
+            this.keychain_emcrypt_btn.UseVisualStyleBackColor = true;
+            // 
+            // keychain_decrypt_btn
+            // 
+            this.keychain_decrypt_btn.Location = new System.Drawing.Point(211, 3);
+            this.keychain_decrypt_btn.Name = "keychain_decrypt_btn";
+            this.keychain_decrypt_btn.Size = new System.Drawing.Size(199, 200);
+            this.keychain_decrypt_btn.TabIndex = 1;
+            this.keychain_decrypt_btn.Text = "DECRYPT";
+            this.keychain_decrypt_btn.UseVisualStyleBackColor = true;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -158,6 +226,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -174,6 +244,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button keychain_privatekey_status;
+        private System.Windows.Forms.Button keychain_publickey_status;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button keychain_decrypt_btn;
+        private System.Windows.Forms.Button keychain_emcrypt_btn;
     }
 }
 
