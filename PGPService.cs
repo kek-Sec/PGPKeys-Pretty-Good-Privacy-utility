@@ -141,7 +141,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 FileInfo inputFile = new FileInfo(filepath);
                 FileInfo signedFile = new FileInfo(filepath+".pgp");
 
-                pgp.SignFileAsync(inputFile, signedFile);
+                pgp.ClearSignFileAsync(inputFile, signedFile);
             });
         }
 
@@ -154,7 +154,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             await Task.Run(() =>
             {
-                return pgp.SignArmoredStringAsync(plaintext);
+                return pgp.ClearSignArmoredStringAsync(plaintext);
             });
             return null;
         }
