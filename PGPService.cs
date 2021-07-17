@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +60,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             await Task.Run(() =>
             {
-                EncryptionKeys pub = new EncryptionKeys(private_key,password);
+                FileInfo privateKey = new FileInfo(private_key);
+                EncryptionKeys pub = new EncryptionKeys(privateKey,password);
 
                 this.pgp = new PGP(pub);
             });
@@ -122,6 +124,39 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             {
                 pgp.EncryptFileAsync(filepath, filepath + ".pgp");
             });
+        }
+        #endregion
+
+        #region signing
+        /// <summary>
+        /// Sign a file
+        /// </summary>
+        /// <param name="filepath">The file to sign</param>
+        /// <returns></returns>
+        public async Task SignFile(string filepath)
+        {
+            await Task.Run(() =>
+            {
+                // Reference input/output files
+                FileInfo inputFile = new FileInfo(filepath);
+                FileInfo signedFile = new FileInfo(filepath+".pgp");
+
+                pgp.SignFileAsync(inputFile, signedFile);
+            });
+        }
+
+        /// <summary>
+        /// Sign text
+        /// </summary>
+        /// <param name="plaintext">The string to sign</param>
+        /// <returns></returns>
+        public async Task<String> SignText(string plaintext)
+        {
+            await Task.Run(() =>
+            {
+                return pgp.SignArmoredStringAsync(plaintext);
+            });
+            return null;
         }
         #endregion
     }
