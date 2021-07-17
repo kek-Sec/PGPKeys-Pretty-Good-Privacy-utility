@@ -63,6 +63,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _007_credit_card {
+            get {
+                object obj = ResourceManager.GetObject("007-credit card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _017_fingerprint {
             get {
                 object obj = ResourceManager.GetObject("017-fingerprint", resourceCulture);
@@ -186,6 +196,26 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
         internal static System.Drawing.Bitmap message_box_512x512_2194194 {
             get {
                 object obj = ResourceManager.GetObject("message-box-512x512-2194194", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paper_plane_512x512_1216070 {
+            get {
+                object obj = ResourceManager.GetObject("paper-plane-512x512-1216070", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove_512x512_1214296 {
+            get {
+                object obj = ResourceManager.GetObject("remove-512x512-1214296", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

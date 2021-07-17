@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="paper-plane-512x512-1216070" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper-plane-512x512-1216070.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="history-512x512-1214668" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\history-512x512-1214668.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -126,6 +129,9 @@
   </data>
   <data name="setting-512x512-1214292" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting-512x512-1214292.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove-512x512-1214296" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove-512x512-1214296.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="044-unlock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\044-unlock2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,13 +163,16 @@
   <data name="sync-512x512-1214660" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sync-512x512-1214660.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="2849804_paste_document_paper_file_multimedia_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2849804_paste_document_paper_file_multimedia_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="023-key" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\023-key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="017-fingerprint" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\017-fingerprint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2849804_paste_document_paper_file_multimedia_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2849804_paste_document_paper_file_multimedia_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="007-credit card" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\007-credit card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

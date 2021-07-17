@@ -67,7 +67,20 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel1 = new System.Windows.Forms.Panel();
             this.keychain_listbox = new System.Windows.Forms.ListBox();
             this.Generator_tab = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Options_groupbox = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.generator_password_txt = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.generator_email_txt = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.generator_toolstrip = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
@@ -82,7 +95,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_toolstrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Generator_tab.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.Options_groupbox.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.generator_toolstrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainForm_tabControl
@@ -149,6 +170,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.keychain_paste_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
             this.keychain_paste_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_paste_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_paste_btn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_paste_btn.Location = new System.Drawing.Point(90, 3);
             this.keychain_paste_btn.Name = "keychain_paste_btn";
             this.keychain_paste_btn.Size = new System.Drawing.Size(81, 60);
@@ -159,6 +182,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.keychain_copy_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon;
             this.keychain_copy_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_copy_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_copy_btn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_copy_btn.Location = new System.Drawing.Point(3, 3);
             this.keychain_copy_btn.Name = "keychain_copy_btn";
             this.keychain_copy_btn.Size = new System.Drawing.Size(81, 60);
@@ -216,6 +241,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.keychain_settings_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.setting_512x512_1214292;
             this.keychain_settings_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_settings_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_settings_btn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_settings_btn.Location = new System.Drawing.Point(177, 3);
             this.keychain_settings_btn.Name = "keychain_settings_btn";
             this.keychain_settings_btn.Size = new System.Drawing.Size(81, 66);
@@ -226,6 +253,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.keychain_delete_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("keychain_delete_btn.BackgroundImage")));
             this.keychain_delete_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_delete_btn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_delete_btn.Location = new System.Drawing.Point(90, 3);
             this.keychain_delete_btn.Name = "keychain_delete_btn";
             this.keychain_delete_btn.Size = new System.Drawing.Size(81, 66);
@@ -236,10 +265,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.keychain_add_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.add_new_512x512_1214356;
             this.keychain_add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_add_btn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.keychain_add_btn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.keychain_add_btn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_add_btn.Location = new System.Drawing.Point(3, 3);
             this.keychain_add_btn.Name = "keychain_add_btn";
             this.keychain_add_btn.Size = new System.Drawing.Size(81, 66);
             this.keychain_add_btn.TabIndex = 0;
+            this.keychain_add_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_add_btn.UseVisualStyleBackColor = true;
             // 
             // panel4
@@ -255,20 +289,30 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.keychain_sign_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._017_fingerprint;
             this.keychain_sign_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_sign_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_sign_btn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.keychain_sign_btn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_sign_btn.Location = new System.Drawing.Point(208, 3);
             this.keychain_sign_btn.Name = "keychain_sign_btn";
             this.keychain_sign_btn.Size = new System.Drawing.Size(196, 200);
             this.keychain_sign_btn.TabIndex = 1;
+            this.keychain_sign_btn.Text = "Sign";
+            this.keychain_sign_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_sign_btn.UseVisualStyleBackColor = true;
             // 
             // keychain_verify_btn
             // 
             this.keychain_verify_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._035_protection;
             this.keychain_verify_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_verify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_verify_btn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.keychain_verify_btn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_verify_btn.Location = new System.Drawing.Point(3, 3);
             this.keychain_verify_btn.Name = "keychain_verify_btn";
             this.keychain_verify_btn.Size = new System.Drawing.Size(199, 200);
             this.keychain_verify_btn.TabIndex = 0;
+            this.keychain_verify_btn.Text = "Verify";
+            this.keychain_verify_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_verify_btn.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -284,20 +328,30 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.keychain_decrypt_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._044_unlock;
             this.keychain_decrypt_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_decrypt_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_decrypt_btn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.keychain_decrypt_btn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_decrypt_btn.Location = new System.Drawing.Point(211, 3);
             this.keychain_decrypt_btn.Name = "keychain_decrypt_btn";
             this.keychain_decrypt_btn.Size = new System.Drawing.Size(199, 200);
             this.keychain_decrypt_btn.TabIndex = 1;
+            this.keychain_decrypt_btn.Text = "Decrypt";
+            this.keychain_decrypt_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_decrypt_btn.UseVisualStyleBackColor = true;
             // 
             // keychain_emcrypt_btn
             // 
             this.keychain_emcrypt_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._025_lock;
             this.keychain_emcrypt_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keychain_emcrypt_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keychain_emcrypt_btn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.keychain_emcrypt_btn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_emcrypt_btn.Location = new System.Drawing.Point(3, 3);
             this.keychain_emcrypt_btn.Name = "keychain_emcrypt_btn";
             this.keychain_emcrypt_btn.Size = new System.Drawing.Size(202, 200);
             this.keychain_emcrypt_btn.TabIndex = 0;
+            this.keychain_emcrypt_btn.Text = "Encrypt";
+            this.keychain_emcrypt_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_emcrypt_btn.UseVisualStyleBackColor = true;
             // 
             // panel2
@@ -438,7 +492,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // Generator_tab
             // 
-            this.Generator_tab.Controls.Add(this.toolStrip1);
+            this.Generator_tab.Controls.Add(this.panel9);
+            this.Generator_tab.Controls.Add(this.generator_toolstrip);
             this.Generator_tab.Location = new System.Drawing.Point(4, 30);
             this.Generator_tab.Name = "Generator_tab";
             this.Generator_tab.Padding = new System.Windows.Forms.Padding(3);
@@ -448,15 +503,155 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.Generator_tab.ToolTipText = "Generate new key pair";
             this.Generator_tab.UseVisualStyleBackColor = true;
             // 
-            // toolStrip1
+            // panel9
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.panel9.Controls.Add(this.groupBox5);
+            this.panel9.Controls.Add(this.Options_groupbox);
+            this.panel9.Location = new System.Drawing.Point(6, 31);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1040, 602);
+            this.panel9.TabIndex = 1;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Location = new System.Drawing.Point(267, 168);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(443, 110);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._007_credit_card;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Location = new System.Drawing.Point(0, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(443, 97);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Generate";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Options_groupbox
+            // 
+            this.Options_groupbox.Controls.Add(this.groupBox4);
+            this.Options_groupbox.Controls.Add(this.pictureBox2);
+            this.Options_groupbox.Controls.Add(this.groupBox3);
+            this.Options_groupbox.Controls.Add(this.pictureBox1);
+            this.Options_groupbox.Controls.Add(this.groupBox2);
+            this.Options_groupbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Options_groupbox.Location = new System.Drawing.Point(0, 3);
+            this.Options_groupbox.Name = "Options_groupbox";
+            this.Options_groupbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Options_groupbox.Size = new System.Drawing.Size(1040, 159);
+            this.Options_groupbox.TabIndex = 0;
+            this.Options_groupbox.TabStop = false;
+            this.Options_groupbox.Text = "Options";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.generator_password_txt);
+            this.groupBox4.Location = new System.Drawing.Point(730, 28);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(307, 114);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Password";
+            // 
+            // generator_password_txt
+            // 
+            this.generator_password_txt.Location = new System.Drawing.Point(6, 52);
+            this.generator_password_txt.Name = "generator_password_txt";
+            this.generator_password_txt.Size = new System.Drawing.Size(237, 29);
+            this.generator_password_txt.TabIndex = 1;
+            this.generator_password_txt.UseSystemPasswordChar = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.remove_512x512_1214296;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.InitialImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.paper_plane_512x512_1216070;
+            this.pictureBox2.Location = new System.Drawing.Point(576, 56);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(148, 60);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.generator_email_txt);
+            this.groupBox3.Location = new System.Drawing.Point(267, 28);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(303, 114);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Email";
+            // 
+            // generator_email_txt
+            // 
+            this.generator_email_txt.Location = new System.Drawing.Point(6, 52);
+            this.generator_email_txt.Name = "generator_email_txt";
+            this.generator_email_txt.Size = new System.Drawing.Size(291, 29);
+            this.generator_email_txt.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.remove_512x512_1214296;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.paper_plane_512x512_1216070;
+            this.pictureBox1.Location = new System.Drawing.Point(113, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(148, 60);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Location = new System.Drawing.Point(6, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(101, 114);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Key length";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton2.Location = new System.Drawing.Point(6, 28);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(84, 36);
+            this.radioButton2.TabIndex = 2;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "2048";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButton1.Location = new System.Drawing.Point(6, 70);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(84, 36);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.Text = "4096";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // generator_toolstrip
+            // 
+            this.generator_toolstrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1046, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.generator_toolstrip.Location = new System.Drawing.Point(3, 3);
+            this.generator_toolstrip.Name = "generator_toolstrip";
+            this.generator_toolstrip.Size = new System.Drawing.Size(1046, 25);
+            this.generator_toolstrip.TabIndex = 0;
+            this.generator_toolstrip.Text = "toolStrip1";
             // 
             // toolStripDropDownButton3
             // 
@@ -495,8 +690,19 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel1.ResumeLayout(false);
             this.Generator_tab.ResumeLayout(false);
             this.Generator_tab.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.Options_groupbox.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.generator_toolstrip.ResumeLayout(false);
+            this.generator_toolstrip.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -540,8 +746,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Button keychain_paste_btn;
         private System.Windows.Forms.Button keychain_copy_btn;
         private System.Windows.Forms.TabPage Generator_tab;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip generator_toolstrip;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.GroupBox Options_groupbox;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox generator_password_txt;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox generator_email_txt;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button1;
     }
 }
 
