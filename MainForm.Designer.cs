@@ -83,6 +83,26 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.generator_output_rtb = new System.Windows.Forms.RichTextBox();
             this.clipboard_tab = new System.Windows.Forms.TabPage();
+            this.clipboard_toolstrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.encryptWithPublicKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.encryptWithPrivateKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.decryptWithPrivateKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.decryptWithPublicKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton6 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.importPublicKeyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importPrivateKeyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.verifyClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clipboard_rtb = new System.Windows.Forms.RichTextBox();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -105,6 +125,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.clipboard_tab.SuspendLayout();
+            this.clipboard_toolstrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainForm_tabControl
@@ -113,6 +135,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.MainForm_tabControl.Controls.Add(this.keychain_page);
             this.MainForm_tabControl.Controls.Add(this.Generator_tab);
             this.MainForm_tabControl.Controls.Add(this.clipboard_tab);
+            this.MainForm_tabControl.HotTrack = true;
             this.MainForm_tabControl.Location = new System.Drawing.Point(4, 3);
             this.MainForm_tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.MainForm_tabControl.Name = "MainForm_tabControl";
@@ -670,6 +693,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // clipboard_tab
             // 
+            this.clipboard_tab.Controls.Add(this.clipboard_rtb);
+            this.clipboard_tab.Controls.Add(this.clipboard_toolstrip);
             this.clipboard_tab.Location = new System.Drawing.Point(4, 30);
             this.clipboard_tab.Name = "clipboard_tab";
             this.clipboard_tab.Size = new System.Drawing.Size(1052, 845);
@@ -677,6 +702,175 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.clipboard_tab.Text = "Clipboard";
             this.clipboard_tab.ToolTipText = "Rich clipboard component";
             this.clipboard_tab.UseVisualStyleBackColor = true;
+            // 
+            // clipboard_toolstrip
+            // 
+            this.clipboard_toolstrip.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.clipboard_toolstrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton3,
+            this.toolStripSeparator2,
+            this.toolStripDropDownButton4,
+            this.toolStripSeparator3,
+            this.toolStripDropDownButton5,
+            this.toolStripSeparator4,
+            this.toolStripDropDownButton6,
+            this.toolStripSeparator5,
+            this.toolStripDropDownButton7});
+            this.clipboard_toolstrip.Location = new System.Drawing.Point(0, 0);
+            this.clipboard_toolstrip.Name = "clipboard_toolstrip";
+            this.clipboard_toolstrip.Size = new System.Drawing.Size(1052, 25);
+            this.clipboard_toolstrip.TabIndex = 0;
+            this.clipboard_toolstrip.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton3
+            // 
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pasteToolStripMenuItem,
+            this.copyToolStripMenuItem});
+            this.toolStripDropDownButton3.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon1;
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton3.Text = "toolStripDropDownButton3";
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon1;
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.copyToolStripMenuItem.Text = "Copy";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripDropDownButton4
+            // 
+            this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.encryptWithPublicKeyToolStripMenuItem,
+            this.encryptWithPrivateKeyToolStripMenuItem});
+            this.toolStripDropDownButton4.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._025_lock;
+            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton4.Text = "toolStripDropDownButton4";
+            // 
+            // encryptWithPublicKeyToolStripMenuItem
+            // 
+            this.encryptWithPublicKeyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
+            this.encryptWithPublicKeyToolStripMenuItem.Name = "encryptWithPublicKeyToolStripMenuItem";
+            this.encryptWithPublicKeyToolStripMenuItem.Size = new System.Drawing.Size(235, 24);
+            this.encryptWithPublicKeyToolStripMenuItem.Text = "Encrypt with public key";
+            // 
+            // encryptWithPrivateKeyToolStripMenuItem
+            // 
+            this.encryptWithPrivateKeyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
+            this.encryptWithPrivateKeyToolStripMenuItem.Name = "encryptWithPrivateKeyToolStripMenuItem";
+            this.encryptWithPrivateKeyToolStripMenuItem.Size = new System.Drawing.Size(235, 24);
+            this.encryptWithPrivateKeyToolStripMenuItem.Text = "Encrypt with private key";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripDropDownButton5
+            // 
+            this.toolStripDropDownButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.decryptWithPrivateKeyToolStripMenuItem,
+            this.decryptWithPublicKeyToolStripMenuItem});
+            this.toolStripDropDownButton5.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
+            this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
+            this.toolStripDropDownButton5.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton5.Text = "toolStripDropDownButton5";
+            // 
+            // decryptWithPrivateKeyToolStripMenuItem
+            // 
+            this.decryptWithPrivateKeyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
+            this.decryptWithPrivateKeyToolStripMenuItem.Name = "decryptWithPrivateKeyToolStripMenuItem";
+            this.decryptWithPrivateKeyToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
+            this.decryptWithPrivateKeyToolStripMenuItem.Text = "Decrypt with private key";
+            // 
+            // decryptWithPublicKeyToolStripMenuItem
+            // 
+            this.decryptWithPublicKeyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
+            this.decryptWithPublicKeyToolStripMenuItem.Name = "decryptWithPublicKeyToolStripMenuItem";
+            this.decryptWithPublicKeyToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
+            this.decryptWithPublicKeyToolStripMenuItem.Text = "Decrypt with public key";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripDropDownButton6
+            // 
+            this.toolStripDropDownButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importPublicKeyToolStripMenuItem1,
+            this.importPrivateKeyToolStripMenuItem1});
+            this.toolStripDropDownButton6.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._042_transfer;
+            this.toolStripDropDownButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton6.Name = "toolStripDropDownButton6";
+            this.toolStripDropDownButton6.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton6.Text = "toolStripDropDownButton6";
+            // 
+            // importPublicKeyToolStripMenuItem1
+            // 
+            this.importPublicKeyToolStripMenuItem1.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.box_512x512_1214347;
+            this.importPublicKeyToolStripMenuItem1.Name = "importPublicKeyToolStripMenuItem1";
+            this.importPublicKeyToolStripMenuItem1.Size = new System.Drawing.Size(199, 24);
+            this.importPublicKeyToolStripMenuItem1.Text = "Import public key";
+            // 
+            // importPrivateKeyToolStripMenuItem1
+            // 
+            this.importPrivateKeyToolStripMenuItem1.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.box_512x512_1214347;
+            this.importPrivateKeyToolStripMenuItem1.Name = "importPrivateKeyToolStripMenuItem1";
+            this.importPrivateKeyToolStripMenuItem1.Size = new System.Drawing.Size(199, 24);
+            this.importPrivateKeyToolStripMenuItem1.Text = "Import private key";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripDropDownButton7
+            // 
+            this.toolStripDropDownButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verifyClipboardToolStripMenuItem});
+            this.toolStripDropDownButton7.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._032_police_badge;
+            this.toolStripDropDownButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton7.Name = "toolStripDropDownButton7";
+            this.toolStripDropDownButton7.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton7.Text = "toolStripDropDownButton7";
+            // 
+            // verifyClipboardToolStripMenuItem
+            // 
+            this.verifyClipboardToolStripMenuItem.Name = "verifyClipboardToolStripMenuItem";
+            this.verifyClipboardToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
+            this.verifyClipboardToolStripMenuItem.Text = "Verify clipboard";
+            // 
+            // clipboard_rtb
+            // 
+            this.clipboard_rtb.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.clipboard_rtb.Location = new System.Drawing.Point(4, 28);
+            this.clipboard_rtb.Name = "clipboard_rtb";
+            this.clipboard_rtb.Size = new System.Drawing.Size(1045, 606);
+            this.clipboard_rtb.TabIndex = 1;
+            this.clipboard_rtb.Text = "";
             // 
             // Main_Form
             // 
@@ -717,6 +911,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.clipboard_tab.ResumeLayout(false);
+            this.clipboard_tab.PerformLayout();
+            this.clipboard_toolstrip.ResumeLayout(false);
+            this.clipboard_toolstrip.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -776,6 +974,26 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RichTextBox generator_output_rtb;
         private System.Windows.Forms.TabPage clipboard_tab;
+        private System.Windows.Forms.ToolStrip clipboard_toolstrip;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
+        private System.Windows.Forms.ToolStripMenuItem encryptWithPublicKeyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem encryptWithPrivateKeyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
+        private System.Windows.Forms.ToolStripMenuItem decryptWithPrivateKeyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decryptWithPublicKeyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton6;
+        private System.Windows.Forms.ToolStripMenuItem importPublicKeyToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem importPrivateKeyToolStripMenuItem1;
+        private System.Windows.Forms.RichTextBox clipboard_rtb;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton7;
+        private System.Windows.Forms.ToolStripMenuItem verifyClipboardToolStripMenuItem;
     }
 }
 

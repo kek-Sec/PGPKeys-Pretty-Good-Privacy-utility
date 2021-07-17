@@ -123,6 +123,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _032_police_badge {
+            get {
+                object obj = ResourceManager.GetObject("032-police badge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _035_protection {
             get {
                 object obj = ResourceManager.GetObject("035-protection", resourceCulture);
@@ -136,6 +146,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
         internal static System.Drawing.Bitmap _040_spam {
             get {
                 object obj = ResourceManager.GetObject("040-spam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _042_transfer {
+            get {
+                object obj = ResourceManager.GetObject("042-transfer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
