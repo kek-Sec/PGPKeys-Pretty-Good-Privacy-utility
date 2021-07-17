@@ -17,7 +17,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loader_form());
+            Application.Run(new Main_Form());
+
         }
     }
 }
