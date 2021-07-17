@@ -41,24 +41,24 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel2 = new System.Windows.Forms.Panel();
             this.keychain_privatekey_status = new System.Windows.Forms.Button();
             this.keychain_publickey_status = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.keychain_toolstrip = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.keychain_listbox = new System.Windows.Forms.ListBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.importPublicKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importPrivateKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateKeyPairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.keychain_listbox = new System.Windows.Forms.ListBox();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.keychain_toolstrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_page.Controls.Add(this.panel4);
             this.keychain_page.Controls.Add(this.panel3);
             this.keychain_page.Controls.Add(this.panel2);
-            this.keychain_page.Controls.Add(this.toolStrip1);
+            this.keychain_page.Controls.Add(this.keychain_toolstrip);
             this.keychain_page.Controls.Add(this.panel1);
             this.keychain_page.Location = new System.Drawing.Point(4, 30);
             this.keychain_page.Name = "keychain_page";
@@ -189,18 +189,20 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_publickey_status.Text = "PUBLIC KEY";
             this.keychain_publickey_status.UseVisualStyleBackColor = true;
             // 
-            // toolStrip1
+            // keychain_toolstrip
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.keychain_toolstrip.AllowItemReorder = true;
+            this.keychain_toolstrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
             this.toolStripSeparator1,
             this.toolStripDropDownButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(1215, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
+            this.keychain_toolstrip.Location = new System.Drawing.Point(0, 0);
+            this.keychain_toolstrip.Name = "keychain_toolstrip";
+            this.keychain_toolstrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.keychain_toolstrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.keychain_toolstrip.Size = new System.Drawing.Size(1215, 25);
+            this.keychain_toolstrip.TabIndex = 1;
+            this.keychain_toolstrip.Text = "keychain-menu";
             // 
             // toolStripDropDownButton1
             // 
@@ -219,39 +221,22 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.exportToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.history_512x512_1214668;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.exportToolStripMenuItem.Text = "Load";
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.save_512x512_1784384;
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.importToolStripMenuItem.Text = "Save";
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.sync_512x512_1214660;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.keychain_listbox);
-            this.panel1.Location = new System.Drawing.Point(4, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 604);
-            this.panel1.TabIndex = 0;
-            // 
-            // keychain_listbox
-            // 
-            this.keychain_listbox.FormattingEnabled = true;
-            this.keychain_listbox.ItemHeight = 21;
-            this.keychain_listbox.Location = new System.Drawing.Point(0, 6);
-            this.keychain_listbox.Name = "keychain_listbox";
-            this.keychain_listbox.Size = new System.Drawing.Size(212, 592);
-            this.keychain_listbox.TabIndex = 0;
             // 
             // toolStripSeparator1
             // 
@@ -292,6 +277,23 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.generateKeyPairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.generateKeyPairToolStripMenuItem.Text = "Generate key pair";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.keychain_listbox);
+            this.panel1.Location = new System.Drawing.Point(4, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(215, 604);
+            this.panel1.TabIndex = 0;
+            // 
+            // keychain_listbox
+            // 
+            this.keychain_listbox.FormattingEnabled = true;
+            this.keychain_listbox.ItemHeight = 21;
+            this.keychain_listbox.Location = new System.Drawing.Point(0, 6);
+            this.keychain_listbox.Name = "keychain_listbox";
+            this.keychain_listbox.Size = new System.Drawing.Size(212, 592);
+            this.keychain_listbox.TabIndex = 0;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -310,8 +312,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.keychain_toolstrip.ResumeLayout(false);
+            this.keychain_toolstrip.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -324,7 +326,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.TabPage keychain_page;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox keychain_listbox;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip keychain_toolstrip;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
