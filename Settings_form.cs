@@ -14,7 +14,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
     {
         public Settings_form()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
 
