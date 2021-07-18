@@ -17,22 +17,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         public List<string> logger_output = new List<string>();
 
         /// <summary>
-        /// Verify that all required variables have been initialized
-        /// </summary>
-        /// <returns>True if its verified</returns>
-        private bool verify()
-        {
-            if(key_length != default(int) && email != null && password != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
         /// Main function that calls the pgp service and does the generation
         /// </summary>
         /// <returns>True if no error occurs</returns>

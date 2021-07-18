@@ -196,7 +196,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.InfoText;
+            this.richTextBox1.BackColor = System.Drawing.Color.Black;
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.richTextBox1.Location = new System.Drawing.Point(6, 28);
             this.richTextBox1.Name = "richTextBox1";
@@ -768,9 +768,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // generator_output_rtb
             // 
-            this.generator_output_rtb.BackColor = System.Drawing.SystemColors.InfoText;
-            this.generator_output_rtb.Enabled = false;
-            this.generator_output_rtb.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.generator_output_rtb.BackColor = System.Drawing.Color.Black;
+            this.generator_output_rtb.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.generator_output_rtb.ForeColor = System.Drawing.SystemColors.Highlight;
             this.generator_output_rtb.Location = new System.Drawing.Point(13, 33);
             this.generator_output_rtb.Name = "generator_output_rtb";
