@@ -293,6 +293,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap save_512x512_17843841 {
+            get {
+                object obj = ResourceManager.GetObject("save-512x512-17843841", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap setting_512x512_1214292 {
             get {
                 object obj = ResourceManager.GetObject("setting-512x512-1214292", resourceCulture);
