@@ -273,6 +273,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_settings_btn.Size = new System.Drawing.Size(81, 66);
             this.keychain_settings_btn.TabIndex = 2;
             this.keychain_settings_btn.UseVisualStyleBackColor = true;
+            this.keychain_settings_btn.Click += new System.EventHandler(this.keychain_settings_btn_Click);
             // 
             // keychain_delete_btn
             // 

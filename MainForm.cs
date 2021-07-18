@@ -12,7 +12,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     public partial class Main_Form : Form
     {
-
+        Settings_form settings = new Settings_form();
         public Main_Form()
         {
             InitializeComponent();
@@ -27,5 +27,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
         }
 
+        private void keychain_settings_btn_Click(object sender, EventArgs e)
+        {
+            settings.Show();
+        }
     }
 }

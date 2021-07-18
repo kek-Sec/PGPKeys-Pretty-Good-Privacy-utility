@@ -1,7 +1,7 @@
 ﻿
 namespace PGPKeys____Pretty_Good_Privacy_utility
 {
-    partial class Loader_form
+    partial class Settings_form
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,13 +31,17 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             this.SuspendLayout();
             // 
-            // Loader_form
+            // Settings_form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 394);
-            this.Name = "Loader_form";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(918, 516);
+            this.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.Name = "Settings_form";
+            this.Text = "Settings";
             this.ResumeLayout(false);
 
         }

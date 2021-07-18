@@ -10,10 +10,9 @@ using System.Windows.Forms;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility
 {
-    public partial class Loader_form : Form
+    public partial class Settings_form : Form
     {
-        Boolean loaded = true;
-        public Loader_form()
+        public Settings_form()
         {
             InitializeComponent();
         }
