@@ -68,6 +68,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_listbox = new System.Windows.Forms.ListBox();
             this.Generator_tab = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.generator_output_rtb = new System.Windows.Forms.RichTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Options_groupbox = new System.Windows.Forms.GroupBox();
@@ -80,9 +82,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.generator_output_rtb = new System.Windows.Forms.RichTextBox();
             this.clipboard_tab = new System.Windows.Forms.TabPage();
+            this.clipboard_rtb = new System.Windows.Forms.RichTextBox();
             this.clipboard_toolstrip = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +103,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
             this.verifyClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clipboard_rtb = new System.Windows.Forms.RichTextBox();
             this.MainForm_tabControl.SuspendLayout();
             this.keychain_page.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -117,6 +117,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel1.SuspendLayout();
             this.Generator_tab.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.Options_groupbox.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -124,7 +125,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.clipboard_tab.SuspendLayout();
             this.clipboard_toolstrip.SuspendLayout();
             this.SuspendLayout();
@@ -537,6 +537,29 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel9.Size = new System.Drawing.Size(1040, 627);
             this.panel9.TabIndex = 1;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.generator_output_rtb);
+            this.groupBox6.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox6.Location = new System.Drawing.Point(-10, 284);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(1060, 343);
+            this.groupBox6.TabIndex = 2;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Output";
+            // 
+            // generator_output_rtb
+            // 
+            this.generator_output_rtb.BackColor = System.Drawing.SystemColors.InfoText;
+            this.generator_output_rtb.Enabled = false;
+            this.generator_output_rtb.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.generator_output_rtb.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.generator_output_rtb.Location = new System.Drawing.Point(13, 33);
+            this.generator_output_rtb.Name = "generator_output_rtb";
+            this.generator_output_rtb.Size = new System.Drawing.Size(1040, 310);
+            this.generator_output_rtb.TabIndex = 0;
+            this.generator_output_rtb.Text = "Generation output..";
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.button1);
@@ -668,29 +691,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.radioButton1.Text = "4096";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.generator_output_rtb);
-            this.groupBox6.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox6.Location = new System.Drawing.Point(-10, 284);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1060, 343);
-            this.groupBox6.TabIndex = 2;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Output";
-            // 
-            // generator_output_rtb
-            // 
-            this.generator_output_rtb.BackColor = System.Drawing.SystemColors.InfoText;
-            this.generator_output_rtb.Enabled = false;
-            this.generator_output_rtb.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.generator_output_rtb.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.generator_output_rtb.Location = new System.Drawing.Point(13, 33);
-            this.generator_output_rtb.Name = "generator_output_rtb";
-            this.generator_output_rtb.Size = new System.Drawing.Size(1040, 310);
-            this.generator_output_rtb.TabIndex = 0;
-            this.generator_output_rtb.Text = "Generation output..";
-            // 
             // clipboard_tab
             // 
             this.clipboard_tab.Controls.Add(this.clipboard_rtb);
@@ -702,6 +702,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.clipboard_tab.Text = "Clipboard";
             this.clipboard_tab.ToolTipText = "Rich clipboard component";
             this.clipboard_tab.UseVisualStyleBackColor = true;
+            // 
+            // clipboard_rtb
+            // 
+            this.clipboard_rtb.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.clipboard_rtb.Location = new System.Drawing.Point(4, 28);
+            this.clipboard_rtb.Name = "clipboard_rtb";
+            this.clipboard_rtb.Size = new System.Drawing.Size(1045, 606);
+            this.clipboard_rtb.TabIndex = 1;
+            this.clipboard_rtb.Text = "";
             // 
             // clipboard_toolstrip
             // 
@@ -738,14 +747,14 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.pasteToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.pasteToolStripMenuItem.Text = "Paste";
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon1;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.copyToolStripMenuItem.Text = "Copy";
             // 
             // toolStripSeparator2
@@ -863,15 +872,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.verifyClipboardToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
             this.verifyClipboardToolStripMenuItem.Text = "Verify clipboard";
             // 
-            // clipboard_rtb
-            // 
-            this.clipboard_rtb.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clipboard_rtb.Location = new System.Drawing.Point(4, 28);
-            this.clipboard_rtb.Name = "clipboard_rtb";
-            this.clipboard_rtb.Size = new System.Drawing.Size(1045, 606);
-            this.clipboard_rtb.TabIndex = 1;
-            this.clipboard_rtb.Text = "";
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -881,6 +881,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Main_Form";
             this.Text = "PGPKeys";
             this.Load += new System.EventHandler(this.Main_Form_Load);
@@ -900,6 +901,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel1.ResumeLayout(false);
             this.Generator_tab.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.Options_groupbox.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -910,7 +912,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
             this.clipboard_tab.ResumeLayout(false);
             this.clipboard_tab.PerformLayout();
             this.clipboard_toolstrip.ResumeLayout(false);

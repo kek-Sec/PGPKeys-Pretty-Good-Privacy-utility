@@ -10,6 +10,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
     {
         List<KeyChainObject> keyChainList = new List<KeyChainObject>();
 
+
+        /// <summary>
+        /// Add keychainobject to List
+        /// </summary>
+        /// <param name="item">Object to add</param>
         public void PushToKeyChain(KeyChainObject item)
         {
             keyChainList.Add(item);
@@ -30,5 +35,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         public string private_key { get; set; }
         public string email { get; set; }
         public string password { get; set; }
+
     }
 }
