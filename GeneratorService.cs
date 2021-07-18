@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Windows.Forms;
 using System.Threading.Tasks;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility
@@ -14,7 +14,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         public int key_length { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-
+        public List<string> logger_output = new List<string>();
 
         /// <summary>
         /// Verify that all required variables have been initialized
@@ -48,5 +48,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 return false;
             }
         }
+
+        #region generator logger
+
+        /// <summary>
+        /// Writes output to logger
+        /// </summary>
+        /// <param name="s">The string to write</param>
+        /// <param name="logger">The logger output rich text box</param>
+        public void AddToLogger(string s,RichTextBox logger)
+        {
+            logger.Clear();
+            logger_output.Add(s);
+            logger.Text = String.Join("\n", logger_output.ToArray());
+        }
+
+        #endregion
     }
 }

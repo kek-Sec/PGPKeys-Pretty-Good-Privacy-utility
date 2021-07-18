@@ -32,6 +32,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.MainForm_tabControl = new System.Windows.Forms.TabControl();
             this.Dashboard_page = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -85,7 +87,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.generator_output_rtb = new System.Windows.Forms.RichTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.generate_button = new System.Windows.Forms.Button();
             this.Options_groupbox = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.generator_password_txt = new System.Windows.Forms.TextBox();
@@ -94,8 +96,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.generator_email_txt = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.key_len_2048 = new System.Windows.Forms.RadioButton();
+            this.key_len_4096 = new System.Windows.Forms.RadioButton();
             this.clipboard_tab = new System.Windows.Forms.TabPage();
             this.clipboard_rtb = new System.Windows.Forms.RichTextBox();
             this.clipboard_toolstrip = new System.Windows.Forms.ToolStrip();
@@ -117,10 +119,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
             this.verifyClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.MainForm_tabControl.SuspendLayout();
             this.Dashboard_page.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -150,7 +151,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox2.SuspendLayout();
             this.clipboard_tab.SuspendLayout();
             this.clipboard_toolstrip.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainForm_tabControl
@@ -182,6 +182,27 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.Dashboard_page.Text = "Dashboard";
             this.Dashboard_page.ToolTipText = "PGPKeys dashboard";
             this.Dashboard_page.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.richTextBox1);
+            this.groupBox11.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox11.Location = new System.Drawing.Point(6, 243);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(449, 284);
+            this.groupBox11.TabIndex = 3;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Logger output";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.InfoText;
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.richTextBox1.Location = new System.Drawing.Point(6, 28);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(437, 250);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "...";
             // 
             // groupBox9
             // 
@@ -759,26 +780,27 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.generate_button);
             this.groupBox5.Location = new System.Drawing.Point(267, 168);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(443, 110);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             // 
-            // button1
+            // generate_button
             // 
-            this.button1.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._023_key1;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Location = new System.Drawing.Point(0, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(443, 97);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Generate";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.generate_button.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._023_key1;
+            this.generate_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.generate_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.generate_button.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.generate_button.Location = new System.Drawing.Point(0, 13);
+            this.generate_button.Name = "generate_button";
+            this.generate_button.Size = new System.Drawing.Size(443, 97);
+            this.generate_button.TabIndex = 0;
+            this.generate_button.Text = "Generate";
+            this.generate_button.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.generate_button.UseVisualStyleBackColor = true;
+            this.generate_button.Click += new System.EventHandler(this.generate_button_ClickAsync);
             // 
             // Options_groupbox
             // 
@@ -810,7 +832,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.generator_password_txt.Location = new System.Drawing.Point(6, 52);
             this.generator_password_txt.Name = "generator_password_txt";
-            this.generator_password_txt.Size = new System.Drawing.Size(237, 29);
+            this.generator_password_txt.Size = new System.Drawing.Size(295, 29);
             this.generator_password_txt.TabIndex = 1;
             this.generator_password_txt.UseSystemPasswordChar = true;
             // 
@@ -855,8 +877,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.key_len_2048);
+            this.groupBox2.Controls.Add(this.key_len_4096);
             this.groupBox2.Location = new System.Drawing.Point(6, 28);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(101, 114);
@@ -864,29 +886,29 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Key length";
             // 
-            // radioButton2
+            // key_len_2048
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(6, 28);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(84, 36);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "2048";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.key_len_2048.AutoSize = true;
+            this.key_len_2048.Checked = true;
+            this.key_len_2048.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.key_len_2048.Location = new System.Drawing.Point(6, 28);
+            this.key_len_2048.Name = "key_len_2048";
+            this.key_len_2048.Size = new System.Drawing.Size(84, 36);
+            this.key_len_2048.TabIndex = 2;
+            this.key_len_2048.TabStop = true;
+            this.key_len_2048.Text = "2048";
+            this.key_len_2048.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // key_len_4096
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.Location = new System.Drawing.Point(6, 70);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(84, 36);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.Text = "4096";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.key_len_4096.AutoSize = true;
+            this.key_len_4096.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.key_len_4096.Location = new System.Drawing.Point(6, 70);
+            this.key_len_4096.Name = "key_len_4096";
+            this.key_len_4096.Size = new System.Drawing.Size(84, 36);
+            this.key_len_4096.TabIndex = 1;
+            this.key_len_4096.Text = "4096";
+            this.key_len_4096.UseVisualStyleBackColor = true;
             // 
             // clipboard_tab
             // 
@@ -1069,27 +1091,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.verifyClipboardToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
             this.verifyClipboardToolStripMenuItem.Text = "Verify clipboard";
             // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.richTextBox1);
-            this.groupBox11.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox11.Location = new System.Drawing.Point(6, 243);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(449, 284);
-            this.groupBox11.TabIndex = 3;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Logger output";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.richTextBox1.Location = new System.Drawing.Point(6, 28);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(437, 250);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "...";
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1105,6 +1106,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.Load += new System.EventHandler(this.Main_Form_Load);
             this.MainForm_tabControl.ResumeLayout(false);
             this.Dashboard_page.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
@@ -1143,7 +1145,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.clipboard_tab.PerformLayout();
             this.clipboard_toolstrip.ResumeLayout(false);
             this.clipboard_toolstrip.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1191,15 +1192,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.GroupBox Options_groupbox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton key_len_2048;
+        private System.Windows.Forms.RadioButton key_len_4096;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox generator_password_txt;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox generator_email_txt;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button generate_button;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RichTextBox generator_output_rtb;
         private System.Windows.Forms.TabPage clipboard_tab;
