@@ -110,6 +110,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.MainForm_tabControl.SuspendLayout();
             this.Dashboard_page.SuspendLayout();
             this.keychain_page.SuspendLayout();
@@ -138,6 +145,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainForm_tabControl
@@ -156,6 +166,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // Dashboard_page
             // 
+            this.Dashboard_page.Controls.Add(this.groupBox9);
+            this.Dashboard_page.Controls.Add(this.groupBox8);
             this.Dashboard_page.Controls.Add(this.groupBox7);
             this.Dashboard_page.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Dashboard_page.Location = new System.Drawing.Point(4, 30);
@@ -904,6 +916,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.button2.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.add_link_512x512_1784382;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.button2.Location = new System.Drawing.Point(6, 38);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 40);
@@ -931,7 +945,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(456, 25);
+            this.label1.Location = new System.Drawing.Point(430, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 21);
             this.label1.TabIndex = 4;
@@ -952,7 +966,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.button3.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._035_protection;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.SystemColors.Highlight;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button3.Location = new System.Drawing.Point(856, 38);
             this.button3.Name = "button3";
@@ -961,6 +977,93 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.button3.Text = "verify";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.button5);
+            this.groupBox8.Controls.Add(this.button4);
+            this.groupBox8.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox8.Location = new System.Drawing.Point(6, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(449, 231);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Shortcuts";
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._025_lock;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button4.Location = new System.Drawing.Point(15, 28);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(209, 193);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Encrypt clipboard";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._044_unlock;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button5.Location = new System.Drawing.Point(230, 28);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(209, 193);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Decrypt clipboard";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.button6);
+            this.groupBox9.Controls.Add(this.groupBox10);
+            this.groupBox9.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox9.Location = new System.Drawing.Point(821, 6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(218, 231);
+            this.groupBox9.TabIndex = 2;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Version control";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(6, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(184, 40);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Version: 1.0.0";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.label2);
+            this.groupBox10.Location = new System.Drawing.Point(6, 28);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(200, 78);
+            this.groupBox10.TabIndex = 1;
+            this.groupBox10.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.sync_512x512_1214660;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button6.Location = new System.Drawing.Point(6, 113);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(206, 112);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "update";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // Main_Form
             // 
@@ -1011,6 +1114,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1097,6 +1204,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
     }
 }
 
