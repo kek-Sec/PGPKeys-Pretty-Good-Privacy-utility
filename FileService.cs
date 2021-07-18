@@ -80,5 +80,33 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             });
             return false;
         }
+        /// <summary>
+        /// Verify that a file is indeed a private key file
+        /// </summary>
+        /// <param name="filepath">The file</param>
+        /// <returns>True if verified</returns>
+        public static async Task<bool> VerifyPrivateKeyFile(string filepath)
+        {
+            await Task.Run(() => {
+                try
+                {
+                    string[] lines = File.ReadAllLines(filepath);
+
+                    if ((lines[0] == "-----BEGIN PGP PRIVATE KEY BLOCK-----") && (lines[lines.Length - 1] == "-----END PGP PRIVATE KEY BLOCK-----"))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+            });
+            return false;
+        }
     }
 }
