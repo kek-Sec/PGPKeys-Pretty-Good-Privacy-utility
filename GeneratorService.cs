@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility
 {
@@ -26,6 +27,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             try
             {
                 var keys_folder_path = settings.getSetting("keys_folder_path");
+                if (!File.Exists(keys_folder_path)) { MessageBox.Show("Please set keys folder path in settings first"); return false; }
                 await pgp.GenerateKey(keys_folder_path, email, password, key_length);
                 return true;
             }

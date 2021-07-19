@@ -462,7 +462,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // keychain_logger_rtb
             // 
             this.keychain_logger_rtb.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.keychain_logger_rtb.Enabled = false;
             this.keychain_logger_rtb.ForeColor = System.Drawing.SystemColors.Highlight;
             this.keychain_logger_rtb.Location = new System.Drawing.Point(3, 3);
             this.keychain_logger_rtb.Name = "keychain_logger_rtb";
