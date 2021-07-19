@@ -13,9 +13,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     public partial class Main_Form : Form
     {
-        SettingsService settings = new SettingsService();
         Settings_form settings_form = new Settings_form();
+
+        SettingsService settings = new SettingsService();
         GeneratorService gen_service;
+        KeyChainService keychain = new KeyChainService();
 
         public Main_Form()
         {
@@ -72,15 +74,19 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         }
         #endregion
 
-        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var keys_folder = settings.getSetting("keys_folder_path");
             if(keys_folder == String.Empty)
             {
                 settings.LoadKeysFolder();
+                bool status = await keychain.LoadKeyChain(keys_folder);
+                //load keychain
+                
             }
             else
             {
+                bool status = await keychain.LoadKeyChain(keys_folder);
                 //load keycain from memory
             }
         }
