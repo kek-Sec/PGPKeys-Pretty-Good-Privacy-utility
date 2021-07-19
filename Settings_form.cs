@@ -31,8 +31,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private void Settings_form_Load(object sender, EventArgs e)
         {
-            //set keys folder directory txt
-            settings_key_folder_txt.Text = settings.getSetting("keys_folder_path");
+            try
+            {
+                //set keys folder directory txt
+                settings_key_folder_txt.Text = settings.getSetting("keys_folder_path");
+
+                //setup checkboxes
+                to_tray_checkbox.Checked = settings.getSetting("minimize_to_tray", true);
+                on_startup_checkbox.Checked = settings.getSetting("on_startup", true);
+                on_startup_password_checkbox.Checked = settings.getSetting("Password", true);
+                sessioning_checkbox.Checked = settings.getSetting("Sessioning", true);
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show("Error on loading settings " + exc.Message);
+            }
         }
     }
 }

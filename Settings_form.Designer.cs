@@ -37,11 +37,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.save_keys_path_btn = new System.Windows.Forms.Button();
             this.settings_key_folder_txt = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.sessioning_checkbox = new System.Windows.Forms.CheckBox();
+            this.on_startup_password_checkbox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.on_startup_checkbox = new System.Windows.Forms.CheckBox();
+            this.to_tray_checkbox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -125,8 +125,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox4);
+            this.groupBox2.Controls.Add(this.sessioning_checkbox);
+            this.groupBox2.Controls.Add(this.on_startup_password_checkbox);
             this.groupBox2.Location = new System.Drawing.Point(249, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(240, 118);
@@ -134,30 +134,30 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Security Settings";
             // 
-            // checkBox3
+            // sessioning_checkbox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 80);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(187, 24);
-            this.checkBox3.TabIndex = 1;
-            this.checkBox3.Text = "No password sessioning";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.sessioning_checkbox.AutoSize = true;
+            this.sessioning_checkbox.Location = new System.Drawing.Point(6, 80);
+            this.sessioning_checkbox.Name = "sessioning_checkbox";
+            this.sessioning_checkbox.Size = new System.Drawing.Size(187, 24);
+            this.sessioning_checkbox.TabIndex = 1;
+            this.sessioning_checkbox.Text = "No password sessioning";
+            this.sessioning_checkbox.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // on_startup_password_checkbox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(7, 50);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(161, 24);
-            this.checkBox4.TabIndex = 0;
-            this.checkBox4.Text = "Password on startup";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.on_startup_password_checkbox.AutoSize = true;
+            this.on_startup_password_checkbox.Location = new System.Drawing.Point(7, 50);
+            this.on_startup_password_checkbox.Name = "on_startup_password_checkbox";
+            this.on_startup_password_checkbox.Size = new System.Drawing.Size(161, 24);
+            this.on_startup_password_checkbox.TabIndex = 0;
+            this.on_startup_password_checkbox.Text = "Password on startup";
+            this.on_startup_password_checkbox.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.on_startup_checkbox);
+            this.groupBox1.Controls.Add(this.to_tray_checkbox);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(240, 118);
@@ -165,25 +165,25 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Application Settings";
             // 
-            // checkBox2
+            // on_startup_checkbox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 80);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(192, 24);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Start on windows startup";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.on_startup_checkbox.AutoSize = true;
+            this.on_startup_checkbox.Location = new System.Drawing.Point(6, 80);
+            this.on_startup_checkbox.Name = "on_startup_checkbox";
+            this.on_startup_checkbox.Size = new System.Drawing.Size(192, 24);
+            this.on_startup_checkbox.TabIndex = 1;
+            this.on_startup_checkbox.Text = "Start on windows startup";
+            this.on_startup_checkbox.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // to_tray_checkbox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(7, 50);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(226, 24);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Minimize to tray when closing";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.to_tray_checkbox.AutoSize = true;
+            this.to_tray_checkbox.Location = new System.Drawing.Point(7, 50);
+            this.to_tray_checkbox.Name = "to_tray_checkbox";
+            this.to_tray_checkbox.Size = new System.Drawing.Size(226, 24);
+            this.to_tray_checkbox.TabIndex = 0;
+            this.to_tray_checkbox.Text = "Minimize to tray when closing";
+            this.to_tray_checkbox.UseVisualStyleBackColor = true;
             // 
             // Settings_form
             // 
@@ -215,7 +215,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox to_tray_checkbox;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label1;
@@ -223,9 +223,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Button save_keys_path_btn;
         private System.Windows.Forms.TextBox settings_key_folder_txt;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox sessioning_checkbox;
+        private System.Windows.Forms.CheckBox on_startup_password_checkbox;
+        private System.Windows.Forms.CheckBox on_startup_checkbox;
     }
 }
 

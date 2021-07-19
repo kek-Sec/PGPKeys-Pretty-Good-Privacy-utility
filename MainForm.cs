@@ -32,6 +32,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private void keychain_settings_btn_Click(object sender, EventArgs e)
         {
+            FormCollection fc = Application.OpenForms;
+            foreach (Form frm in fc)
+            {
+                if (frm.Text == "Settings")
+                {
+                    return;
+                }
+            }
+            settings = new Settings_form();
             settings.Show();
         }
 

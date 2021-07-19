@@ -34,5 +34,53 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
                 this["keys_folder_path"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool minimize_to_tray {
+            get {
+                return ((bool)(this["minimize_to_tray"]));
+            }
+            set {
+                this["minimize_to_tray"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool on_startup {
+            get {
+                return ((bool)(this["on_startup"]));
+            }
+            set {
+                this["on_startup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Password {
+            get {
+                return ((bool)(this["Password"]));
+            }
+            set {
+                this["Password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Sessioning {
+            get {
+                return ((bool)(this["Sessioning"]));
+            }
+            set {
+                this["Sessioning"] = value;
+            }
+        }
     }
 }
