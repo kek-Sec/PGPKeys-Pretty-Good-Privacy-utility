@@ -9,6 +9,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
     class GeneratorService
     {
 
+        SettingsService settings = new SettingsService();
         PGPService pgp = new PGPService();
 
         public int key_length { get; set; }
@@ -24,7 +25,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             try
             {
-                await pgp.GenerateKey("c:\\keys", email, password, key_length);
+                var keys_folder_path = settings.getSetting("keys_folder_path");
+                await pgp.GenerateKey(keys_folder_path, email, password, key_length);
                 return true;
             }
             catch(Exception e)
