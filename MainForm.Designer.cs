@@ -73,8 +73,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_toolstrip = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.save_folder = new System.Windows.Forms.ToolStripMenuItem();
+            this.refresh_folder = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.importPublicKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,6 +119,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
             this.verifyClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.load_folder = new System.Windows.Forms.ToolStripMenuItem();
             this.MainForm_tabControl.SuspendLayout();
             this.Dashboard_page.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -648,8 +649,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportToolStripMenuItem,
-            this.importToolStripMenuItem,
-            this.refreshToolStripMenuItem});
+            this.load_folder,
+            this.save_folder,
+            this.refresh_folder});
             this.toolStripDropDownButton1.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.message_box_512x512_2194194;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -660,22 +662,23 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.exportToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.history_512x512_1214668;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportToolStripMenuItem.Text = "Load";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
-            // importToolStripMenuItem
+            // save_folder
             // 
-            this.importToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.save_512x512_1784384;
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.importToolStripMenuItem.Text = "Save";
+            this.save_folder.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.save_512x512_1784384;
+            this.save_folder.Name = "save_folder";
+            this.save_folder.Size = new System.Drawing.Size(180, 22);
+            this.save_folder.Text = "Save";
             // 
-            // refreshToolStripMenuItem
+            // refresh_folder
             // 
-            this.refreshToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.sync_512x512_1214660;
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refresh_folder.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.sync_512x512_1214660;
+            this.refresh_folder.Name = "refresh_folder";
+            this.refresh_folder.Size = new System.Drawing.Size(180, 22);
+            this.refresh_folder.Text = "Refresh";
             // 
             // toolStripSeparator1
             // 
@@ -1090,6 +1093,14 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.verifyClipboardToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
             this.verifyClipboardToolStripMenuItem.Text = "Verify clipboard";
             // 
+            // load_folder
+            // 
+            this.load_folder.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.history_512x512_1214668;
+            this.load_folder.Name = "load_folder";
+            this.load_folder.Size = new System.Drawing.Size(180, 22);
+            this.load_folder.Text = "Load Folder";
+            this.load_folder.Click += new System.EventHandler(this.load_folder_Click);
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1158,8 +1169,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.ToolStrip keychain_toolstrip;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem save_folder;
+        private System.Windows.Forms.ToolStripMenuItem refresh_folder;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button keychain_privatekey_status;
         private System.Windows.Forms.Button keychain_publickey_status;
@@ -1239,6 +1250,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem load_folder;
     }
 }
 

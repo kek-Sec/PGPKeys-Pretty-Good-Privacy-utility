@@ -13,7 +13,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     public partial class Main_Form : Form
     {
-        Settings_form settings = new Settings_form();
+        SettingsService settings = new SettingsService();
+        Settings_form settings_form = new Settings_form();
         GeneratorService gen_service;
 
         public Main_Form()
@@ -40,8 +41,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                     return;
                 }
             }
-            settings = new Settings_form();
-            settings.Show();
+            settings_form = new Settings_form();
+            settings_form.Show();
         }
 
         #region Button events
@@ -70,5 +71,24 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         }
         #endregion
+
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var keys_folder = settings.getSetting("keys_folder_path");
+            if(keys_folder == String.Empty)
+            {
+                settings.LoadKeysFolder();
+            }
+            else
+            {
+                //load keycain from memory
+            }
+        }
+
+        private void load_folder_Click(object sender, EventArgs e)
+        {
+            settings.LoadKeysFolder();
+            //load keychain
+        }
     }
 }
