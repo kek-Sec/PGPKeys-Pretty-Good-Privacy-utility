@@ -3,11 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     class SettingsService
     {
+
+        /// <summary>
+        /// Changes the keys folder directory setting
+        /// </summary>
+        public void LoadKeysFolder()
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    UpdateSetting("keys_folder_path", fbd.SelectedPath);
+                    MessageBox.Show("Successfully saved", "Keys directory", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
         #region settings
         /// <summary>
         /// Updates System Properties settings

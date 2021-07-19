@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -56,7 +57,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             FormattableString logger_output = $"Generating key pair with {gen_service.key_length.ToString()} length : {output}";
 
             gen_service.AddToLogger(logger_output.ToString(), generator_output_rtb);
-         
+            SystemSounds.Beep.Play();
+
         }
         #endregion
     }

@@ -34,8 +34,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.save_keys_path_btn = new System.Windows.Forms.Button();
+            this.settings_key_folder_txt = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -93,8 +93,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.save_keys_path_btn);
+            this.groupBox4.Controls.Add(this.settings_key_folder_txt);
             this.groupBox4.Location = new System.Drawing.Point(3, 135);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(240, 201);
@@ -102,24 +102,26 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filepaths";
             // 
-            // button1
+            // save_keys_path_btn
             // 
-            this.button1.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.save_512x512_17843841;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(48, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 138);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Keys path";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.save_keys_path_btn.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.save_512x512_17843841;
+            this.save_keys_path_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.save_keys_path_btn.Location = new System.Drawing.Point(48, 24);
+            this.save_keys_path_btn.Name = "save_keys_path_btn";
+            this.save_keys_path_btn.Size = new System.Drawing.Size(134, 138);
+            this.save_keys_path_btn.TabIndex = 6;
+            this.save_keys_path_btn.Text = "Keys path";
+            this.save_keys_path_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.save_keys_path_btn.UseVisualStyleBackColor = true;
+            this.save_keys_path_btn.Click += new System.EventHandler(this.save_keys_path_btn_Click);
             // 
-            // textBox1
+            // settings_key_folder_txt
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 27);
-            this.textBox1.TabIndex = 5;
+            this.settings_key_folder_txt.Location = new System.Drawing.Point(0, 168);
+            this.settings_key_folder_txt.Name = "settings_key_folder_txt";
+            this.settings_key_folder_txt.Size = new System.Drawing.Size(240, 27);
+            this.settings_key_folder_txt.TabIndex = 5;
+            this.settings_key_folder_txt.DoubleClick += new System.EventHandler(this.textBox1_DoubleClick);
             // 
             // groupBox2
             // 
@@ -195,6 +197,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.MaximizeBox = false;
             this.Name = "Settings_form";
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.Settings_form_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -217,8 +220,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button save_keys_path_btn;
+        private System.Windows.Forms.TextBox settings_key_folder_txt;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;

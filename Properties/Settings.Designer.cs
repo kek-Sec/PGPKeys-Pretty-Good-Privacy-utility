@@ -22,5 +22,17 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string keys_folder_path {
+            get {
+                return ((string)(this["keys_folder_path"]));
+            }
+            set {
+                this["keys_folder_path"] = value;
+            }
+        }
     }
 }
