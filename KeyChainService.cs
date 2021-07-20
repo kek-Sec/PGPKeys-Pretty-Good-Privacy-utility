@@ -38,14 +38,39 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 List<String> private_keys = await DiscoverPrivateKeys(folderpath);
                 List<String> public_keys = await DiscoverPublicKeys(folderpath);
 
+                List<String> private_keys_clean = new List<String>();
+                List<String> public_keys_clean = new List<String>();
+
                 //Create new keychain list
                 keyChainList = new List<KeyChainObject>();
 
-                //
+                //cleanup filenames
+                for(int i=0;i<private_keys.Count;i++)
+                {
+                    private_keys_clean.Add(private_keys[i].Split('-')[0]);
+                }
+                for(int j=0;j<public_keys.Count;j++)
+                {
+                    public_keys_clean.Add(public_keys[j].Split('-')[0]);
+                }
+
+                //Create keychain objects
+                
 
                 return true;
             });
             return false;
+        }
+
+        private async Task<List<KeyChainObject>> MakeKeychain(List<string> public_keys_paths,List<string> private_keys_paths,List<string> public_keys_clean,List<string> private_keys_clean)
+        {
+            await Task.Run(async () => 
+            {
+                List<KeyChainObject> keychain = new List<KeyChainObject>();
+
+
+            });
+            return null;
         }
 
         /// <summary>
