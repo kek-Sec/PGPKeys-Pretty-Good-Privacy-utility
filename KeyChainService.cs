@@ -128,7 +128,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                     to_return.Add(file);
                 }
             }
-            MessageBox.Show(to_return[0]);
             return to_return;
         }
 

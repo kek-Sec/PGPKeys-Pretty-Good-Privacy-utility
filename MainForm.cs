@@ -18,6 +18,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         SettingsService settings = new SettingsService();
         GeneratorService gen_service;
         KeyChainService keychain = new KeyChainService();
+        KeyChainObject selected_key = new KeyChainObject();
 
         public Main_Form()
         {
@@ -109,6 +110,33 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             settings.LoadKeysFolder();
             //load keychain
+        }
+
+        private void keychain_listbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var indx = keychain_listbox.SelectedIndex;
+            if (indx == -1) { return; }
+            //set current key
+            selected_key.email = keychain.keyChainList[indx].email;
+            selected_key.private_key = keychain.keyChainList[indx].private_key;
+            selected_key.public_key = keychain.keyChainList[indx].public_key;
+
+            if (selected_key.private_key == null)
+            {
+                keychain_emcrypt_btn.Enabled = true;
+                keychain_decrypt_btn.Enabled = false;
+                keychain_verify_btn.Enabled = true;
+                keychain_sign_btn.Enabled = false;
+            }
+            else
+            {
+                keychain_emcrypt_btn.Enabled = true;
+                keychain_decrypt_btn.Enabled = true;
+                keychain_verify_btn.Enabled = true;
+                keychain_sign_btn.Enabled = true;
+
+            }
+
         }
     }
 }

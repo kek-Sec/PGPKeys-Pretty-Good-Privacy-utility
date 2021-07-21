@@ -73,6 +73,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_toolstrip = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.load_folder = new System.Windows.Forms.ToolStripMenuItem();
             this.save_folder = new System.Windows.Forms.ToolStripMenuItem();
             this.refresh_folder = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -119,7 +120,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
             this.verifyClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.load_folder = new System.Windows.Forms.ToolStripMenuItem();
             this.MainForm_tabControl.SuspendLayout();
             this.Dashboard_page.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -661,22 +661,30 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.exportToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.history_512x512_1214668;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.exportToolStripMenuItem.Text = "Load";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
+            // 
+            // load_folder
+            // 
+            this.load_folder.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.history_512x512_1214668;
+            this.load_folder.Name = "load_folder";
+            this.load_folder.Size = new System.Drawing.Size(136, 22);
+            this.load_folder.Text = "Load Folder";
+            this.load_folder.Click += new System.EventHandler(this.load_folder_Click);
             // 
             // save_folder
             // 
             this.save_folder.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.save_512x512_1784384;
             this.save_folder.Name = "save_folder";
-            this.save_folder.Size = new System.Drawing.Size(180, 22);
+            this.save_folder.Size = new System.Drawing.Size(136, 22);
             this.save_folder.Text = "Save";
             // 
             // refresh_folder
             // 
             this.refresh_folder.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.sync_512x512_1214660;
             this.refresh_folder.Name = "refresh_folder";
-            this.refresh_folder.Size = new System.Drawing.Size(180, 22);
+            this.refresh_folder.Size = new System.Drawing.Size(136, 22);
             this.refresh_folder.Text = "Refresh";
             // 
             // toolStripSeparator1
@@ -734,6 +742,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_listbox.Name = "keychain_listbox";
             this.keychain_listbox.Size = new System.Drawing.Size(212, 592);
             this.keychain_listbox.TabIndex = 0;
+            this.keychain_listbox.SelectedIndexChanged += new System.EventHandler(this.keychain_listbox_SelectedIndexChanged);
             // 
             // Generator_tab
             // 
@@ -1091,14 +1100,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.verifyClipboardToolStripMenuItem.Name = "verifyClipboardToolStripMenuItem";
             this.verifyClipboardToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
             this.verifyClipboardToolStripMenuItem.Text = "Verify clipboard";
-            // 
-            // load_folder
-            // 
-            this.load_folder.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.history_512x512_1214668;
-            this.load_folder.Name = "load_folder";
-            this.load_folder.Size = new System.Drawing.Size(180, 22);
-            this.load_folder.Text = "Load Folder";
-            this.load_folder.Click += new System.EventHandler(this.load_folder_Click);
             // 
             // Main_Form
             // 
