@@ -53,22 +53,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             keyChainList = new List<KeyChainObject>();
 
             //cleanup filenames
-            for (int i = 0; i < private_keys.Count; i++)
-            {
-                //loop for number of // todo
-                var private_key = private_keys[i].Split('-')[0];
-                private_key = private_key.Substring(private_key.IndexOf('\\') + 1);
-                private_key = private_key.Substring(private_key.IndexOf('\\') + 1);
-                private_keys_clean.Add(private_key);
-            }
-            for (int j = 0; j < public_keys.Count; j++)
-            {
-                var public_key = public_keys[j].Split('-')[0];
-                public_key = public_key.Substring(public_key.IndexOf('\\') + 1);
-                public_key = public_key.Substring(public_key.IndexOf('\\') + 1);
-                public_keys_clean.Add(public_key);
-            }
-
+            private_keys_clean = getEmailFromText(private_keys);
+            public_keys_clean = getEmailFromText(public_keys);
+            
             //Create keychain objects
             keyChainList = MakeKeychain(public_keys, private_keys, public_keys_clean, private_keys_clean);
 
@@ -154,6 +141,30 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             }
 
             return to_return;
+        }
+
+        /// <summary>
+        /// Receive filepath starting with email and return only the email part
+        /// </summary>
+        /// <param name="fuzzy_text">The list containing the filenames</param>
+        /// <returns>List of cleared names</returns>
+        private List<string> getEmailFromText(List<string> fuzzy_text)
+        {
+            List<string> ret = new List<string>();
+            for (int i = 0; i < fuzzy_text.Count; i++)
+            {
+                //loop for number of /
+
+                var temp = fuzzy_text[i].Split('-')[0];
+                int count = temp.Count(f => f == '\\');
+                for (int k = 0; k < count; k++)
+                {
+                    temp = temp.Substring(temp.IndexOf('\\') + 1);
+                }
+
+                ret.Add(temp);
+            }
+            return ret;
         }
 
         #region keychain logger
