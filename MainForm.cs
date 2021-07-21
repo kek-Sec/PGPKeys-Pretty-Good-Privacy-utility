@@ -74,20 +74,34 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         }
         #endregion
 
-        private async void LoadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var keys_folder = settings.getSetting("keys_folder_path");
+
+            //clear listbox
+            keychain_listbox.Items.Clear();
+
             if(keys_folder == String.Empty)
             {
                 settings.LoadKeysFolder();
-                bool status = await keychain.LoadKeyChain(keys_folder);
+                keychain.LoadKeyChain(keys_folder);
                 //load keychain
+                foreach (KeyChainObject k in keychain.keyChainList)
+                {
+                    keychain_listbox.Items.Add(k.email);
+                }
                 
             }
             else
             {
-                bool status = await keychain.LoadKeyChain(keys_folder);
-                //load keycain from memory
+                keychain.LoadKeyChain(keys_folder);
+                
+                //load keycain from settings path
+                //load keychain
+                foreach (KeyChainObject k in keychain.keyChainList)
+                {
+                    keychain_listbox.Items.Add(k.email);
+                }
             }
         }
 

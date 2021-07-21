@@ -4,12 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     class KeyChainService
     {
-        List<KeyChainObject> keyChainList;
+        public List<KeyChainObject> keyChainList;
 
 
         /// <summary>
@@ -34,37 +35,33 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="folderpath">The folder where the keys are placed</param>
         /// <returns></returns>
-        public async Task<bool> LoadKeyChain(string folderpath)
+        public void LoadKeyChain(string folderpath)
         {
-            await Task.Run(async () =>
-            {
-                if (!Directory.Exists(folderpath)) { return false; }
 
-                List<String> private_keys = await DiscoverPrivateKeys(folderpath);
-                List<String> public_keys = await DiscoverPublicKeys(folderpath);
+                if (!Directory.Exists(folderpath)) { return; }
+
+                List<String> private_keys =  DiscoverPrivateKeys(folderpath);
+                List<String> public_keys =  DiscoverPublicKeys(folderpath);
 
                 List<String> private_keys_clean = new List<String>();
                 List<String> public_keys_clean = new List<String>();
 
                 //Create new keychain list
                 keyChainList = new List<KeyChainObject>();
+                
+                                //cleanup filenames
+                                for(int i=0;i<private_keys.Count;i++)
+                                {
+                                    private_keys_clean.Add(private_keys[i].Split('-')[0]);
+                                }
+                                for(int j=0;j<public_keys.Count;j++)
+                                {
+                                    public_keys_clean.Add(public_keys[j].Split('-')[0]);
+                                }
 
-                //cleanup filenames
-                for(int i=0;i<private_keys.Count;i++)
-                {
-                    private_keys_clean.Add(private_keys[i].Split('-')[0]);
-                }
-                for(int j=0;j<public_keys.Count;j++)
-                {
-                    public_keys_clean.Add(public_keys[j].Split('-')[0]);
-                }
-
-                //Create keychain objects
-                keyChainList = await MakeKeychain(public_keys, private_keys, public_keys_clean, private_keys_clean);
-
-                return true;
-            });
-            return false;
+                                //Create keychain objects
+                                keyChainList = MakeKeychain(public_keys, private_keys, public_keys_clean, private_keys_clean);
+                
         }
 
         /// <summary>
@@ -75,10 +72,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="public_keys_clean">clear filenames from the public keys</param>
         /// <param name="private_keys_clean">clear filenames from the private keys</param>
         /// <returns>Keychain list</returns>
-        private async Task<List<KeyChainObject>> MakeKeychain(List<string> public_keys_paths,List<string> private_keys_paths,List<string> public_keys_clean,List<string> private_keys_clean)
+        private List<KeyChainObject> MakeKeychain(List<string> public_keys_paths,List<string> private_keys_paths,List<string> public_keys_clean,List<string> private_keys_clean)
         {
-            await Task.Run(() =>
-            {
+
                 List<KeyChainObject> keychain = new List<KeyChainObject>();
                 KeyChainObject keyset;
 
@@ -98,12 +94,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                             break;
                         }
                     }
+                keychain.Add(keyset);
                 }
                 return keychain;
 
 
-            });
-            return null;
+
         }
 
         /// <summary>
@@ -111,15 +107,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="folderpath">The folder to check</param>
         /// <returns>List of private key file paths</returns>
-        private async Task<List<String>> DiscoverPrivateKeys(string folderpath)
+        private  List<string> DiscoverPrivateKeys(string folderpath)
         {
-            await Task.Run(() =>
-            {
+
                 string[] lines;
                 List<String> to_return = new List<String>();
-
-                string[] filePaths = Directory.GetFiles(folderpath+"\\", "*.asc",SearchOption.TopDirectoryOnly);
-                foreach(string file in filePaths)
+                string[] filePaths = Directory.GetFiles(folderpath, "*.asc");
+                foreach (string file in filePaths)
                 {
                     lines = File.ReadAllLines(file);
                     if(lines[0] == "-----BEGIN PGP PRIVATE KEY BLOCK-----")
@@ -127,10 +121,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                         to_return.Add(file);
                     }
                 }
-
+                MessageBox.Show(to_return[0]);
                 return to_return;
-            });
-            return null;
         }
 
         /// <summary>
@@ -138,14 +130,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="folderpath">The folder to check</param>
         /// <returns>List of public key file paths</returns>
-        private async Task<List<String>> DiscoverPublicKeys(string folderpath)
+        private List<String> DiscoverPublicKeys(string folderpath)
         {
-            await Task.Run(() =>
-            {
                 string[] lines;
                 List<String> to_return = new List<String>();
 
-                string[] filePaths = Directory.GetFiles(folderpath + "\\", "*.asc", SearchOption.TopDirectoryOnly);
+                string[] filePaths = Directory.GetFiles(folderpath, "*.asc", SearchOption.TopDirectoryOnly);
                 foreach (string file in filePaths)
                 {
                     lines = File.ReadAllLines(file);
@@ -156,8 +146,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 }
 
                 return to_return;
-            });
-            return null;
         }
     }
 
