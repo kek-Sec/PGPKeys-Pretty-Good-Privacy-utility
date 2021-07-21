@@ -11,6 +11,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
     class KeyChainService
     {
         public List<KeyChainObject> keyChainList;
+        List<string> logger_output = new List<string>();
 
         /// <summary>
         /// Add keychainobject to List
@@ -70,6 +71,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
             //Create keychain objects
             keyChainList = MakeKeychain(public_keys, private_keys, public_keys_clean, private_keys_clean);
+
 
         }
 
@@ -153,6 +155,22 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
             return to_return;
         }
+
+        #region keychain logger
+
+        /// <summary>
+        /// Writes output to logger
+        /// </summary>
+        /// <param name="s">The string to write</param>
+        /// <param name="logger">The logger output rich text box</param>
+        public void AddToLogger(string s, RichTextBox logger)
+        {
+            logger.Clear();
+            logger_output.Add(s);
+            logger.Text = String.Join("\n", logger_output.ToArray());
+        }
+
+        #endregion
     }
 
     public class KeyChainObject

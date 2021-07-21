@@ -91,7 +91,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 {
                     keychain_listbox.Items.Add(k.email);
                 }
-                
+                FormattableString res = $"Added [{this.keychain.keyChainList.Count}] entries!";
+                keychain.AddToLogger(res.ToString(), keychain_logger_rtb);
             }
             else
             {
@@ -103,6 +104,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 {
                     keychain_listbox.Items.Add(k.email);
                 }
+                FormattableString res = $"Added [{this.keychain.keyChainList.Count}] entries!";
+                keychain.AddToLogger(res.ToString(), keychain_logger_rtb);
+
+
             }
         }
 
