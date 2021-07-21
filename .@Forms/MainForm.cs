@@ -20,6 +20,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         KeyChainService keychain = new KeyChainService();
         KeyChainObject selected_key = new KeyChainObject();
 
+        Generator_Controller gc = new Generator_Controller();
+
         public Main_Form()
         {
             InitializeComponent();
@@ -49,29 +51,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         }
 
         #region Button events
-        private async void generate_button_ClickAsync(object sender, EventArgs e)
+        private void generate_button_Click(object sender, EventArgs e)
         {
-            if(generator_password_txt.Text == default(string)) { return; }
-            if(generator_email_txt.Text == default(string)) { return; }
-
-            gen_service = new GeneratorService();
-            gen_service.email = generator_email_txt.Text;
-            gen_service.password = generator_password_txt.Text;
-
-            int key_len = key_len_2048.Checked ? 2048 : 4096;
-
-            gen_service.key_length = key_len;
-
-            bool gen_status = await gen_service.GenerateKeyPairAsync();
-
-
-            string output = gen_status ? "successful!" : "failed!";
-
-            FormattableString logger_output = $"Generating key pair with {gen_service.key_length.ToString()} length : {output}";
-
-            gen_service.AddToLogger(logger_output.ToString(), generator_output_rtb);
-            SystemSounds.Beep.Play();
-
+            gc.Generate(generator_password_txt, generator_email_txt, generator_output_rtb, key_len_2048);
         }
         #endregion
 
@@ -153,6 +135,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             Clipboard.SetText(keychain_clipboard_rtb.Text);
 
+        }
+
+        private void key_len_4096_CheckedChanged(object sender, EventArgs e)
+        {
+            gc.SetKeySize(4096, key_len_2048);
+        }
+
+        private void key_len_2048_CheckedChanged(object sender, EventArgs e)
+        {
+            gc.SetKeySize(2048, key_len_4096);
         }
     }
 }

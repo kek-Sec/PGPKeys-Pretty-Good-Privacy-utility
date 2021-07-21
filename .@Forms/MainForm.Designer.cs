@@ -812,7 +812,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.generate_button.Text = "Generate";
             this.generate_button.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.generate_button.UseVisualStyleBackColor = true;
-            this.generate_button.Click += new System.EventHandler(this.generate_button_ClickAsync);
+            this.generate_button.Click += new System.EventHandler(this.generate_button_Click);
             // 
             // Options_groupbox
             // 
@@ -910,6 +910,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.key_len_2048.TabStop = true;
             this.key_len_2048.Text = "2048";
             this.key_len_2048.UseVisualStyleBackColor = true;
+            this.key_len_2048.CheckedChanged += new System.EventHandler(this.key_len_2048_CheckedChanged);
             // 
             // key_len_4096
             // 
@@ -921,6 +922,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.key_len_4096.TabIndex = 1;
             this.key_len_4096.Text = "4096";
             this.key_len_4096.UseVisualStyleBackColor = true;
+            this.key_len_4096.CheckedChanged += new System.EventHandler(this.key_len_4096_CheckedChanged);
             // 
             // clipboard_tab
             // 
