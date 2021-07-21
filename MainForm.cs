@@ -143,5 +143,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             }
 
         }
+
+        private void keychain_paste_btn_Click(object sender, EventArgs e)
+        {
+            keychain_clipboard_rtb.Text = Clipboard.GetText();
+        }
+
+        private void keychain_copy_btn_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(keychain_clipboard_rtb.Text);
+
+        }
     }
 }

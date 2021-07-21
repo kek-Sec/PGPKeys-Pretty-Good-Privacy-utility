@@ -420,6 +420,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_paste_btn.Size = new System.Drawing.Size(81, 60);
             this.keychain_paste_btn.TabIndex = 2;
             this.keychain_paste_btn.UseVisualStyleBackColor = true;
+            this.keychain_paste_btn.Click += new System.EventHandler(this.keychain_paste_btn_Click);
             // 
             // keychain_copy_btn
             // 
@@ -432,6 +433,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_copy_btn.Size = new System.Drawing.Size(81, 60);
             this.keychain_copy_btn.TabIndex = 0;
             this.keychain_copy_btn.UseVisualStyleBackColor = true;
+            this.keychain_copy_btn.Click += new System.EventHandler(this.keychain_copy_btn_Click);
             // 
             // groupBox1
             // 
