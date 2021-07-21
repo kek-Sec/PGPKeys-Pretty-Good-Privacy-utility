@@ -13,9 +13,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         SettingsService settings = new SettingsService();
         PGPService pgp = new PGPService();
 
-        public int key_length { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
+        public int key_length
+        {
+            get;
+            set;
+        }
+        public string email
+        {
+            get;
+            set;
+        }
+        public string password
+        {
+            get;
+            set;
+        }
         public List<string> logger_output = new List<string>();
 
         /// <summary>
@@ -27,11 +39,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             try
             {
                 var keys_folder_path = settings.getSetting("keys_folder_path");
-                if (!Directory.Exists(keys_folder_path)) { MessageBox.Show("Please set keys folder path in settings first"); return false; }
+                if (!Directory.Exists(keys_folder_path))
+                {
+                    MessageBox.Show("Please set keys folder path in settings first");
+                    return false;
+                }
                 await pgp.GenerateKey(keys_folder_path, email, password, key_length);
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
@@ -44,7 +60,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="s">The string to write</param>
         /// <param name="logger">The logger output rich text box</param>
-        public void AddToLogger(string s,RichTextBox logger)
+        public void AddToLogger(string s, RichTextBox logger)
         {
             logger.Clear();
             logger_output.Add(s);

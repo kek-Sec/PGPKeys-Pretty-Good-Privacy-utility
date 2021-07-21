@@ -46,8 +46,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             List<String> private_keys = DiscoverPrivateKeys(folderpath);
             List<String> public_keys = DiscoverPublicKeys(folderpath);
 
-            List<String> private_keys_clean = new List<String>();
-            List<String> public_keys_clean = new List<String>();
+            List<String> private_keys_clean;
+            List<String> public_keys_clean;
 
             //Create new keychain list
             keyChainList = new List<KeyChainObject>();
@@ -78,10 +78,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
             for (int i = 0; i < public_keys_clean.Count; i++)
             {
-                keyset = new KeyChainObject();
-
-                keyset.email = public_keys_clean[i];
-                keyset.public_key = File.ReadAllText(public_keys_paths[i]);
+                keyset = new KeyChainObject
+                {
+                    email = public_keys_clean[i],
+                    public_key = File.ReadAllText(public_keys_paths[i])
+                };
 
                 //loop private keys
                 for (int j = 0; j < private_keys_clean.Count; j++)
