@@ -29,6 +29,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             keyChainList.Clear();
         }
 
+        /// <summary>
+        /// Entry function for the loading of the keychain
+        /// </summary>
+        /// <param name="folderpath">The folder where the keys are placed</param>
+        /// <returns></returns>
         public async Task<bool> LoadKeyChain(string folderpath)
         {
             await Task.Run(async () =>
@@ -55,18 +60,46 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 }
 
                 //Create keychain objects
-                
+                keyChainList = await MakeKeychain(public_keys, private_keys, public_keys_clean, private_keys_clean);
 
                 return true;
             });
             return false;
         }
 
+        /// <summary>
+        /// Function to build the KeyChain
+        /// </summary>
+        /// <param name="public_keys_paths">the paths for the public keys</param>
+        /// <param name="private_keys_paths">the paths for the private keys</param>
+        /// <param name="public_keys_clean">clear filenames from the public keys</param>
+        /// <param name="private_keys_clean">clear filenames from the private keys</param>
+        /// <returns>Keychain list</returns>
         private async Task<List<KeyChainObject>> MakeKeychain(List<string> public_keys_paths,List<string> private_keys_paths,List<string> public_keys_clean,List<string> private_keys_clean)
         {
-            await Task.Run(async () => 
+            await Task.Run(() =>
             {
                 List<KeyChainObject> keychain = new List<KeyChainObject>();
+                KeyChainObject keyset;
+
+                for (int i = 0; i < public_keys_clean.Count; i++)
+                {
+                    keyset = new KeyChainObject();
+
+                    keyset.email = public_keys_clean[i];
+                    keyset.public_key = File.ReadAllText(public_keys_paths[i]);
+
+                    //loop private keys
+                    for (int j = 0; j < private_keys_clean.Count; j++)
+                    {
+                        if (private_keys_clean[j] == keyset.email)
+                        {
+                            keyset.private_key = File.ReadAllText(private_keys_paths[j]);
+                            break;
+                        }
+                    }
+                }
+                return keychain;
 
 
             });
