@@ -12,7 +12,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
     {
         public List<KeyChainObject> keyChainList;
 
-
         /// <summary>
         /// Add keychainobject to List
         /// </summary>
@@ -38,30 +37,40 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         public void LoadKeyChain(string folderpath)
         {
 
-                if (!Directory.Exists(folderpath)) { return; }
+            if (!Directory.Exists(folderpath))
+            {
+                return;
+            }
 
-                List<String> private_keys =  DiscoverPrivateKeys(folderpath);
-                List<String> public_keys =  DiscoverPublicKeys(folderpath);
+            List<String> private_keys = DiscoverPrivateKeys(folderpath);
+            List<String> public_keys = DiscoverPublicKeys(folderpath);
 
-                List<String> private_keys_clean = new List<String>();
-                List<String> public_keys_clean = new List<String>();
+            List<String> private_keys_clean = new List<String>();
+            List<String> public_keys_clean = new List<String>();
 
-                //Create new keychain list
-                keyChainList = new List<KeyChainObject>();
-                
-                                //cleanup filenames
-                                for(int i=0;i<private_keys.Count;i++)
-                                {
-                                    private_keys_clean.Add(private_keys[i].Split('-')[0]);
-                                }
-                                for(int j=0;j<public_keys.Count;j++)
-                                {
-                                    public_keys_clean.Add(public_keys[j].Split('-')[0]);
-                                }
+            //Create new keychain list
+            keyChainList = new List<KeyChainObject>();
 
-                                //Create keychain objects
-                                keyChainList = MakeKeychain(public_keys, private_keys, public_keys_clean, private_keys_clean);
-                
+            //cleanup filenames
+            for (int i = 0; i < private_keys.Count; i++)
+            {
+                //loop for number of // todo
+                var private_key = private_keys[i].Split('-')[0];
+                private_key = private_key.Substring(private_key.IndexOf('\\') + 1);
+                private_key = private_key.Substring(private_key.IndexOf('\\') + 1);
+                private_keys_clean.Add(private_key);
+            }
+            for (int j = 0; j < public_keys.Count; j++)
+            {
+                var public_key = public_keys[j].Split('-')[0];
+                public_key = public_key.Substring(public_key.IndexOf('\\') + 1);
+                public_key = public_key.Substring(public_key.IndexOf('\\') + 1);
+                public_keys_clean.Add(public_key);
+            }
+
+            //Create keychain objects
+            keyChainList = MakeKeychain(public_keys, private_keys, public_keys_clean, private_keys_clean);
+
         }
 
         /// <summary>
@@ -72,33 +81,31 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="public_keys_clean">clear filenames from the public keys</param>
         /// <param name="private_keys_clean">clear filenames from the private keys</param>
         /// <returns>Keychain list</returns>
-        private List<KeyChainObject> MakeKeychain(List<string> public_keys_paths,List<string> private_keys_paths,List<string> public_keys_clean,List<string> private_keys_clean)
+        private List<KeyChainObject> MakeKeychain(List<string> public_keys_paths, List<string> private_keys_paths, List<string> public_keys_clean, List<string> private_keys_clean)
         {
 
-                List<KeyChainObject> keychain = new List<KeyChainObject>();
-                KeyChainObject keyset;
+            List<KeyChainObject> keychain = new List<KeyChainObject>();
+            KeyChainObject keyset;
 
-                for (int i = 0; i < public_keys_clean.Count; i++)
+            for (int i = 0; i < public_keys_clean.Count; i++)
+            {
+                keyset = new KeyChainObject();
+
+                keyset.email = public_keys_clean[i];
+                keyset.public_key = File.ReadAllText(public_keys_paths[i]);
+
+                //loop private keys
+                for (int j = 0; j < private_keys_clean.Count; j++)
                 {
-                    keyset = new KeyChainObject();
-
-                    keyset.email = public_keys_clean[i];
-                    keyset.public_key = File.ReadAllText(public_keys_paths[i]);
-
-                    //loop private keys
-                    for (int j = 0; j < private_keys_clean.Count; j++)
+                    if (private_keys_clean[j] == keyset.email)
                     {
-                        if (private_keys_clean[j] == keyset.email)
-                        {
-                            keyset.private_key = File.ReadAllText(private_keys_paths[j]);
-                            break;
-                        }
+                        keyset.private_key = File.ReadAllText(private_keys_paths[j]);
+                        break;
                     }
-                keychain.Add(keyset);
                 }
-                return keychain;
-
-
+                keychain.Add(keyset);
+            }
+            return keychain;
 
         }
 
@@ -107,22 +114,22 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="folderpath">The folder to check</param>
         /// <returns>List of private key file paths</returns>
-        private  List<string> DiscoverPrivateKeys(string folderpath)
+        private List<string> DiscoverPrivateKeys(string folderpath)
         {
 
-                string[] lines;
-                List<String> to_return = new List<String>();
-                string[] filePaths = Directory.GetFiles(folderpath, "*.asc");
-                foreach (string file in filePaths)
+            string[] lines;
+            List<String> to_return = new List<String>();
+            string[] filePaths = Directory.GetFiles(folderpath, "*.asc");
+            foreach (string file in filePaths)
+            {
+                lines = File.ReadAllLines(file);
+                if (lines[0] == "-----BEGIN PGP PRIVATE KEY BLOCK-----")
                 {
-                    lines = File.ReadAllLines(file);
-                    if(lines[0] == "-----BEGIN PGP PRIVATE KEY BLOCK-----")
-                    {
-                        to_return.Add(file);
-                    }
+                    to_return.Add(file);
                 }
-                MessageBox.Show(to_return[0]);
-                return to_return;
+            }
+            MessageBox.Show(to_return[0]);
+            return to_return;
         }
 
         /// <summary>
@@ -132,30 +139,45 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <returns>List of public key file paths</returns>
         private List<String> DiscoverPublicKeys(string folderpath)
         {
-                string[] lines;
-                List<String> to_return = new List<String>();
+            string[] lines;
+            List<String> to_return = new List<String>();
 
-                string[] filePaths = Directory.GetFiles(folderpath, "*.asc", SearchOption.TopDirectoryOnly);
-                foreach (string file in filePaths)
+            string[] filePaths = Directory.GetFiles(folderpath, "*.asc", SearchOption.TopDirectoryOnly);
+            foreach (string file in filePaths)
+            {
+                lines = File.ReadAllLines(file);
+                if (lines[0] == "-----BEGIN PGP PUBLIC KEY BLOCK-----")
                 {
-                    lines = File.ReadAllLines(file);
-                    if (lines[0] == "-----BEGIN PGP PUBLIC KEY BLOCK-----")
-                    {
-                        to_return.Add(file);
-                    }
+                    to_return.Add(file);
                 }
+            }
 
-                return to_return;
+            return to_return;
         }
     }
 
-
     public class KeyChainObject
     {
-        public string public_key { get; set; }
-        public string private_key { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
+        public string public_key
+        {
+            get;
+            set;
+        }
+        public string private_key
+        {
+            get;
+            set;
+        }
+        public string email
+        {
+            get;
+            set;
+        }
+        public string password
+        {
+            get;
+            set;
+        }
 
     }
 }
