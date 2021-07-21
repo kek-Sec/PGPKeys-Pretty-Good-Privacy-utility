@@ -16,10 +16,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         Settings_form settings_form = new Settings_form();
 
         SettingsService settings = new SettingsService();
-        GeneratorService gen_service;
         KeyChainService keychain = new KeyChainService();
         KeyChainObject selected_key = new KeyChainObject();
 
+        Keychain_Controller kc = new Keychain_Controller();
         Generator_Controller gc = new Generator_Controller();
 
         public Main_Form()
@@ -38,16 +38,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private void keychain_settings_btn_Click(object sender, EventArgs e)
         {
-            FormCollection fc = Application.OpenForms;
-            foreach (Form frm in fc)
-            {
-                if (frm.Text == "Settings")
-                {
-                    return;
-                }
-            }
-            settings_form = new Settings_form();
-            settings_form.Show();
+            kc.ShowSettingsForm();
         }
 
         #region Button events
@@ -59,38 +50,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var keys_folder = settings.getSetting("keys_folder_path");
+            kc.LoadKeychain(keychain_listbox, keychain_logger_rtb);
 
-            //clear listbox
-            keychain_listbox.Items.Clear();
-
-            if(keys_folder == String.Empty)
-            {
-                settings.LoadKeysFolder();
-                keychain.LoadKeyChain(keys_folder);
-                //load keychain
-                foreach (KeyChainObject k in keychain.keyChainList)
-                {
-                    keychain_listbox.Items.Add(k.email);
-                }
-                FormattableString res = $"Added [{this.keychain.keyChainList.Count}] entries!";
-                keychain.AddToLogger(res.ToString(), keychain_logger_rtb);
-            }
-            else
-            {
-                keychain.LoadKeyChain(keys_folder);
-                
-                //load keycain from settings path
-                //load keychain
-                foreach (KeyChainObject k in keychain.keyChainList)
-                {
-                    keychain_listbox.Items.Add(k.email);
-                }
-                FormattableString res = $"Added [{this.keychain.keyChainList.Count}] entries!";
-                keychain.AddToLogger(res.ToString(), keychain_logger_rtb);
-
-
-            }
+            
         }
 
         private void load_folder_Click(object sender, EventArgs e)
