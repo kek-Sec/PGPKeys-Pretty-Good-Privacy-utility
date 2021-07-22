@@ -98,7 +98,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="plaintext">The plaintext string to encrypt</param>
         /// <returns></returns>
-        public async Task<String> EncryptString(string plaintext)
+        public async Task<string> EncryptString(string plaintext)
         {
             await Task.Run(() => {
                 return pgp.EncryptArmoredStringAsync(plaintext);
@@ -111,11 +111,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="filepath">The file to encrypt</param>
         /// <returns></returns>
-        public async Task EncryptFile(string filepath)
+        public async Task<string> EncryptFile(string filepath)
         {
             await Task.Run(() => {
-                pgp.EncryptFileAsync(filepath, filepath + ".pgp");
+                return pgp.EncryptFileAsync(filepath, filepath + ".pgp");
             });
+            return null;
         }
         #endregion
 

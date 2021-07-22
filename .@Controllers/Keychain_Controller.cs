@@ -12,6 +12,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
     {
         SettingsService settings = new SettingsService();
         KeyChainService keychain = new KeyChainService();
+        PGPService pgp = new PGPService();
         KeyChainObject keychain_object = new KeyChainObject();
 
 
@@ -113,6 +114,19 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 keychain_sign_btn.Enabled = true;
 
             }
+        }
+
+        /// <summary>
+        /// Encrypt clipboard
+        /// </summary>
+        /// <param name="clipboard_rtb">The clipboard</param>
+        /// <param name="selected_key">The selected key</param>
+        public async Task<string> Encrypt(string plaintext,KeyChainObject selected_key)
+        {
+                var pub_key = selected_key.public_key;
+                if (pub_key == null) { return "no public key"; }
+
+            return null;
         }
     }
 }

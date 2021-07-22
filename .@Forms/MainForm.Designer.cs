@@ -520,6 +520,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_add_btn.TabIndex = 0;
             this.keychain_add_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_add_btn.UseVisualStyleBackColor = true;
+            this.keychain_add_btn.Click += new System.EventHandler(this.keychain_add_btn_Click);
             // 
             // panel4
             // 
@@ -598,6 +599,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_emcrypt_btn.Text = "Encrypt";
             this.keychain_emcrypt_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_emcrypt_btn.UseVisualStyleBackColor = true;
+            this.keychain_emcrypt_btn.Click += new System.EventHandler(this.keychain_emcrypt_btn_Click);
             // 
             // panel2
             // 

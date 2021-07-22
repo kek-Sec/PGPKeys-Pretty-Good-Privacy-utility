@@ -85,5 +85,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             gc.SetKeySize(2048, key_len_4096);
         }
+
+        private void keychain_add_btn_Click(object sender, EventArgs e)
+        {
+            //go to generator
+            MainForm_tabControl.SelectedIndex = 2;
+        }
+
+        private async void keychain_emcrypt_btn_Click(object sender, EventArgs e)
+        {
+            // keychain_clipboard_rtb.Text = await kc.Encrypt(keychain_clipboard_rtb.Text, selected_key);
+            PGPService pgp = new PGPService();
+            await pgp.LoadPublicKey(selected_key.public_key);
+            keychain_clipboard_rtb.Text = await pgp.EncryptString(keychain_clipboard_rtb.Text);
+            string test = await pgp.EncryptString("test123");
+            MessageBox.Show(test);
+        }
     }
 }
