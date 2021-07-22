@@ -67,12 +67,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="cyphertext">The cyphertext for decryption</param>
         /// <returns></returns>
-        public async Task<String> DecryptString(string cyphertext)
+        public async Task<string> DecryptString(string cyphertext,string public_key,string password)
         {
-            await Task.Run(() => {
-                return pgp.DecryptArmoredStringAsync(cyphertext);
-            });
-            return null;
+            PGP new_pgpcore = LoadPrivateKey(public_key, password);
+                return await new_pgpcore.DecryptArmoredStringAsync(cyphertext);
         }
 
         /// <summary>
