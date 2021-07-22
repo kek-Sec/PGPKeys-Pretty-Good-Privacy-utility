@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,7 +73,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             }
         }
 
-        public void Listbox_Item_Click(KeyChainObject selected_key,Button keychain_emcrypt_btn,Button keychain_decrypt_btn,Button keychain_verify_btn,Button keychain_sign_btn,ListBox keychain_listbox)
+        public void Listbox_Item_Click(KeyChainObject selected_key,Button keychain_emcrypt_btn,Button keychain_decrypt_btn,Button keychain_verify_btn,Button keychain_sign_btn,ListBox keychain_listbox,Button keychain_publickey_status,Button keychain_privatekey_status)
         {
             var indx = keychain_listbox.SelectedIndex;
             if (indx == -1) { return; }
@@ -81,8 +82,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             selected_key.private_key = keychain.keyChainList[indx].private_key;
             selected_key.public_key = keychain.keyChainList[indx].public_key;
 
+
+            keychain_publickey_status.BackColor = Color.LightGreen;
+            keychain_privatekey_status.BackColor = Color.LightGreen;
+
             if (selected_key.private_key == null)
             {
+                keychain_privatekey_status.BackColor = Color.DarkGray;
                 keychain_emcrypt_btn.Enabled = true;
                 keychain_decrypt_btn.Enabled = false;
                 keychain_verify_btn.Enabled = true;

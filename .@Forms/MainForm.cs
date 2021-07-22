@@ -13,10 +13,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     public partial class Main_Form : Form
     {
-        Settings_form settings_form = new Settings_form();
 
         SettingsService settings = new SettingsService();
-        KeyChainService keychain = new KeyChainService();
         KeyChainObject selected_key = new KeyChainObject();
 
         Keychain_Controller kc = new Keychain_Controller();
@@ -63,7 +61,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private void keychain_listbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            kc.Listbox_Item_Click(selected_key, keychain_emcrypt_btn, keychain_decrypt_btn, keychain_verify_btn, keychain_sign_btn, keychain_listbox);
+            kc.Listbox_Item_Click(selected_key, keychain_emcrypt_btn, keychain_decrypt_btn, keychain_verify_btn, keychain_sign_btn, keychain_listbox,keychain_publickey_status,keychain_privatekey_status);
 
         }
 
