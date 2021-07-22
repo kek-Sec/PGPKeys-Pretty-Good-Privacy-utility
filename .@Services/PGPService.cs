@@ -34,6 +34,18 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             });
         }
 
+        /// <summary>
+        /// Loads public key
+        /// </summary>
+        /// <param name="public_key">Public key file content</param>
+        /// <returns></returns>
+        public PGP LoadPrivateKey(string public_key)
+        {
+            EncryptionKeys encryptionKeys = new EncryptionKeys(public_key);
+
+            // Encrypt
+            return new PGP(encryptionKeys);
+        }
 
         /// <summary>
         /// Loads private key
@@ -41,14 +53,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="private_key">Private key file content</param>
         /// <param name="password">password for the key</param>
         /// <returns></returns>
-        public async Task LoadPrivateKey(string private_key, string password)
+        public PGP LoadPrivateKey(string private_key, string password)
         {
-            await Task.Run(() => {
                 FileInfo privateKey = new FileInfo(private_key);
                 EncryptionKeys pub = new EncryptionKeys(privateKey, password);
 
-                this.pgp = new PGP(pub);
-            });
+                return new PGP(pub);
         }
 
         #region Decryption
