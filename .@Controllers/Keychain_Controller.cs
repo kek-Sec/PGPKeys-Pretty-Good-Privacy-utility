@@ -120,7 +120,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <summary>
         /// Encrypt clipboard
         /// </summary>
-        /// <param name="clipboard_rtb">The clipboard</param>
+        /// <param name="keychain_clipboard_rtb">The clipboard</param>
         /// <param name="selected_key">The selected key</param>
         public async Task  Encrypt(RichTextBox keychain_clipboard_rtb,KeyChainObject selected_key)
         {
@@ -138,6 +138,25 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 string encryptedContent = await pgp.EncryptArmoredStringAsync(clipboard);
                 keychain_clipboard_rtb.Text = encryptedContent;
 
+        }
+        /// <summary>
+        /// Encrypt clipboard
+        /// </summary>
+        /// <param name="keychain_clipboard_rtb">The clipboard</param>
+        /// <param name="selected_key">The selected key</param>
+        public async Task Decrypt(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key,string password)
+        {
+            var priv_key = selected_key.private_key;
+            if(priv_key == null) { return; }
+
+            // Load keys
+            string privateKey = priv_key;
+            EncryptionKeys encryptionKeys = new EncryptionKeys(privateKey, password);
+
+            PGP pgp = new PGP(encryptionKeys);
+
+            // Decrypt
+            keychain_clipboard_rtb.Text = await pgp.DecryptArmoredStringAsync(keychain_clipboard_rtb.Text);
         }
     }
 }
