@@ -1,8 +1,10 @@
-﻿using System;
+﻿using PgpCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -19,6 +21,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         Keychain_Controller kc = new Keychain_Controller();
         Generator_Controller gc = new Generator_Controller();
+        PGP pgp = new PGP();
 
         public Main_Form()
         {
@@ -94,12 +97,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private async void keychain_emcrypt_btn_Click(object sender, EventArgs e)
         {
-            // keychain_clipboard_rtb.Text = await kc.Encrypt(keychain_clipboard_rtb.Text, selected_key);
-            PGPService pgp = new PGPService();
-            await pgp.LoadPublicKey(selected_key.public_key);
-            keychain_clipboard_rtb.Text = await pgp.EncryptString(keychain_clipboard_rtb.Text);
-            string test = await pgp.EncryptString("test123");
-            MessageBox.Show(test);
+           await kc.Encrypt(keychain_clipboard_rtb, selected_key);
         }
     }
 }

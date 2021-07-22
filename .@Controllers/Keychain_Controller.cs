@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PgpCore;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -121,12 +122,22 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="clipboard_rtb">The clipboard</param>
         /// <param name="selected_key">The selected key</param>
-        public async Task<string> Encrypt(string plaintext,KeyChainObject selected_key)
+        public async Task  Encrypt(RichTextBox keychain_clipboard_rtb,KeyChainObject selected_key)
         {
                 var pub_key = selected_key.public_key;
-                if (pub_key == null) { return "no public key"; }
+                if (pub_key == null) { return; }
+            
 
-            return null;
+                var clipboard = keychain_clipboard_rtb.Text;
+
+                string publicKey = selected_key.public_key;
+                EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
+
+                // Encrypt
+                PGP pgp = new PGP(encryptionKeys);
+                string encryptedContent = await pgp.EncryptArmoredStringAsync(clipboard);
+                keychain_clipboard_rtb.Text = encryptedContent;
+
         }
     }
 }

@@ -34,19 +34,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             });
         }
 
-        /// <summary>
-        /// Task that loads the public key in the current pgp object
-        /// </summary>
-        /// <param name="pub_key">public key read from file</param>
-        /// <returns>awaitable task</returns>
-        public async Task LoadPublicKey(string pub_key)
-        {
-            await Task.Run(() => {
-                EncryptionKeys pub = new EncryptionKeys(pub_key);
-
-                this.pgp = new PGP(pub);
-            });
-        }
 
         /// <summary>
         /// Loads private key
@@ -98,9 +85,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="plaintext">The plaintext string to encrypt</param>
         /// <returns></returns>
-        public async Task<string> EncryptString(string plaintext)
+        public async Task<string> EncryptString(string plaintext,string publicKey)
         {
             await Task.Run(() => {
+                EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
+                PGP pgp = new PGP(encryptionKeys);
                 return pgp.EncryptArmoredStringAsync(plaintext);
             });
             return null;
