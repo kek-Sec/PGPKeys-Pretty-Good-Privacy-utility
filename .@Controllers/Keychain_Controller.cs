@@ -73,6 +73,17 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             }
         }
 
+        /// <summary>
+        /// Called when the selected index of the keychain listbox is triggered
+        /// </summary>
+        /// <param name="selected_key">Selected keychainobject on the main form</param>
+        /// <param name="keychain_emcrypt_btn">Encrypt button</param>
+        /// <param name="keychain_decrypt_btn">Decrypt button</param>
+        /// <param name="keychain_verify_btn">Verify button</param>
+        /// <param name="keychain_sign_btn">Sign button</param>
+        /// <param name="keychain_listbox">The listbox</param>
+        /// <param name="keychain_publickey_status">status button pub key</param>
+        /// <param name="keychain_privatekey_status">status button priv key</param>
         public void Listbox_Item_Click(KeyChainObject selected_key,Button keychain_emcrypt_btn,Button keychain_decrypt_btn,Button keychain_verify_btn,Button keychain_sign_btn,ListBox keychain_listbox,Button keychain_publickey_status,Button keychain_privatekey_status)
         {
             var indx = keychain_listbox.SelectedIndex;
