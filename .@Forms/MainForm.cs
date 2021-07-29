@@ -105,5 +105,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             dc.CheckFileHash(hash_textbox);
         }
+
+        private void dashboard_encrypt_button_Click(object sender, EventArgs e)
+        {
+            dc.EncryptClipboard();
+        }
     }
 }

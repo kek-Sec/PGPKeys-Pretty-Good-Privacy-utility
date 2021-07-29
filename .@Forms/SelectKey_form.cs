@@ -54,6 +54,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             var index = select_key_listbox.SelectedIndex;
             if(index == -1) { return; }
             selected_key = keychain[index];
+            Dashboard_Controller.selected_key = selected_key;
+            this.Close();
         }
     }
 

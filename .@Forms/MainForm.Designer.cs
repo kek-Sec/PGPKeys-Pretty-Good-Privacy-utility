@@ -40,7 +40,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.dashboard_encrypt_button = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.verify_hash_button = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -250,7 +250,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.button5);
-            this.groupBox8.Controls.Add(this.button4);
+            this.groupBox8.Controls.Add(this.dashboard_encrypt_button);
             this.groupBox8.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox8.Location = new System.Drawing.Point(6, 6);
             this.groupBox8.Name = "groupBox8";
@@ -274,20 +274,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // dashboard_encrypt_button
             // 
-            this.button4.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._025_lock;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button4.Location = new System.Drawing.Point(15, 28);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 193);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Encrypt clipboard";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.dashboard_encrypt_button.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._025_lock;
+            this.dashboard_encrypt_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dashboard_encrypt_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dashboard_encrypt_button.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dashboard_encrypt_button.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.dashboard_encrypt_button.Location = new System.Drawing.Point(15, 28);
+            this.dashboard_encrypt_button.Name = "dashboard_encrypt_button";
+            this.dashboard_encrypt_button.Size = new System.Drawing.Size(209, 193);
+            this.dashboard_encrypt_button.TabIndex = 1;
+            this.dashboard_encrypt_button.Text = "Encrypt clipboard";
+            this.dashboard_encrypt_button.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.dashboard_encrypt_button.UseVisualStyleBackColor = true;
+            this.dashboard_encrypt_button.Click += new System.EventHandler(this.dashboard_encrypt_button_Click);
             // 
             // groupBox7
             // 
@@ -955,14 +956,14 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.pasteToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.pasteToolStripMenuItem.Text = "Paste";
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon1;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.copyToolStripMenuItem.Text = "Copy";
             // 
             // toolStripSeparator2
@@ -1223,7 +1224,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button dashboard_encrypt_button;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ToolStripMenuItem load_folder;
