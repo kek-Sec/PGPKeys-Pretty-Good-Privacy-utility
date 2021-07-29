@@ -63,7 +63,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             selected_key = keychain[index];
             if(action_type == 1)
             {
-                await pgp.EncryptString(Clipboard.GetText(), selected_key.public_key);
+                string encrypted = await pgp.EncryptString(Clipboard.GetText(), selected_key.public_key);
+                MessageBox.Show(encrypted);
                 SystemSounds.Beep.Play();
                 this.Close();
             }
