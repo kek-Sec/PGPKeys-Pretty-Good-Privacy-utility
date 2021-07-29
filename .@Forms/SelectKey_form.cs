@@ -8,14 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using System.Media;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     public partial class SelectKey_form : Form
     {
-
+        PGPService pgp = new PGPService();
         public KeyChainObject selected_key;
+
+        /// <summary>
+        /// Action types
+        /// 1 -> Encrypt
+        /// 2 -> Decrypt
+        /// </summary>
+        public int action_type;
 
         List<KeyChainObject> keychain = new List<KeyChainObject>();
 
@@ -49,13 +56,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
-        private void select_key_listbox_SelectedIndexChanged(object sender, EventArgs e)
+        private async void select_key_listbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var index = select_key_listbox.SelectedIndex;
             if(index == -1) { return; }
             selected_key = keychain[index];
-            Dashboard_Controller.selected_key = selected_key;
-            this.Close();
+            if(action_type == 1)
+            {
+                await pgp.EncryptString(Clipboard.GetText(), selected_key.public_key);
+                SystemSounds.Beep.Play();
+                this.Close();
+            }
+            else if(action_type == 2)
+            {
+               //implement decryption
+            }
         }
     }
 

@@ -11,7 +11,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
     class Dashboard_Controller
     {
         SelectKey_form select_key_form;
-        public static KeyChainObject selected_key;
         PGPService pgp = new PGPService();
         HashingService hs = new HashingService();
 
