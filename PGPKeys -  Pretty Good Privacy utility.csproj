@@ -23,7 +23,6 @@
     <Compile Include=".%40Services\FileService.cs" />
     <Compile Include=".%40Services\GeneratorService.cs" />
     <Compile Include=".%40Services\HashingService.cs" />
-    <Compile Include=".%40Services\KeyChainObject.cs" />
     <Compile Include=".%40Services\KeyChainService.cs" />
     <Compile Include=".%40Services\PGPService.cs" />
     <Compile Include=".%40Services\SettingsService.cs" />
