@@ -23,15 +23,21 @@
     <Compile Include=".%40Services\FileService.cs" />
     <Compile Include=".%40Services\GeneratorService.cs" />
     <Compile Include=".%40Services\HashingService.cs" />
+    <Compile Include=".%40Services\KeyChainObject.cs" />
     <Compile Include=".%40Services\KeyChainService.cs" />
     <Compile Include=".%40Services\PGPService.cs" />
     <Compile Include=".%40Services\SettingsService.cs" />
+    <Compile Include=".%40Forms\SelectKey_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".@Forms\SelectKey_form.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include=".%40Forms\Loader_form.resx" />
     <EmbeddedResource Include=".%40Forms\MainForm.resx" />
     <EmbeddedResource Include=".%40Forms\Settings_form.resx" />
+    <EmbeddedResource Include=".@Forms\SelectKey_form.resx" />
   </ItemGroup>
 
   <ItemGroup>
