@@ -45,7 +45,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.hash_textbox = new System.Windows.Forms.TextBox();
             this.keychain_page = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -294,7 +294,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox7.Controls.Add(this.button3);
             this.groupBox7.Controls.Add(this.pictureBox4);
             this.groupBox7.Controls.Add(this.label1);
-            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.hash_textbox);
             this.groupBox7.Location = new System.Drawing.Point(6, 533);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(1040, 100);
@@ -338,12 +338,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.label1.TabIndex = 4;
             this.label1.Text = "Given hash";
             // 
-            // textBox1
+            // hash_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(475, 29);
-            this.textBox1.TabIndex = 3;
+            this.hash_textbox.Location = new System.Drawing.Point(15, 50);
+            this.hash_textbox.Name = "hash_textbox";
+            this.hash_textbox.Size = new System.Drawing.Size(475, 29);
+            this.hash_textbox.TabIndex = 3;
             // 
             // keychain_page
             // 
@@ -1215,7 +1215,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox hash_textbox;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox10;
