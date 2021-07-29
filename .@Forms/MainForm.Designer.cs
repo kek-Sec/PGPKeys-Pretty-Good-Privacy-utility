@@ -46,8 +46,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.keychain_page = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -128,7 +126,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.keychain_page.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -298,8 +295,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox7.Controls.Add(this.pictureBox4);
             this.groupBox7.Controls.Add(this.label1);
             this.groupBox7.Controls.Add(this.textBox1);
-            this.groupBox7.Controls.Add(this.pictureBox3);
-            this.groupBox7.Controls.Add(this.button2);
             this.groupBox7.Location = new System.Drawing.Point(6, 533);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(1040, 100);
@@ -315,9 +310,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.button3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.SystemColors.Highlight;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.Location = new System.Drawing.Point(856, 38);
+            this.button3.Location = new System.Drawing.Point(813, 26);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 40);
+            this.button3.Size = new System.Drawing.Size(198, 60);
             this.button3.TabIndex = 6;
             this.button3.Text = "verify";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -328,16 +323,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.pictureBox4.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.remove_512x512_1214296;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.InitialImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.paper_plane_512x512_1216070;
-            this.pictureBox4.Location = new System.Drawing.Point(685, 30);
+            this.pictureBox4.Location = new System.Drawing.Point(496, 28);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(148, 60);
+            this.pictureBox4.Size = new System.Drawing.Size(311, 60);
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(430, 25);
+            this.label1.Location = new System.Drawing.Point(196, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 21);
             this.label1.TabIndex = 4;
@@ -345,33 +340,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(305, 49);
+            this.textBox1.Location = new System.Drawing.Point(15, 50);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(374, 29);
+            this.textBox1.Size = new System.Drawing.Size(475, 29);
             this.textBox1.TabIndex = 3;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.remove_512x512_1214296;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.InitialImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.paper_plane_512x512_1216070;
-            this.pictureBox3.Location = new System.Drawing.Point(151, 30);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(148, 60);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.add_link_512x512_1784382;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button2.Location = new System.Drawing.Point(6, 38);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 40);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // keychain_page
             // 
@@ -1130,7 +1102,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.keychain_page.ResumeLayout(false);
             this.keychain_page.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -1245,8 +1216,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox10;
