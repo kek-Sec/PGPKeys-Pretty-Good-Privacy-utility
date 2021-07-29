@@ -10,7 +10,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     class Dashboard_Controller
     {
-
+        PGPService pgp = new PGPService();
         HashingService hs = new HashingService();
 
         /// <summary>
@@ -27,5 +27,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             hs.VerifyFileHash(hash);
         }
 
+
+        public void EncryptClipboard()
+        {
+            var clipboard = Clipboard.GetText();
+            //need to setup MAIN KEY
+        }
     }
 }
