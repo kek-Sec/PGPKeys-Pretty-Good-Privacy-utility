@@ -19,6 +19,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         SettingsService settings = new SettingsService();
         KeyChainObject selected_key = new KeyChainObject();
 
+        Dashboard_Controller dc = new Dashboard_Controller();
         Keychain_Controller kc = new Keychain_Controller();
         Generator_Controller gc = new Generator_Controller();
         PGP pgp = new PGP();
@@ -98,6 +99,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private async void keychain_emcrypt_btn_Click(object sender, EventArgs e)
         {
            await kc.Encrypt(keychain_clipboard_rtb, selected_key);
+        }
+
+        private void verify_hash_button_Click(object sender, EventArgs e)
+        {
+            dc.CheckFileHash(hash_textbox);
         }
     }
 }

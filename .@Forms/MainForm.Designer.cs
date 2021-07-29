@@ -42,7 +42,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.verify_hash_button = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.hash_textbox = new System.Windows.Forms.TextBox();
@@ -291,7 +291,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button3);
+            this.groupBox7.Controls.Add(this.verify_hash_button);
             this.groupBox7.Controls.Add(this.pictureBox4);
             this.groupBox7.Controls.Add(this.label1);
             this.groupBox7.Controls.Add(this.hash_textbox);
@@ -302,21 +302,22 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Verify file signature";
             // 
-            // button3
+            // verify_hash_button
             // 
-            this.button3.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._035_protection;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.Location = new System.Drawing.Point(813, 26);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(198, 60);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "verify";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.verify_hash_button.BackgroundImage = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._035_protection;
+            this.verify_hash_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.verify_hash_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.verify_hash_button.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.verify_hash_button.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.verify_hash_button.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.verify_hash_button.Location = new System.Drawing.Point(813, 26);
+            this.verify_hash_button.Name = "verify_hash_button";
+            this.verify_hash_button.Size = new System.Drawing.Size(198, 60);
+            this.verify_hash_button.TabIndex = 6;
+            this.verify_hash_button.Text = "verify";
+            this.verify_hash_button.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.verify_hash_button.UseVisualStyleBackColor = true;
+            this.verify_hash_button.Click += new System.EventHandler(this.verify_hash_button_Click);
             // 
             // pictureBox4
             // 
@@ -1212,7 +1213,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton7;
         private System.Windows.Forms.ToolStripMenuItem verifyClipboardToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button verify_hash_button;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox hash_textbox;
