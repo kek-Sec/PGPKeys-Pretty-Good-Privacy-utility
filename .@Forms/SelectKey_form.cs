@@ -14,6 +14,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     public partial class SelectKey_form : Form
     {
+
+        public KeyChainObject selected_key;
+
+        List<KeyChainObject> keychain = new List<KeyChainObject>();
+
         private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         private const UInt32 SWP_NOSIZE = 0x0001;
         private const UInt32 SWP_NOMOVE = 0x0002;
@@ -30,7 +35,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private void SelectKey_form_Load(object sender, EventArgs e)
         {
             kcs.LoadKeyChain(settings.getSetting("keys_folder_path"));
-            List<KeyChainObject> keychain = kcs.keyChainList;
+             keychain = kcs.keyChainList;
 
             foreach(KeyChainObject key_set in keychain)
             {
@@ -43,6 +48,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        private void select_key_listbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var index = select_key_listbox.SelectedIndex;
+            if(index == -1) { return; }
+            selected_key = keychain[index];
+        }
     }
 
 }

@@ -10,6 +10,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     class Dashboard_Controller
     {
+        SelectKey_form select_key_form;
+        public static KeyChainObject selected_key;
         PGPService pgp = new PGPService();
         HashingService hs = new HashingService();
 
@@ -31,7 +33,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         public void EncryptClipboard()
         {
             var clipboard = Clipboard.GetText();
-            //need to setup MAIN KEY
+
+           
+            select_key_form = new SelectKey_form();
+            select_key_form.Show();
+
         }
     }
 }

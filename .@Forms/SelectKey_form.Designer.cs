@@ -40,6 +40,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.select_key_listbox.Name = "select_key_listbox";
             this.select_key_listbox.Size = new System.Drawing.Size(521, 454);
             this.select_key_listbox.TabIndex = 0;
+            this.select_key_listbox.SelectedIndexChanged += new System.EventHandler(this.select_key_listbox_SelectedIndexChanged);
             // 
             // SelectKey_form
             // 
