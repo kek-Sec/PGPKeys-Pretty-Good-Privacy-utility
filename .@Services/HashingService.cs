@@ -76,7 +76,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
             using var md5 = MD5.Create();
             using var stream = File.OpenRead(filename);
             var hash = md5.ComputeHash(stream);
-            return BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", "").ToLower();
+           return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
         }
 
         /// <summary>
@@ -86,11 +86,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
         /// <returns>hash in string</returns>
         private string SHA256CheckSum(string filePath)
         {
-            using (SHA256 SHA256 = SHA256Managed.Create())
-            {
-                using (FileStream fileStream = File.OpenRead(filePath))
-                    return Convert.ToBase64String(SHA256.ComputeHash(fileStream));
-            }
+            SHA256 Sha256 = SHA256.Create();
+            byte[] hash;
+            using FileStream stream = File.OpenRead(filePath);
+            hash = Sha256.ComputeHash(stream);
+            string result = "";
+            foreach (byte b in hash) result += b.ToString("x2");
+            return result;
         }
     }
 }
