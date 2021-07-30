@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Media;
@@ -15,7 +10,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     public partial class SelectKey_form : Form
     {
+        SettingsService settings = new SettingsService();
+        KeyChainService kcs = new KeyChainService();
+
         SelectKey_Controller sc = new SelectKey_Controller();
+
         public KeyChainObject selected_key;
 
         /// <summary>
@@ -27,19 +26,31 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         List<KeyChainObject> keychain = new List<KeyChainObject>();
 
+        #region top view hook
+        /// <summary>
+        /// System hook to stay on top
+        /// </summary>
         private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         private const UInt32 SWP_NOSIZE = 0x0001;
         private const UInt32 SWP_NOMOVE = 0x0002;
         private const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+        #endregion
 
-        SettingsService settings = new SettingsService();
-        KeyChainService kcs = new KeyChainService();
+
 
         public SelectKey_form()
         {
             InitializeComponent();            
         }
 
+        /// <summary>
+        /// Load event responsible for filling the listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectKey_form_Load(object sender, EventArgs e)
         {
             SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
@@ -47,7 +58,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             kcs.LoadKeyChain(settings.getSetting("keys_folder_path"));
             keychain = kcs.keyChainList;
 
-            if(!keychain.Any()) { select_key_listbox.Items.Add("No keys found!"); }
+            if(!keychain.Any()) { select_key_listbox.Items.Add("No keys found!"); } //to-do handle this
             else
             {
                 foreach (KeyChainObject key_set in keychain)
@@ -59,10 +70,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
 
         }
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
-
+        
+        /// <summary>
+        /// Called when a list item is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void select_key_listbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var index = select_key_listbox.SelectedIndex;
