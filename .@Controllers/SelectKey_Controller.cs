@@ -1,4 +1,5 @@
 ﻿using PgpCore;
+using PGPKeys____Pretty_Good_Privacy_utility._Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,18 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
                 case 1:
                     return await EncryptAsync(keyset, text);
                 case 2:
-                    
+                    return await DecryptAsync(keyset, text);
+                default:
+                    return null;
             }
         }
 
+        /// <summary>
+        /// Encrypt input async
+        /// </summary>
+        /// <param name="keyset">The keyset used</param>
+        /// <param name="plaintext">The text to encrypt</param>
+        /// <returns>awaitable string</returns>
         private async Task<string> EncryptAsync(KeyChainObject keyset,string plaintext)
         {
             var pub_key = keyset.public_key;
@@ -40,6 +49,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
             return encryptedContent;
         }
 
+        /// <summary>
+        /// Decrypt input async
+        /// </summary>
+        /// <param name="keyset">The keyset used</param>
+        /// <param name="encrypted">The encrypted text</param>
+        /// <returns>awaitable String</returns>
         private async Task<string> DecryptAsync(KeyChainObject keyset, string encrypted)
         {
             var priv_key = keyset.private_key;
@@ -47,12 +62,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
 
             // Load keys
             string privateKey = priv_key;
+            Password_box pb = new Password_box();
+            string password = pb.Show("Insert key password", "Input needed!");
+
             EncryptionKeys encryptionKeys = new EncryptionKeys(privateKey, password);
 
             PGP pgp = new PGP(encryptionKeys);
 
             // Decrypt
-            keychain_clipboard_rtb.Text = await pgp.DecryptArmoredStringAsync(keychain_clipboard_rtb.Text);
+           return await pgp.DecryptArmoredStringAsync(encrypted);
         }
     }
 }
