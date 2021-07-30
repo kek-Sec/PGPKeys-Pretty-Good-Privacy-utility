@@ -1,4 +1,5 @@
 ﻿using PgpCore;
+using PGPKeys____Pretty_Good_Privacy_utility.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         SettingsService settings = new SettingsService();
         KeyChainObject selected_key = new KeyChainObject();
 
+        Clipboard_Controller cc = new Clipboard_Controller();
         Dashboard_Controller dc = new Dashboard_Controller();
         Keychain_Controller kc = new Keychain_Controller();
         Generator_Controller gc = new Generator_Controller();
@@ -124,6 +126,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private async void keychain_sign_btn_Click(object sender, EventArgs e)
         {
             await kc.Sign(keychain_clipboard_rtb, selected_key);
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cc.Paste(clipboard_rtb);
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cc.Copy(clipboard_rtb);
         }
     }
 }

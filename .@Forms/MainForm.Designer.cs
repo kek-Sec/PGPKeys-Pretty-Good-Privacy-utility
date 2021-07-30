@@ -959,15 +959,17 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.pasteToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon1;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
