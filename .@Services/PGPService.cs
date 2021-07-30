@@ -66,7 +66,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// Encrypts plaintext 
         /// </summary>
         /// <param name="plaintext">The plaintext string to encrypt</param>
-        /// <returns></returns>
+        /// <param name="publicKey">Public key string</param>
+        /// <returns>Awaitable string</returns>
         public Task<string> EncryptString(string plaintext,string publicKey)
         {
                 EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
@@ -78,7 +79,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// Encrypt file
         /// </summary>
         /// <param name="filepath">The file to encrypt</param>
-        /// <returns></returns>
+        /// <param name="publicKey">Public key string</param>
+        /// <returns>awaitable Task</returns>
         public  Task EncryptFile(string filepath,string publicKey)
         {
             EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
@@ -93,7 +95,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// Sign a file
         /// </summary>
         /// <param name="filepath">The file to sign</param>
-        /// <returns></returns>
+        /// <param name="publickey">Public key string</param>
+        /// <returns>awaitable task</returns>
         public Task SignFile(string filepath,string publickey)
         {
             EncryptionKeys encryptionKeys = new EncryptionKeys(publickey);
