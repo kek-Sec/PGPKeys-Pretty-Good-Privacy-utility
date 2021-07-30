@@ -9,6 +9,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
 {
     class Clipboard_Controller
     {
+        SelectKey_form select_key_form;
+        PGPService pgp = new PGPService();
 
         public void Paste(RichTextBox rtb)
         {
@@ -18,6 +20,24 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
         public void Copy(RichTextBox rtb)
         {
             Clipboard.SetText(rtb.Text);
+        }
+
+        public void Encrypt(RichTextBox rtb)
+        {
+            Clipboard.SetText(rtb.Text);
+            select_key_form = new SelectKey_form();
+            select_key_form.Show();
+            select_key_form.action_type = 1;
+            rtb.Text = Clipboard.GetText();
+        }
+
+        public void Decrypt(RichTextBox rtb)
+        {
+            Clipboard.SetText(rtb.Text);
+            select_key_form = new SelectKey_form();
+            select_key_form.Show();
+            select_key_form.action_type = 2;
+            rtb.Text = Clipboard.GetText();
         }
     }
 }

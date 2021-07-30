@@ -108,10 +108,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.encryptWithPublicKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encryptWithPrivateKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.decryptWithPrivateKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.decryptWithPublicKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton6 = new System.Windows.Forms.ToolStripDropDownButton();
             this.importPublicKeyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.importPrivateKeyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -932,8 +928,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStripSeparator2,
             this.toolStripDropDownButton4,
             this.toolStripSeparator3,
-            this.toolStripDropDownButton5,
-            this.toolStripSeparator4,
             this.toolStripDropDownButton6,
             this.toolStripSeparator5,
             this.toolStripDropDownButton7});
@@ -959,7 +953,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.pasteToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_paste_document_paper_file_multimedia_icon;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -967,7 +961,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.copyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources._2849804_copy_document_paper_file_multimedia_icon1;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -992,51 +986,22 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.encryptWithPublicKeyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
             this.encryptWithPublicKeyToolStripMenuItem.Name = "encryptWithPublicKeyToolStripMenuItem";
-            this.encryptWithPublicKeyToolStripMenuItem.Size = new System.Drawing.Size(235, 24);
+            this.encryptWithPublicKeyToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
             this.encryptWithPublicKeyToolStripMenuItem.Text = "Encrypt with public key";
+            this.encryptWithPublicKeyToolStripMenuItem.Click += new System.EventHandler(this.encryptWithPublicKeyToolStripMenuItem_Click);
             // 
             // encryptWithPrivateKeyToolStripMenuItem
             // 
             this.encryptWithPrivateKeyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
             this.encryptWithPrivateKeyToolStripMenuItem.Name = "encryptWithPrivateKeyToolStripMenuItem";
-            this.encryptWithPrivateKeyToolStripMenuItem.Size = new System.Drawing.Size(235, 24);
-            this.encryptWithPrivateKeyToolStripMenuItem.Text = "Encrypt with private key";
+            this.encryptWithPrivateKeyToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
+            this.encryptWithPrivateKeyToolStripMenuItem.Text = "Decrypt with private key";
+            this.encryptWithPrivateKeyToolStripMenuItem.Click += new System.EventHandler(this.encryptWithPrivateKeyToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripDropDownButton5
-            // 
-            this.toolStripDropDownButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.decryptWithPrivateKeyToolStripMenuItem,
-            this.decryptWithPublicKeyToolStripMenuItem});
-            this.toolStripDropDownButton5.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
-            this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
-            this.toolStripDropDownButton5.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton5.Text = "toolStripDropDownButton5";
-            // 
-            // decryptWithPrivateKeyToolStripMenuItem
-            // 
-            this.decryptWithPrivateKeyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
-            this.decryptWithPrivateKeyToolStripMenuItem.Name = "decryptWithPrivateKeyToolStripMenuItem";
-            this.decryptWithPrivateKeyToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
-            this.decryptWithPrivateKeyToolStripMenuItem.Text = "Decrypt with private key";
-            // 
-            // decryptWithPublicKeyToolStripMenuItem
-            // 
-            this.decryptWithPublicKeyToolStripMenuItem.Image = global::PGPKeys____Pretty_Good_Privacy_utility.Properties.Resources.key_512x512_1214374;
-            this.decryptWithPublicKeyToolStripMenuItem.Name = "decryptWithPublicKeyToolStripMenuItem";
-            this.decryptWithPublicKeyToolStripMenuItem.Size = new System.Drawing.Size(238, 24);
-            this.decryptWithPublicKeyToolStripMenuItem.Text = "Decrypt with public key";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripDropDownButton6
             // 
@@ -1207,10 +1172,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.ToolStripMenuItem encryptWithPublicKeyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem encryptWithPrivateKeyToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
-        private System.Windows.Forms.ToolStripMenuItem decryptWithPrivateKeyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem decryptWithPublicKeyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton6;
         private System.Windows.Forms.ToolStripMenuItem importPublicKeyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem importPrivateKeyToolStripMenuItem1;
