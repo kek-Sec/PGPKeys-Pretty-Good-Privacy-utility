@@ -34,43 +34,17 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             });
         }
 
-        /// <summary>
-        /// Loads public key
-        /// </summary>
-        /// <param name="public_key">Public key file content</param>
-        /// <returns></returns>
-        public PGP LoadPrivateKey(string public_key)
-        {
-            EncryptionKeys encryptionKeys = new EncryptionKeys(public_key);
-
-            // Encrypt
-            return new PGP(encryptionKeys);
-        }
-
-        /// <summary>
-        /// Loads private key
-        /// </summary>
-        /// <param name="private_key">Private key file content</param>
-        /// <param name="password">password for the key</param>
-        /// <returns></returns>
-        public PGP LoadPrivateKey(string private_key, string password)
-        {
-                FileInfo privateKey = new FileInfo(private_key);
-                EncryptionKeys pub = new EncryptionKeys(privateKey, password);
-
-                return new PGP(pub);
-        }
-
         #region Decryption
         /// <summary>
         /// Decrypt cypher text 
         /// </summary>
         /// <param name="cyphertext">The cyphertext for decryption</param>
         /// <returns></returns>
-        public async Task<string> DecryptString(string cyphertext,string public_key,string password)
+        public Task<string> DecryptString(string cyphertext,string private_key,string password)
         {
-            PGP new_pgpcore = LoadPrivateKey(public_key, password);
-                return await new_pgpcore.DecryptArmoredStringAsync(cyphertext);
+            EncryptionKeys priv = new EncryptionKeys(private_key, password);
+            PGP pgp = new PGP(priv);
+            return pgp.DecryptArmoredStringAsync(cyphertext);
         }
 
         /// <summary>
@@ -78,12 +52,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="filepath">The file for decryption</param>
         /// <returns></returns>
-        public async Task DecryptFile(string filepath)
+        public Task DecryptFile(string filepath,string private_key,string password)
         {
-            await Task.Run(() => {
-                var outputpath = filepath.Remove(filepath.Length - 4);
-                pgp.DecryptFileAsync(filepath, outputpath);
-            });
+            EncryptionKeys priv = new EncryptionKeys(private_key, password);
+            PGP pgp = new PGP(priv);
+            var outputpath = filepath.Remove(filepath.Length - 4);
+            return pgp.DecryptFileAsync(filepath, outputpath);
         }
         #endregion
 
@@ -93,14 +67,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="plaintext">The plaintext string to encrypt</param>
         /// <returns></returns>
-        public async Task<string> EncryptString(string plaintext,string publicKey)
+        public Task<string> EncryptString(string plaintext,string publicKey)
         {
-            await Task.Run(() => {
                 EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
                 PGP pgp = new PGP(encryptionKeys);
                 return pgp.EncryptArmoredStringAsync(plaintext);
-            });
-            return null;
         }
 
         /// <summary>
@@ -108,12 +79,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="filepath">The file to encrypt</param>
         /// <returns></returns>
-        public async Task<string> EncryptFile(string filepath)
+        public  Task EncryptFile(string filepath,string publicKey)
         {
-            await Task.Run(() => {
-                return pgp.EncryptFileAsync(filepath, filepath + ".pgp");
-            });
-            return null;
+            EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
+            PGP pgp = new PGP(encryptionKeys);
+            return pgp.EncryptFileAsync(filepath, filepath + ".pgp");
+          
         }
         #endregion
 
@@ -123,15 +94,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="filepath">The file to sign</param>
         /// <returns></returns>
-        public async Task SignFile(string filepath)
+        public Task SignFile(string filepath,string publickey)
         {
-            await Task.Run(() => {
-                // Reference input/output files
-                FileInfo inputFile = new FileInfo(filepath);
-                FileInfo signedFile = new FileInfo(filepath + ".pgp");
+            EncryptionKeys encryptionKeys = new EncryptionKeys(publickey);
+            PGP pgp = new PGP(encryptionKeys);
+            // Reference input/output files
+            FileInfo inputFile = new FileInfo(filepath);
+            FileInfo signedFile = new FileInfo(filepath + ".pgp");
 
-                pgp.ClearSignFileAsync(inputFile, signedFile);
-            });
+           return pgp.ClearSignFileAsync(inputFile, signedFile);
         }
 
         /// <summary>
@@ -139,12 +110,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="plaintext">The string to sign</param>
         /// <returns></returns>
-        public async Task<String> SignText(string plaintext)
+        public Task<String> SignText(string plaintext,string publickey)
         {
-            await Task.Run(() => {
+            
+                EncryptionKeys encryptionKeys = new EncryptionKeys(publickey);
+                PGP pgp = new PGP(encryptionKeys);
                 return pgp.ClearSignArmoredStringAsync(plaintext);
-            });
-            return null;
         }
         #endregion
 
@@ -155,14 +126,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="filepath">The file to verify</param>
         /// <returns>True for verified false for not verified or failed</returns>
-        public async Task<bool> VerifyFile(string filepath)
+        public  Task<bool> VerifyFile(string filepath,string publickey)
         {
-            await Task.Run(() => {
-                FileInfo inputFile = new FileInfo(filepath);
-
-                return pgp.VerifyClearFileAsync(inputFile);
-            });
-            return false;
+            FileInfo inputFile = new FileInfo(filepath);
+            EncryptionKeys encryptionKeys = new EncryptionKeys(publickey);
+            PGP pgp = new PGP(encryptionKeys);
+            return pgp.VerifyClearFileAsync(inputFile);
         }
 
         /// <summary>
@@ -170,12 +139,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="signed_str">The string to verify</param>
         /// <returns>True for verified false for not verified or failed</returns>
-        public async Task<bool> VerifyString(string signed_str)
+        public Task<bool> VerifyString(string signed_str,string privatekey,string password)
         {
-            await Task.Run(() => {
-                return pgp.VerifyClearArmoredStringAsync(signed_str);
-            });
-            return false;
+            EncryptionKeys priv = new EncryptionKeys(privatekey, password);
+            PGP pgp = new PGP(priv);
+            return pgp.VerifyClearArmoredStringAsync(signed_str);
         }
         #endregion
     }
