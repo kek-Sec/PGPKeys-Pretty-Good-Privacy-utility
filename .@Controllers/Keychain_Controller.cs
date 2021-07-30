@@ -13,8 +13,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
     {
         SettingsService settings = new SettingsService();
         KeyChainService keychain = new KeyChainService();
-        PGPService pgp = new PGPService();
-        KeyChainObject keychain_object = new KeyChainObject();
 
 
         /// <summary>

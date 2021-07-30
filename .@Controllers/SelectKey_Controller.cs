@@ -1,9 +1,6 @@
 ﻿using PgpCore;
 using PGPKeys____Pretty_Good_Privacy_utility._Forms;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
