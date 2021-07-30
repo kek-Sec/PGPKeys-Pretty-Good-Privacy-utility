@@ -520,6 +520,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_sign_btn.Text = "Sign";
             this.keychain_sign_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_sign_btn.UseVisualStyleBackColor = true;
+            this.keychain_sign_btn.Click += new System.EventHandler(this.keychain_sign_btn_Click);
             // 
             // keychain_verify_btn
             // 

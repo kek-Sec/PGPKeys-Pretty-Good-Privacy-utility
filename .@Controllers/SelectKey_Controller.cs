@@ -11,6 +11,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
         /// <summary>
         /// [1] --> Enrcypt
         /// [2] --> Decrypt
+        /// [3] --> Sign
         /// </summary>
         /// <param name="action">Action id</param>
         /// <param name="text">The text to act upon</param>
@@ -23,6 +24,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
                     return await EncryptAsync(keyset, text);
                 case 2:
                     return await DecryptAsync(keyset, text);
+                case 3:
+                    return await SignAsync(keyset, text);
                 default:
                     return null;
             }
@@ -79,6 +82,28 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
                 return Clipboard.GetText();
             }
            
+        }
+
+        /// <summary>
+        /// Sign string async
+        /// </summary>
+        /// <param name="keyset">The selected key</param>
+        /// <param name="plaintext">The plaintext</param>
+        /// <returns></returns>
+        private async Task<string> SignAsync(KeyChainObject keyset,string plaintext)
+        {
+            Password_box_Form pbf = new Password_box_Form();
+            string password = pbf.Show("Input needed!", "insert password..");
+            var privateKey = keyset.private_key;
+            if(privateKey is null) { return null; }
+
+            EncryptionKeys encryptionKeys = new EncryptionKeys(privateKey, password);
+
+            PGP pgp = new PGP(encryptionKeys);
+
+
+            // Sign
+            return await pgp.ClearSignArmoredStringAsync(plaintext);
         }
     }
 }

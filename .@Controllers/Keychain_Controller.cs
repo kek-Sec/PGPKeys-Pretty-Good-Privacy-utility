@@ -203,7 +203,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             var clipboard = keychain_clipboard_rtb.Text;
 
             // Sign
-            clipboard = await pgp.ClearSignArmoredStringAsync(clipboard);
+            keychain_clipboard_rtb.Text = await pgp.ClearSignArmoredStringAsync(clipboard);
         }
     }
 }
