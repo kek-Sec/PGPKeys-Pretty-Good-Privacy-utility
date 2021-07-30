@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Media;
+using PGPKeys____Pretty_Good_Privacy_utility._Controllers;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility
 {
     public partial class SelectKey_form : Form
     {
-        PGPService pgp = new PGPService();
+        SelectKey_Controller sc = new SelectKey_Controller();
         public KeyChainObject selected_key;
 
         /// <summary>
@@ -61,17 +62,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             var index = select_key_listbox.SelectedIndex;
             if(index == -1) { return; }
             selected_key = keychain[index];
-            if(action_type == 1)
-            {
-                string encrypted = await pgp.EncryptString(Clipboard.GetText(), selected_key.public_key);
-                MessageBox.Show(encrypted);
-                SystemSounds.Beep.Play();
-                this.Close();
-            }
-            else if(action_type == 2)
-            {
-               //implement decryption
-            }
+            Clipboard.SetText(await sc.resolveActionAsync(action_type, Clipboard.GetText(), selected_key));
         }
     }
 
