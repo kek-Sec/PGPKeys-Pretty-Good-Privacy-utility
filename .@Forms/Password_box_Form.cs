@@ -14,6 +14,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Forms
         public string Show(string prompt, string title)
         {
             frm = new Form();
+            frm.TopMost = true;
             FlowLayoutPanel FL = new FlowLayoutPanel();
             Label lbl = new Label();
             TextBox txt = new TextBox();
@@ -24,7 +25,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Forms
             frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Width = 200;
-            frm.Height = 180;
+            frm.Height = 175;
 
             frm.Text = title;
             lbl.Text = prompt;
