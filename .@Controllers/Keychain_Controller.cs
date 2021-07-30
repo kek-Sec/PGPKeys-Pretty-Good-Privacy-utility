@@ -1,4 +1,5 @@
 ﻿using PgpCore;
+using PGPKeys____Pretty_Good_Privacy_utility._Forms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -182,6 +183,27 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             {
                 MessageBox.Show("Not verified!", " Failed to verify with pub key -> " + selected_key.email, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Function to sign the text in the clipboard
+        /// </summary>
+        /// <param name="keychain_clipboard_rtb">The clipboard rich text box</param>
+        /// <param name="selected_key">The selected key</param>
+        /// <returns>awaitable task</returns>
+        public async Task Sign(RichTextBox keychain_clipboard_rtb,KeyChainObject selected_key)
+        {
+            string privateKey = selected_key.private_key;
+            Password_box_Form pbf = new Password_box_Form();
+            string password = pbf.Show("Input needed!", "insert password..");
+            EncryptionKeys encryptionKeys = new EncryptionKeys(privateKey, password);
+
+            PGP pgp = new PGP(encryptionKeys);
+
+            var clipboard = keychain_clipboard_rtb.Text;
+
+            // Sign
+            clipboard = await pgp.ClearSignArmoredStringAsync(clipboard);
         }
     }
 }
