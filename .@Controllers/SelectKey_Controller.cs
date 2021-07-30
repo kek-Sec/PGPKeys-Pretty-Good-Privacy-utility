@@ -8,6 +8,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
 {
     class SelectKey_Controller
     {
+
+        PGPService pgp = new PGPService();
+
         /// <summary>
         /// [1] --> Enrcypt
         /// [2] --> Decrypt
@@ -42,11 +45,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
             var pub_key = keyset.public_key;
             if (pub_key == null) { return null; }
 
-            EncryptionKeys encryptionKeys = new EncryptionKeys(pub_key);
-
             // Encrypt
-            PGP pgp = new PGP(encryptionKeys);
-            string encryptedContent = await pgp.EncryptArmoredStringAsync(plaintext);
+
+            string encryptedContent = await pgp.EncryptString(plaintext, pub_key);
             return encryptedContent;
         }
 
@@ -68,12 +69,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
                 Password_box_Form pb = new Password_box_Form();
                 string password = pb.Show("Insert key password", "Input needed!");
 
-                EncryptionKeys encryptionKeys = new EncryptionKeys(privateKey, password);
 
-                PGP pgp = new PGP(encryptionKeys);
 
                 // Decrypt
-                return await pgp.DecryptArmoredStringAsync(encrypted);
+                return await pgp.DecryptString(encrypted, priv_key, password);
             }
             catch(Exception e)
             {
