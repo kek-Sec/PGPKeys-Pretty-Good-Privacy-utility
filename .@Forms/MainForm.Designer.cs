@@ -535,6 +535,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.keychain_verify_btn.Text = "Verify";
             this.keychain_verify_btn.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.keychain_verify_btn.UseVisualStyleBackColor = true;
+            this.keychain_verify_btn.Click += new System.EventHandler(this.keychain_verify_btn_Click);
             // 
             // panel3
             // 

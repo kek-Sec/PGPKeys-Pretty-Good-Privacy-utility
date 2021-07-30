@@ -115,5 +115,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             dc.DecryptClipboard();
         }
+
+        private async void keychain_verify_btn_Click(object sender, EventArgs e)
+        {
+            await kc.Verify(keychain_clipboard_rtb, selected_key);
+        }
     }
 }
