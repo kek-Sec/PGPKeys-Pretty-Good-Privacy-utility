@@ -110,5 +110,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             dc.EncryptClipboard();
         }
+
+        private void dashboard_decrypt_button_Click(object sender, EventArgs e)
+        {
+            dc.DecryptClipboard();
+        }
     }
 }

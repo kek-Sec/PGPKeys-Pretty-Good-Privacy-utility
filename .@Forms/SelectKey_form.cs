@@ -69,6 +69,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             if(index == -1) { return; }
             selected_key = keychain[index];
             Clipboard.SetText(await sc.resolveActionAsync(action_type, Clipboard.GetText(), selected_key));
+            SystemSounds.Beep.Play();
+            this.Close();
         }
     }
 

@@ -31,13 +31,18 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         public void EncryptClipboard()
         {
-            var clipboard = Clipboard.GetText();
-
            
             select_key_form = new SelectKey_form();
             select_key_form.Show();
             select_key_form.action_type = 1;
 
+        }
+
+        public void DecryptClipboard()
+        {
+            select_key_form = new SelectKey_form();
+            select_key_form.Show();
+            select_key_form.action_type = 2;
         }
     }
 }
