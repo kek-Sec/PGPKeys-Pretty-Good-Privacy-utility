@@ -156,5 +156,27 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // Decrypt
             keychain_clipboard_rtb.Text = await pgp.DecryptArmoredStringAsync(keychain_clipboard_rtb.Text);
         }
+
+
+        public async Task Verify(RichTextBox keychain_clipboard_rtb,KeyChainObject selected_key)
+        {
+            // Load keys
+            string publicKey = selected_key.public_key;
+            EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
+
+            PGP pgp = new PGP(encryptionKeys);
+
+            // Verify
+            bool verified = await pgp.VerifyClearArmoredStringAsync(keychain_clipboard_rtb.Text);
+
+            if(verified)
+            {
+                MessageBox.Show("Verified!", " Verified with pub key -> " + selected_key.email, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Not verified!", " Failed to verify with pub key -> " + selected_key.email, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
