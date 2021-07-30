@@ -12,12 +12,14 @@
     <Compile Include=".%40Controllers\Dashboard_Controller.cs" />
     <Compile Include=".%40Controllers\Generator_Controller.cs" />
     <Compile Include=".%40Controllers\Keychain_Controller.cs" />
+    <Compile Include=".%40Controllers\SelectKey_Controller.cs" />
     <Compile Include=".%40Forms\Loader_form.cs" />
     <Compile Include=".%40Forms\Loader_form.Designer.cs" />
     <Compile Include=".%40Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include=".%40Forms\MainForm.Designer.cs" />
+    <Compile Include=".%40Forms\Password_box.cs" />
     <Compile Include=".%40Forms\Settings_form.cs" />
     <Compile Include=".%40Forms\Settings_form.Designer.cs" />
     <Compile Include=".%40Services\FileService.cs" />
