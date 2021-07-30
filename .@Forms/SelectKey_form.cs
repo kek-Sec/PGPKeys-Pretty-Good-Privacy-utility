@@ -42,15 +42,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private void SelectKey_form_Load(object sender, EventArgs e)
         {
-            kcs.LoadKeyChain(settings.getSetting("keys_folder_path"));
-             keychain = kcs.keyChainList;
+            SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
 
-            foreach(KeyChainObject key_set in keychain)
+            kcs.LoadKeyChain(settings.getSetting("keys_folder_path"));
+            keychain = kcs.keyChainList;
+
+            if(!keychain.Any()) { select_key_listbox.Items.Add("No keys found!"); }
+            else
             {
-                select_key_listbox.Items.Add(key_set.email);
+                foreach (KeyChainObject key_set in keychain)
+                {
+                    select_key_listbox.Items.Add(key_set.email);
+                }
             }
 
-            SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
+
 
         }
         [DllImport("user32.dll")]
