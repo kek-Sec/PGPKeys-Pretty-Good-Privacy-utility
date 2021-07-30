@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
 {
@@ -60,17 +61,27 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
             var priv_key = keyset.private_key;
             if (priv_key == null) { return null; }
 
-            // Load keys
-            string privateKey = priv_key;
-            Password_box pb = new Password_box();
-            string password = pb.Show("Insert key password", "Input needed!");
+            try
+            {
+                // Load keys
+                string privateKey = priv_key;
+                Password_box_Form pb = new Password_box_Form();
+                string password = pb.Show("Insert key password", "Input needed!");
 
-            EncryptionKeys encryptionKeys = new EncryptionKeys(privateKey, password);
+                EncryptionKeys encryptionKeys = new EncryptionKeys(privateKey, password);
 
-            PGP pgp = new PGP(encryptionKeys);
+                PGP pgp = new PGP(encryptionKeys);
 
-            // Decrypt
-           return await pgp.DecryptArmoredStringAsync(encrypted);
+                // Decrypt
+                return await pgp.DecryptArmoredStringAsync(encrypted);
+            }
+            catch(Exception e)
+            {
+                //to-do write to logger
+                MessageBox.Show("Failed to encrypt -> " + e.Message);
+                return Clipboard.GetText();
+            }
+           
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility._Forms
 {
-    class Password_box
+    class Password_box_Form
     {
         private Form frm;
         public string Show(string prompt, string title)
@@ -20,11 +20,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Forms
             Button ok = new Button();
             Button cancel = new Button();
 
-            frm.Font = new Font("Calibri", 9, FontStyle.Bold);
+            frm.Font = new Font("Calibri", 11, FontStyle.Bold);
             frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Width = 200;
-            frm.Height = 150;
+            frm.Height = 200;
 
             frm.Text = title;
             lbl.Text = prompt;
