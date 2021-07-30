@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility._Forms
 {
     class Password_box_Form
     {
+
+        /// <summary>
+        /// Password input box
+        /// </summary>
+
         private Form frm;
         public string Show(string prompt, string title)
         {
@@ -24,7 +24,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Forms
             frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Width = 200;
-            frm.Height = 200;
+            frm.Height = 180;
 
             frm.Text = title;
             lbl.Text = prompt;
@@ -92,5 +92,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Forms
         {
             if (e.KeyChar == 13) { okClick(null, null); }
         }
+
     }
 }
