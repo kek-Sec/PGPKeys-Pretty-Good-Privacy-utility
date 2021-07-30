@@ -157,7 +157,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             keychain_clipboard_rtb.Text = await pgp.DecryptArmoredStringAsync(keychain_clipboard_rtb.Text);
         }
 
-
+        /// <summary>
+        /// Function for verifying string with public key
+        /// </summary>
+        /// <param name="keychain_clipboard_rtb">The clipboard rich text box</param>
+        /// <param name="selected_key">The selected key</param>
+        /// <returns>awaitable task</returns>
         public async Task Verify(RichTextBox keychain_clipboard_rtb,KeyChainObject selected_key)
         {
             // Load keys
