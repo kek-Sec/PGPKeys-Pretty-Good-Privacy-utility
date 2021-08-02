@@ -29,6 +29,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             Clipboard.SetText(rtb.Text);
         }
 
+        public void Verify(RichTextBox rtb,Timer clipboard_timer)
+        {
+            cs.Verify(rtb, clipboard_timer);
+        }
+
         /// <summary>
         /// Enrcypt the clipboard rich text box content
         /// </summary>

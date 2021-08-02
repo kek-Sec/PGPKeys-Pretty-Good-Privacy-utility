@@ -74,9 +74,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
             // Sign
             if (await pgp.VerifyArmoredStringAsync(plaintext))
             {
-                return "true";
+                MessageBox.Show("Verified!", " It's a match!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return plaintext;
             }
-            return "false";
+            MessageBox.Show("Not verified!", " It's NOT a match!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return plaintext;
         }
 
         /// <summary>
