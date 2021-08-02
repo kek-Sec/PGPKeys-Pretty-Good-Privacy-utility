@@ -17,6 +17,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
         /// [1] --> Enrcypt
         /// [2] --> Decrypt
         /// [3] --> Sign
+        /// [4] --> Verify
         /// </summary>
         /// <param name="action">Action id</param>
         /// <param name="text">The text to act upon</param>
@@ -31,6 +32,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
                     return await sks.DecryptAsync(keyset, text);
                 case 3:
                     return await sks.SignAsync(keyset, text);
+                case 4:
+                    return await sks.VerifyAsync(keyset, text);
                 default:
                     return null;
             }
