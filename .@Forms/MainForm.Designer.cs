@@ -1070,6 +1070,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.MaximizeBox = false;
             this.Name = "Main_Form";
             this.Text = "PGPKeys";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Form_FormClosing);
             this.Load += new System.EventHandler(this.Main_Form_Load);
             this.MainForm_tabControl.ResumeLayout(false);
             this.Dashboard_page.ResumeLayout(false);

@@ -27,6 +27,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         public static string clipboard_content = " ";
         public static string clipboard_input = " ";
+        public static bool kill_timer = false;
 
         public Main_Form()
         {
@@ -155,6 +156,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private void clipboard_timer_Tick(object sender, EventArgs e)
         {
             clipboard_rtb.Text = clipboard_content;
+            if(kill_timer) { clipboard_timer.Stop(); }
+        }
+
+        private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            clipboard_timer.Stop();
         }
     }
 }
