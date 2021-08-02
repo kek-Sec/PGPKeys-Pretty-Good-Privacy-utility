@@ -9,7 +9,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
     class HashingService
     {
 
-        public void VerifyFileHash(string given_hash)
+        public string VerifyFileHash(string given_hash)
         {
             var filepath = LoadFile();
 
@@ -29,10 +29,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
             if (given_hash.Equals(file_hash, StringComparison.InvariantCultureIgnoreCase))
             {
                 MessageBox.Show("Verified!", " hashes match!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return file_hash;
             }
 
             MessageBox.Show("Not verified!", " hashes do not match!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return file_hash;
 
 
         }

@@ -109,17 +109,17 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private void verify_hash_button_Click(object sender, EventArgs e)
         {
-            dc.CheckFileHash(hash_textbox);
+            dc.CheckFileHash(hash_textbox,dashboard_logger_rtb);
         }
 
         private void dashboard_encrypt_button_Click(object sender, EventArgs e)
         {
-            dc.EncryptClipboard();
+            dc.EncryptClipboard(dashboard_logger_rtb);
         }
 
         private void dashboard_decrypt_button_Click(object sender, EventArgs e)
         {
-            dc.DecryptClipboard();
+            dc.DecryptClipboard(dashboard_logger_rtb);
         }
 
         private async void keychain_verify_btn_Click(object sender, EventArgs e)

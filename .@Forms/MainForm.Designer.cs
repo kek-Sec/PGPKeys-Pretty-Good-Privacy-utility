@@ -34,7 +34,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.MainForm_tabControl = new System.Windows.Forms.TabControl();
             this.Dashboard_page = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dashboard_logger_rtb = new System.Windows.Forms.RichTextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -181,7 +181,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.richTextBox1);
+            this.groupBox11.Controls.Add(this.dashboard_logger_rtb);
             this.groupBox11.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox11.Location = new System.Drawing.Point(6, 243);
             this.groupBox11.Name = "groupBox11";
@@ -190,15 +190,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Logger output";
             // 
-            // richTextBox1
+            // dashboard_logger_rtb
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Black;
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.richTextBox1.Location = new System.Drawing.Point(6, 28);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(437, 250);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "...";
+            this.dashboard_logger_rtb.BackColor = System.Drawing.Color.Black;
+            this.dashboard_logger_rtb.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.dashboard_logger_rtb.Location = new System.Drawing.Point(6, 28);
+            this.dashboard_logger_rtb.Name = "dashboard_logger_rtb";
+            this.dashboard_logger_rtb.Size = new System.Drawing.Size(437, 250);
+            this.dashboard_logger_rtb.TabIndex = 0;
+            this.dashboard_logger_rtb.Text = "...";
             // 
             // groupBox9
             // 
@@ -1202,7 +1202,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.Button dashboard_decrypt_button;
         private System.Windows.Forms.Button dashboard_encrypt_button;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox dashboard_logger_rtb;
         private System.Windows.Forms.ToolStripMenuItem load_folder;
         private System.Windows.Forms.Timer clipboard_timer;
     }
