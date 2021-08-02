@@ -42,6 +42,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private void Main_Form_Load(object sender, EventArgs e)
         {
             dc.GetVersion(dashboard_version_label);
+            dashboard_logger_rtb.ReadOnly = true;
+            keychain_logger_rtb.ReadOnly = true;
+            generator_output_rtb.ReadOnly = true;
         }
 
         private void keychain_settings_btn_Click(object sender, EventArgs e)
