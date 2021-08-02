@@ -164,5 +164,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             cc.Decrypt(clipboard_rtb,clipboard_timer);
 
         }
+
+        private void importPublicKeyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cc.ImportPublicKey(clipboard_rtb);
+        }
+
+        private void importPrivateKeyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cc.ImportPrivateKey(clipboard_rtb);
+        }
     }
 }

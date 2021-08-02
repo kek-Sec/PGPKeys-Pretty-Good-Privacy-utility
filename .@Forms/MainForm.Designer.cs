@@ -1023,6 +1023,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.importPublicKeyToolStripMenuItem1.Name = "importPublicKeyToolStripMenuItem1";
             this.importPublicKeyToolStripMenuItem1.Size = new System.Drawing.Size(199, 24);
             this.importPublicKeyToolStripMenuItem1.Text = "Import public key";
+            this.importPublicKeyToolStripMenuItem1.Click += new System.EventHandler(this.importPublicKeyToolStripMenuItem1_Click);
             // 
             // importPrivateKeyToolStripMenuItem1
             // 
@@ -1030,6 +1031,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.importPrivateKeyToolStripMenuItem1.Name = "importPrivateKeyToolStripMenuItem1";
             this.importPrivateKeyToolStripMenuItem1.Size = new System.Drawing.Size(199, 24);
             this.importPrivateKeyToolStripMenuItem1.Text = "Import private key";
+            this.importPrivateKeyToolStripMenuItem1.Click += new System.EventHandler(this.importPrivateKeyToolStripMenuItem1_Click);
             // 
             // toolStripSeparator5
             // 
