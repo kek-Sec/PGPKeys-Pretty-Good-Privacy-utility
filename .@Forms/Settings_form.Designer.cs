@@ -57,16 +57,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(743, 336);
+            this.panel1.Size = new System.Drawing.Size(458, 336);
             this.panel1.TabIndex = 0;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.linkLabel1);
             this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Location = new System.Drawing.Point(401, 262);
+            this.groupBox5.Location = new System.Drawing.Point(249, 256);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(339, 74);
+            this.groupBox5.Size = new System.Drawing.Size(206, 74);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Software info";
@@ -85,7 +85,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(210, 45);
+            this.label1.Location = new System.Drawing.Point(0, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 25);
             this.label1.TabIndex = 0;
@@ -129,7 +129,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox2.Controls.Add(this.on_startup_password_checkbox);
             this.groupBox2.Location = new System.Drawing.Point(249, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(240, 118);
+            this.groupBox2.Size = new System.Drawing.Size(206, 118);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Security Settings";
@@ -143,6 +143,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.sessioning_checkbox.TabIndex = 1;
             this.sessioning_checkbox.Text = "No password sessioning";
             this.sessioning_checkbox.UseVisualStyleBackColor = true;
+            this.sessioning_checkbox.CheckedChanged += new System.EventHandler(this.sessioning_checkbox_CheckedChanged);
             // 
             // on_startup_password_checkbox
             // 
@@ -153,6 +154,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.on_startup_password_checkbox.TabIndex = 0;
             this.on_startup_password_checkbox.Text = "Password on startup";
             this.on_startup_password_checkbox.UseVisualStyleBackColor = true;
+            this.on_startup_password_checkbox.CheckedChanged += new System.EventHandler(this.on_startup_password_checkbox_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -174,6 +176,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.on_startup_checkbox.TabIndex = 1;
             this.on_startup_checkbox.Text = "Start on windows startup";
             this.on_startup_checkbox.UseVisualStyleBackColor = true;
+            this.on_startup_checkbox.CheckedChanged += new System.EventHandler(this.on_startup_checkbox_CheckedChanged);
             // 
             // to_tray_checkbox
             // 
@@ -184,12 +187,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.to_tray_checkbox.TabIndex = 0;
             this.to_tray_checkbox.Text = "Minimize to tray when closing";
             this.to_tray_checkbox.UseVisualStyleBackColor = true;
+            this.to_tray_checkbox.CheckedChanged += new System.EventHandler(this.to_tray_checkbox_CheckedChanged);
             // 
             // Settings_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 339);
+            this.ClientSize = new System.Drawing.Size(463, 339);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

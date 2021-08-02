@@ -47,5 +47,25 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 MessageBox.Show("Error on loading settings " + exc.Message);
             }
         }
+
+        private void on_startup_password_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            settings.UpdateSetting("on_startup", on_startup_checkbox.Checked);
+        }
+
+        private void to_tray_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            settings.UpdateSetting("minimize_to_tray", to_tray_checkbox.Checked);
+        }
+
+        private void on_startup_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            settings.UpdateSetting("on_startup", on_startup_checkbox.Checked);
+        }
+
+        private void sessioning_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            settings.UpdateSetting("Sessioning", sessioning_checkbox.Checked);
+        }
     }
 }
