@@ -22,6 +22,7 @@
     <Compile Include=".%40Forms\Password_box_Form.cs" />
     <Compile Include=".%40Forms\Settings_form.cs" />
     <Compile Include=".%40Forms\Settings_form.Designer.cs" />
+    <Compile Include=".%40Services\ClipboardService.cs" />
     <Compile Include=".%40Services\FileService.cs" />
     <Compile Include=".%40Services\GeneratorService.cs" />
     <Compile Include=".%40Services\HashingService.cs" />
