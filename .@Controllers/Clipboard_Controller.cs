@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
 {
@@ -21,6 +16,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             Clipboard.SetText(rtb.Text);
         }
 
+        /// <summary>
+        /// Enrcypt the clipboard rich text box content
+        /// </summary>
+        /// <param name="rtb">The input rich text box</param>
+        /// <param name="clipboard_timer">The timer used to refresh the rtb</param>
         public void Encrypt(RichTextBox rtb,Timer clipboard_timer)
         {
             Main_Form.kill_timer = false;
@@ -32,6 +32,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             select_key_form.input = rtb.Text;
         }
 
+        /// <summary>
+        /// Decrpyt the clipboard rich text box content
+        /// </summary>
+        /// <param name="rtb">The input rich text box</param>
+        /// <param name="clipboard_timer">The timer used to refresh the rtb</param>
         public void Decrypt(RichTextBox rtb,Timer clipboard_timer)
         {
             Main_Form.kill_timer = false;
