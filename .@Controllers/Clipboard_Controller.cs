@@ -81,6 +81,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
                 var filename = DateTime.Now.ToString("MM-dd-mm-ss") + "-private.asc";
                 File.WriteAllText(keys_folder + "\\" + filename, input);
                 MessageBox.Show("Private key imported at: \n " + filename);
+                rtb.Text = " ";
 
             }
             catch (Exception e)
@@ -111,6 +112,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
                 var filename = DateTime.Now.ToString("MM-dd-mm-ss") + "-public.asc";
                 File.WriteAllText(keys_folder + "\\" + filename,input);
                 MessageBox.Show("Public key imported at: \n " + filename);
+                rtb.Text = " ";
             }
             catch(Exception e)
             {
