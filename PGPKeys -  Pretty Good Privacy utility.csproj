@@ -27,6 +27,7 @@
     <Compile Include=".%40Services\HashingService.cs" />
     <Compile Include=".%40Services\KeyChainService.cs" />
     <Compile Include=".%40Services\PGPService.cs" />
+    <Compile Include=".%40Services\SelectKeyService.cs" />
     <Compile Include=".%40Services\SettingsService.cs" />
     <Compile Include=".%40Forms\SelectKey_form.cs">
       <SubType>Form</SubType>

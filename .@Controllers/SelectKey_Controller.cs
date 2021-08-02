@@ -1,5 +1,6 @@
 ﻿using PgpCore;
 using PGPKeys____Pretty_Good_Privacy_utility._Forms;
+using PGPKeys____Pretty_Good_Privacy_utility._Services;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,6 +11,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
     {
 
         PGPService pgp = new PGPService();
+        SelectKeyService sks = new SelectKeyService();
+
 
         /// <summary>
         /// [1] --> Enrcypt
@@ -24,85 +27,18 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
             switch (action)
             {
                 case 1:
-                    return await EncryptAsync(keyset, text);
+                    return await sks.EncryptAsync(keyset, text);
                 case 2:
-                    return await DecryptAsync(keyset, text);
+                    return await sks.DecryptAsync(keyset, text);
                 case 3:
-                    return await SignAsync(keyset, text);
+                    return await sks.SignAsync(keyset, text);
                 default:
                     return null;
             }
         }
 
-        /// <summary>
-        /// Encrypt input async
-        /// </summary>
-        /// <param name="keyset">The keyset used</param>
-        /// <param name="plaintext">The text to encrypt</param>
-        /// <returns>awaitable string</returns>
-        private async Task<string> EncryptAsync(KeyChainObject keyset,string plaintext)
-        {
-            var pub_key = keyset.public_key;
-            if (pub_key == null) { return null; }
+       
 
-            // Encrypt
-
-            string encryptedContent = await pgp.EncryptString(plaintext, pub_key);
-            return encryptedContent;
-        }
-
-        /// <summary>
-        /// Decrypt input async
-        /// </summary>
-        /// <param name="keyset">The keyset used</param>
-        /// <param name="encrypted">The encrypted text</param>
-        /// <returns>awaitable String</returns>
-        private async Task<string> DecryptAsync(KeyChainObject keyset, string encrypted)
-        {
-            var priv_key = keyset.private_key;
-            if (priv_key == null) { return null; }
-
-            try
-            {
-                // Load keys
-                string privateKey = priv_key;
-                Password_box_Form pb = new Password_box_Form();
-                string password = pb.Show("Insert key password", "Input needed!");
-
-
-
-                // Decrypt
-                return await pgp.DecryptString(encrypted, priv_key, password);
-            }
-            catch(Exception e)
-            {
-                //to-do write to logger
-                MessageBox.Show("Failed to encrypt -> " + e.Message);
-                return Clipboard.GetText();
-            }
-           
-        }
-
-        /// <summary>
-        /// Sign string async
-        /// </summary>
-        /// <param name="keyset">The selected key</param>
-        /// <param name="plaintext">The plaintext</param>
-        /// <returns></returns>
-        private async Task<string> SignAsync(KeyChainObject keyset,string plaintext)
-        {
-            Password_box_Form pbf = new Password_box_Form();
-            string password = pbf.Show("Input needed!", "insert password..");
-            var privateKey = keyset.private_key;
-            if(privateKey is null) { return null; }
-
-            EncryptionKeys encryptionKeys = new EncryptionKeys(privateKey, password);
-
-            PGP pgp = new PGP(encryptionKeys);
-
-
-            // Sign
-            return await pgp.ClearSignArmoredStringAsync(plaintext);
-        }
+       
     }
 }
