@@ -91,7 +91,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             }
             else
             {
-                Main_Form.clipboard_content = await sc.resolveActionAsync(action_type, Main_Form.clipboard_input, selected_key);
+                Main_Form.clipboard_content = await sc.resolveActionAsync(action_type, input, selected_key);
             }
             SystemSounds.Beep.Play();
             this.Close();

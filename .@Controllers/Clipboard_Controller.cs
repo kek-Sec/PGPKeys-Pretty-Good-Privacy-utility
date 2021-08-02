@@ -10,7 +10,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
     class Clipboard_Controller
     {
         SelectKey_form select_key_form;
-        PGPService pgp = new PGPService();
 
         public void Paste(RichTextBox rtb)
         {
