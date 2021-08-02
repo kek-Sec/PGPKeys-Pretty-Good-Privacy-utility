@@ -147,11 +147,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             clipboard_timer.Start();
         }
 
-        private void encryptWithPrivateKeyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cc.Decrypt(clipboard_rtb);
-            clipboard_timer.Start();
-        }
 
         private void clipboard_timer_Tick(object sender, EventArgs e)
         {
@@ -162,6 +157,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             clipboard_timer.Stop();
+        }
+
+        private void encryptWithPrivateKeyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cc.Decrypt(clipboard_rtb);
+            clipboard_timer.Start();
         }
     }
 }
