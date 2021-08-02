@@ -26,6 +26,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         public bool on_clipboard;
 
+        public string input;
+
         List<KeyChainObject> keychain = new List<KeyChainObject>();
 
         #region top view hook

@@ -40,7 +40,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="e"></param>
         private void Main_Form_Load(object sender, EventArgs e)
         {
-            clipboard_timer.Start();
         }
 
         private void keychain_settings_btn_Click(object sender, EventArgs e)
@@ -144,11 +143,13 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private void encryptWithPublicKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cc.Encrypt(clipboard_rtb);
+            clipboard_timer.Start();
         }
 
         private void encryptWithPrivateKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cc.Decrypt(clipboard_rtb);
+            clipboard_timer.Start();
         }
 
         private void clipboard_timer_Tick(object sender, EventArgs e)
