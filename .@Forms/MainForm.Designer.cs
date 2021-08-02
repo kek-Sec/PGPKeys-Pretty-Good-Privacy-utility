@@ -1054,6 +1054,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.verifyClipboardToolStripMenuItem.Name = "verifyClipboardToolStripMenuItem";
             this.verifyClipboardToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
             this.verifyClipboardToolStripMenuItem.Text = "Verify clipboard";
+            this.verifyClipboardToolStripMenuItem.Click += new System.EventHandler(this.verifyClipboardToolStripMenuItem_Click);
             // 
             // clipboard_timer
             // 

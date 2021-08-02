@@ -178,5 +178,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         {
             cc.ImportPrivateKey(clipboard_rtb);
         }
+
+        private void verifyClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cc.Verify(clipboard_rtb, clipboard_timer);
+        }
     }
 }
