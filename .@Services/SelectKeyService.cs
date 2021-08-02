@@ -56,6 +56,30 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
         }
 
         /// <summary>
+        /// Verify string async
+        /// </summary>
+        /// <param name="keyset">The selected key</param>
+        /// <param name="plaintext">The plaintext</param>
+        /// <returns></returns>
+        public async Task<string> VerifyAsync(KeyChainObject keyset, string plaintext)
+        {
+            var pub = keyset.public_key;
+            if (pub is null) { return null; }
+
+            EncryptionKeys encryptionKeys = new EncryptionKeys(pub);
+
+            PGP pgp = new PGP(encryptionKeys);
+
+
+            // Sign
+            if (await pgp.VerifyArmoredStringAsync(plaintext))
+            {
+                return "true";
+            }
+            return "false";
+        }
+
+        /// <summary>
         /// Decrypt input async
         /// </summary>
         /// <param name="keyset">The keyset used</param>
