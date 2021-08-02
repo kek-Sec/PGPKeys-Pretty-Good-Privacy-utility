@@ -12,7 +12,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         SettingsService settings = new SettingsService();
         KeyChainService keychain = new KeyChainService();
 
-
         /// <summary>
         /// Show the settings form
         /// </summary>
@@ -118,7 +117,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="keychain_clipboard_rtb">The clipboard</param>
         /// <param name="selected_key">The selected key</param>
-        public async Task Encrypt(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key)
+        public async Task Encrypt(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key, RichTextBox keychain_logger_rtb)
         {
             var pub_key = selected_key.public_key;
             if (pub_key == null) { return; }
@@ -134,13 +133,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             string encryptedContent = await pgp.EncryptArmoredStringAsync(clipboard);
             keychain_clipboard_rtb.Text = encryptedContent;
 
+            keychain.AddToLogger($"Encrypting with {selected_key.email}...", keychain_logger_rtb);
+
         }
         /// <summary>
         /// Encrypt clipboard
         /// </summary>
         /// <param name="keychain_clipboard_rtb">The clipboard</param>
         /// <param name="selected_key">The selected key</param>
-        public async Task Decrypt(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key, string password)
+        public async Task Decrypt(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key, string password, RichTextBox keychain_logger_rtb)
         {
             var priv_key = selected_key.private_key;
             if (priv_key == null) { return; }
@@ -153,6 +154,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
             // Decrypt
             keychain_clipboard_rtb.Text = await pgp.DecryptArmoredStringAsync(keychain_clipboard_rtb.Text);
+
+            //logger
+            keychain.AddToLogger($"Decrypting with {selected_key.email}...", keychain_logger_rtb);
+
         }
 
         /// <summary>
@@ -188,7 +193,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="keychain_clipboard_rtb">The clipboard rich text box</param>
         /// <param name="selected_key">The selected key</param>
         /// <returns>awaitable task</returns>
-        public async Task Sign(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key)
+        public async Task Sign(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key,RichTextBox keychain_logger_rtb)
         {
             string privateKey = selected_key.private_key;
             Password_box_Form pbf = new Password_box_Form();
@@ -201,6 +206,9 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
             // Sign
             keychain_clipboard_rtb.Text = await pgp.ClearSignArmoredStringAsync(clipboard);
+
+            //log
+            keychain.AddToLogger($"Signing with {selected_key.email}...", keychain_logger_rtb);
         }
     }
 }
