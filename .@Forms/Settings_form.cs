@@ -9,7 +9,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         public Settings_form()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void save_keys_path_btn_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 on_startup_password_checkbox.Checked = settings.getSetting("Password", true);
                 sessioning_checkbox.Checked = settings.getSetting("Sessioning", true);
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show("Error on loading settings " + exc.Message);
             }

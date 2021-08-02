@@ -13,7 +13,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="keysize">The selected keysize</param>
         /// <param name="other_radiobutton">The not selected radiobutton to set to not checked</param>
-        public void SetKeySize(int keysize,RadioButton other_checkbox)
+        public void SetKeySize(int keysize, RadioButton other_checkbox)
         {
             generator.key_length = keysize;
             other_checkbox.Checked = false;
@@ -26,12 +26,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="generator_email_txt">Textbox with the email</param>
         /// <param name="generator_output_rtb">Generator logger output</param>
         /// <param name="key_len_2048">Radiobutton for 2048 length</param>
-        public async void Generate(TextBox generator_password_txt,TextBox generator_email_txt,RichTextBox generator_output_rtb,RadioButton key_len_2048)
+        public async void Generate(TextBox generator_password_txt, TextBox generator_email_txt, RichTextBox generator_output_rtb, RadioButton key_len_2048)
         {
             if (generator_password_txt.Text == default(string)) { return; }
             if (generator_email_txt.Text == default(string)) { return; }
 
-            
+
             generator.email = generator_email_txt.Text;
             generator.password = generator_password_txt.Text;
             int key_len = key_len_2048.Checked ? 2048 : 4096;

@@ -16,7 +16,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <returns>Returns string[] containing all the lines of the file</returns>
         public static async Task<string[]> readFile(string filepath)
         {
-            await Task.Run(() => {
+            await Task.Run(() =>
+            {
                 try
                 {
                     return File.ReadAllLines(filepath);
@@ -27,7 +28,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 }
             });
             return null;
-           
+
         }
 
         /// <summary>
@@ -36,9 +37,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="filepath">The file</param>
         /// <param name="lines">The lines array</param>
         /// <returns>True if file is written</returns>
-        public static async Task<bool> WriteFile(string filepath,string[] lines)
+        public static async Task<bool> WriteFile(string filepath, string[] lines)
         {
-            await Task.Run(() => {
+            await Task.Run(() =>
+            {
                 try
                 {
                     File.WriteAllLines(filepath, lines);
@@ -59,7 +61,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <returns>True if verified</returns>
         public static async Task<bool> VerifyPublicKeyFile(string filepath)
         {
-            await Task.Run(() => {
+            await Task.Run(() =>
+            {
                 try
                 {
                     string[] lines = File.ReadAllLines(filepath);
@@ -87,7 +90,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <returns>True if verified</returns>
         public static async Task<bool> VerifyPrivateKeyFile(string filepath)
         {
-            await Task.Run(() => {
+            await Task.Run(() =>
+            {
                 try
                 {
                     string[] lines = File.ReadAllLines(filepath);

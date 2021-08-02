@@ -64,7 +64,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="setting">The setting to get.</param>
         /// <param name="get_bool">True if we want a bool</param>
-        public bool getSetting(string setting,bool get_bool)
+        public bool getSetting(string setting, bool get_bool)
         {
             return (bool)Properties.Settings.Default[setting];
         }

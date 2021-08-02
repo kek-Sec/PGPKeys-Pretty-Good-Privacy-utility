@@ -32,7 +32,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
         /// </summary>
         /// <param name="rtb">The input rich text box</param>
         /// <param name="clipboard_timer">The timer used to refresh the rtb</param>
-        public void Encrypt(RichTextBox rtb,Timer clipboard_timer)
+        public void Encrypt(RichTextBox rtb, Timer clipboard_timer)
         {
             Main_Form.kill_timer = false;
             clipboard_timer.Start();
@@ -48,7 +48,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
         /// </summary>
         /// <param name="rtb">The input rich text box</param>
         /// <param name="clipboard_timer">The timer used to refresh the rtb</param>
-        public void Decrypt(RichTextBox rtb,Timer clipboard_timer)
+        public void Decrypt(RichTextBox rtb, Timer clipboard_timer)
         {
             Main_Form.kill_timer = false;
             clipboard_timer.Start();
@@ -99,7 +99,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             //make sure input is publickey
             var input = rtb.Text;
 
-            if(!input.StartsWith("-----BEGIN PGP PUBLIC KEY BLOCK-----"))
+            if (!input.StartsWith("-----BEGIN PGP PUBLIC KEY BLOCK-----"))
             {
                 MessageBox.Show("Input does not match public key format..");
                 return;
@@ -110,11 +110,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             try
             {
                 var filename = DateTime.Now.ToString("MM-dd-mm-ss") + "-public.asc";
-                File.WriteAllText(keys_folder + "\\" + filename,input);
+                File.WriteAllText(keys_folder + "\\" + filename, input);
                 MessageBox.Show("Public key imported at: \n " + filename);
                 rtb.Text = " ";
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return;
             }

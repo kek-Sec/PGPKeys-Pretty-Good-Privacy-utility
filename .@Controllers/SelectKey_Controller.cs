@@ -10,7 +10,6 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
     class SelectKey_Controller
     {
 
-        PGPService pgp = new PGPService();
         SelectKeyService sks = new SelectKeyService();
 
 
@@ -22,7 +21,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
         /// <param name="action">Action id</param>
         /// <param name="text">The text to act upon</param>
         /// <param name="keyset">The keyset to use</param>
-        public async Task<string> resolveActionAsync(int action,string text,KeyChainObject keyset)
+        public async Task<string> resolveActionAsync(int action, string text, KeyChainObject keyset)
         {
             switch (action)
             {
@@ -37,8 +36,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Controllers
             }
         }
 
-       
 
-       
+
+
     }
 }

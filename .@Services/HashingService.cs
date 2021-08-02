@@ -17,16 +17,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
 
             string file_hash;
 
-            if(is_md5)
+            if (is_md5)
             {
-                file_hash = CalculateMD5(filepath);    
+                file_hash = CalculateMD5(filepath);
             }
             else
             {
                 file_hash = SHA256CheckSum(filepath);
             }
 
-            if(given_hash.Equals(file_hash, StringComparison.InvariantCultureIgnoreCase))
+            if (given_hash.Equals(file_hash, StringComparison.InvariantCultureIgnoreCase))
             {
                 MessageBox.Show("Verified!", " hashes match!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -76,7 +76,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
             using var md5 = MD5.Create();
             using var stream = File.OpenRead(filename);
             var hash = md5.ComputeHash(stream);
-           return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
         }
 
         /// <summary>

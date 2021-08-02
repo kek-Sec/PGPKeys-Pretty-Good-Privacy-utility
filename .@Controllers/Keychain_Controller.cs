@@ -1,10 +1,7 @@
 ﻿using PgpCore;
 using PGPKeys____Pretty_Good_Privacy_utility._Forms;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -85,7 +82,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="keychain_listbox">The listbox</param>
         /// <param name="keychain_publickey_status">status button pub key</param>
         /// <param name="keychain_privatekey_status">status button priv key</param>
-        public void Listbox_Item_Click(KeyChainObject selected_key,Button keychain_emcrypt_btn,Button keychain_decrypt_btn,Button keychain_verify_btn,Button keychain_sign_btn,ListBox keychain_listbox,Button keychain_publickey_status,Button keychain_privatekey_status)
+        public void Listbox_Item_Click(KeyChainObject selected_key, Button keychain_emcrypt_btn, Button keychain_decrypt_btn, Button keychain_verify_btn, Button keychain_sign_btn, ListBox keychain_listbox, Button keychain_publickey_status, Button keychain_privatekey_status)
         {
             var indx = keychain_listbox.SelectedIndex;
             if (indx == -1) { return; }
@@ -121,21 +118,21 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="keychain_clipboard_rtb">The clipboard</param>
         /// <param name="selected_key">The selected key</param>
-        public async Task  Encrypt(RichTextBox keychain_clipboard_rtb,KeyChainObject selected_key)
+        public async Task Encrypt(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key)
         {
-                var pub_key = selected_key.public_key;
-                if (pub_key == null) { return; }
-            
+            var pub_key = selected_key.public_key;
+            if (pub_key == null) { return; }
 
-                var clipboard = keychain_clipboard_rtb.Text;
 
-                string publicKey = selected_key.public_key;
-                EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
+            var clipboard = keychain_clipboard_rtb.Text;
 
-                // Encrypt
-                PGP pgp = new PGP(encryptionKeys);
-                string encryptedContent = await pgp.EncryptArmoredStringAsync(clipboard);
-                keychain_clipboard_rtb.Text = encryptedContent;
+            string publicKey = selected_key.public_key;
+            EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
+
+            // Encrypt
+            PGP pgp = new PGP(encryptionKeys);
+            string encryptedContent = await pgp.EncryptArmoredStringAsync(clipboard);
+            keychain_clipboard_rtb.Text = encryptedContent;
 
         }
         /// <summary>
@@ -143,10 +140,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="keychain_clipboard_rtb">The clipboard</param>
         /// <param name="selected_key">The selected key</param>
-        public async Task Decrypt(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key,string password)
+        public async Task Decrypt(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key, string password)
         {
             var priv_key = selected_key.private_key;
-            if(priv_key == null) { return; }
+            if (priv_key == null) { return; }
 
             // Load keys
             string privateKey = priv_key;
@@ -164,7 +161,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="keychain_clipboard_rtb">The clipboard rich text box</param>
         /// <param name="selected_key">The selected key</param>
         /// <returns>awaitable task</returns>
-        public async Task Verify(RichTextBox keychain_clipboard_rtb,KeyChainObject selected_key)
+        public async Task Verify(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key)
         {
             // Load keys
             string publicKey = selected_key.public_key;
@@ -175,7 +172,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // Verify
             bool verified = await pgp.VerifyClearArmoredStringAsync(keychain_clipboard_rtb.Text);
 
-            if(verified)
+            if (verified)
             {
                 MessageBox.Show("Verified!", " Verified with pub key -> " + selected_key.email, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -191,7 +188,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="keychain_clipboard_rtb">The clipboard rich text box</param>
         /// <param name="selected_key">The selected key</param>
         /// <returns>awaitable task</returns>
-        public async Task Sign(RichTextBox keychain_clipboard_rtb,KeyChainObject selected_key)
+        public async Task Sign(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key)
         {
             string privateKey = selected_key.private_key;
             Password_box_Form pbf = new Password_box_Form();

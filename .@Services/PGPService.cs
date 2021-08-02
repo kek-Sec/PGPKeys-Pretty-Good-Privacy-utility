@@ -22,7 +22,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <returns>awaitable task</returns>
         public async Task GenerateKey(string keys_path, string email, string password, int key_length)
         {
-            await Task.Run(() => {
+            await Task.Run(() =>
+            {
                 try
                 {
                     pgp.GenerateKeyAsync(keys_path + "\\" + email + "-public.asc", keys_path + "\\" + email + "-private.asc", email, password, key_length);
@@ -40,7 +41,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="cyphertext">The cyphertext for decryption</param>
         /// <returns></returns>
-        public Task<string> DecryptString(string cyphertext,string private_key,string password)
+        public Task<string> DecryptString(string cyphertext, string private_key, string password)
         {
             EncryptionKeys priv = new EncryptionKeys(private_key, password);
             PGP pgp = new PGP(priv);
@@ -52,7 +53,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="filepath">The file for decryption</param>
         /// <returns></returns>
-        public Task DecryptFile(string filepath,string private_key,string password)
+        public Task DecryptFile(string filepath, string private_key, string password)
         {
             EncryptionKeys priv = new EncryptionKeys(private_key, password);
             PGP pgp = new PGP(priv);
@@ -68,11 +69,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="plaintext">The plaintext string to encrypt</param>
         /// <param name="publicKey">Public key string</param>
         /// <returns>Awaitable string</returns>
-        public Task<string> EncryptString(string plaintext,string publicKey)
+        public Task<string> EncryptString(string plaintext, string publicKey)
         {
-                EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
-                PGP pgp = new PGP(encryptionKeys);
-                return pgp.EncryptArmoredStringAsync(plaintext);
+            EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
+            PGP pgp = new PGP(encryptionKeys);
+            return pgp.EncryptArmoredStringAsync(plaintext);
         }
 
         /// <summary>
@@ -81,12 +82,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="filepath">The file to encrypt</param>
         /// <param name="publicKey">Public key string</param>
         /// <returns>awaitable Task</returns>
-        public  Task EncryptFile(string filepath,string publicKey)
+        public Task EncryptFile(string filepath, string publicKey)
         {
             EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
             PGP pgp = new PGP(encryptionKeys);
             return pgp.EncryptFileAsync(filepath, filepath + ".pgp");
-          
+
         }
         #endregion
 
@@ -97,7 +98,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="filepath">The file to sign</param>
         /// <param name="publickey">Public key string</param>
         /// <returns>awaitable task</returns>
-        public Task SignFile(string filepath,string publickey)
+        public Task SignFile(string filepath, string publickey)
         {
             EncryptionKeys encryptionKeys = new EncryptionKeys(publickey);
             PGP pgp = new PGP(encryptionKeys);
@@ -105,7 +106,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             FileInfo inputFile = new FileInfo(filepath);
             FileInfo signedFile = new FileInfo(filepath + ".pgp");
 
-           return pgp.ClearSignFileAsync(inputFile, signedFile);
+            return pgp.ClearSignFileAsync(inputFile, signedFile);
         }
 
         /// <summary>
@@ -113,12 +114,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="plaintext">The string to sign</param>
         /// <returns></returns>
-        public Task<String> SignText(string plaintext,string publickey)
+        public Task<String> SignText(string plaintext, string publickey)
         {
-            
-                EncryptionKeys encryptionKeys = new EncryptionKeys(publickey);
-                PGP pgp = new PGP(encryptionKeys);
-                return pgp.ClearSignArmoredStringAsync(plaintext);
+
+            EncryptionKeys encryptionKeys = new EncryptionKeys(publickey);
+            PGP pgp = new PGP(encryptionKeys);
+            return pgp.ClearSignArmoredStringAsync(plaintext);
         }
         #endregion
 
@@ -129,7 +130,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="filepath">The file to verify</param>
         /// <returns>True for verified false for not verified or failed</returns>
-        public  Task<bool> VerifyFile(string filepath,string publickey)
+        public Task<bool> VerifyFile(string filepath, string publickey)
         {
             FileInfo inputFile = new FileInfo(filepath);
             EncryptionKeys encryptionKeys = new EncryptionKeys(publickey);
@@ -142,7 +143,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         /// <param name="signed_str">The string to verify</param>
         /// <returns>True for verified false for not verified or failed</returns>
-        public Task<bool> VerifyString(string signed_str,string privatekey,string password)
+        public Task<bool> VerifyString(string signed_str, string privatekey, string password)
         {
             EncryptionKeys priv = new EncryptionKeys(privatekey, password);
             PGP pgp = new PGP(priv);

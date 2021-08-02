@@ -47,7 +47,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         public SelectKey_form()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             kcs.LoadKeyChain(settings.getSetting("keys_folder_path"));
             keychain = kcs.keyChainList;
 
-            if(!keychain.Any()) { select_key_listbox.Items.Add("No keys found!"); } //to-do handle this
+            if (!keychain.Any()) { select_key_listbox.Items.Add("No keys found!"); } //to-do handle this
             else
             {
                 foreach (KeyChainObject key_set in keychain)
@@ -74,7 +74,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
 
         }
-        
+
         /// <summary>
         /// Called when a list item is clicked
         /// </summary>
@@ -83,7 +83,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private async void select_key_listbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var index = select_key_listbox.SelectedIndex;
-            if(index == -1) { return; }
+            if (index == -1) { return; }
             selected_key = keychain[index];
             if (on_clipboard)
             {

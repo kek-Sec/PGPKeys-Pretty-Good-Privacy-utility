@@ -55,7 +55,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             //cleanup filenames
             private_keys_clean = getEmailFromText(private_keys);
             public_keys_clean = getEmailFromText(public_keys);
-            
+
             //Create keychain objects
             keyChainList = MakeKeychain(public_keys, private_keys, public_keys_clean, private_keys_clean);
 

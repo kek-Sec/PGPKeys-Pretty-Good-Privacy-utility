@@ -8,89 +8,111 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PGPKeys____Pretty_Good_Privacy_utility.Properties {
-    
-    
+namespace PGPKeys____Pretty_Good_Privacy_utility.Properties
+{
+
+
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
-        public static Settings Default {
-            get {
+
+        public static Settings Default
+        {
+            get
+            {
                 return defaultInstance;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string keys_folder_path {
-            get {
+        public string keys_folder_path
+        {
+            get
+            {
                 return ((string)(this["keys_folder_path"]));
             }
-            set {
+            set
+            {
                 this["keys_folder_path"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool minimize_to_tray {
-            get {
+        public bool minimize_to_tray
+        {
+            get
+            {
                 return ((bool)(this["minimize_to_tray"]));
             }
-            set {
+            set
+            {
                 this["minimize_to_tray"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool on_startup {
-            get {
+        public bool on_startup
+        {
+            get
+            {
                 return ((bool)(this["on_startup"]));
             }
-            set {
+            set
+            {
                 this["on_startup"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Password {
-            get {
+        public bool Password
+        {
+            get
+            {
                 return ((bool)(this["Password"]));
             }
-            set {
+            set
+            {
                 this["Password"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Sessioning {
-            get {
+        public bool Sessioning
+        {
+            get
+            {
                 return ((bool)(this["Sessioning"]));
             }
-            set {
+            set
+            {
                 this["Sessioning"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1.0.0")]
-        public string version {
-            get {
+        public string version
+        {
+            get
+            {
                 return ((string)(this["version"]));
             }
-            set {
+            set
+            {
                 this["version"] = value;
             }
         }
