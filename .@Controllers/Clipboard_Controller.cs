@@ -59,6 +59,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             select_key_form.on_clipboard = false;
         }
 
+        /// <summary>
+        /// Create a new public key file
+        /// </summary>
+        /// <param name="rtb">The input rich text box</param>
         public void ImportPrivateKey(RichTextBox rtb)
         {
             //make sure input is privatekey
@@ -83,6 +87,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new private key file
+        /// </summary>
+        /// <param name="rtb">The input rich text box</param>
         public void ImportPublicKey(RichTextBox rtb)
         {
             //make sure input is publickey
