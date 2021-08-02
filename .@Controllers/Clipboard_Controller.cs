@@ -1,11 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
 {
     class Clipboard_Controller
     {
         SelectKey_form select_key_form;
-
+        SettingsService settings = new SettingsService();
 
         /// <summary>
         /// Paste to the rtb
@@ -55,6 +57,31 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             select_key_form.Show();
             select_key_form.action_type = 2;
             select_key_form.on_clipboard = false;
+        }
+
+
+        public void ImportPublicKey(RichTextBox rtb)
+        {
+            //make sure input is publickey
+            var input = rtb.Text;
+
+            if(!input.StartsWith("-----BEGIN PGP PUBLIC KEY BLOCK-----"))
+            {
+                MessageBox.Show("Input does not match public key format..");
+                return;
+            }
+
+            var keys_folder = settings.getSetting("keys_folder_path");
+
+            try
+            {
+                var filename = DateTime.Now.ToString("MM-dd-mm-ss") + "-public.asc";
+                File.WriteAllText(keys_folder + "\\" + filename,input);
+            }
+            catch(Exception e)
+            {
+                return;
+            }
         }
     }
 }
