@@ -107,7 +107,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private async void keychain_emcrypt_btn_Click(object sender, EventArgs e)
         {
-           await kc.Encrypt(keychain_clipboard_rtb, selected_key);
+           await kc.Encrypt(keychain_clipboard_rtb, selected_key,keychain_logger_rtb);
         }
 
         private void verify_hash_button_Click(object sender, EventArgs e)
@@ -132,7 +132,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private async void keychain_sign_btn_Click(object sender, EventArgs e)
         {
-            await kc.Sign(keychain_clipboard_rtb, selected_key);
+            await kc.Sign(keychain_clipboard_rtb, selected_key, keychain_logger_rtb);
         }
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
