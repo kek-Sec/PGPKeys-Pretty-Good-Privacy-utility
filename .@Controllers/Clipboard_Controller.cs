@@ -59,6 +59,29 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             select_key_form.on_clipboard = false;
         }
 
+        public void ImportPrivateKey(RichTextBox rtb)
+        {
+            //make sure input is privatekey
+            var input = rtb.Text;
+
+            if (!input.StartsWith("-----BEGIN PGP PRIVATE KEY BLOCK-----"))
+            {
+                MessageBox.Show("Input does not match private key format..");
+                return;
+            }
+
+            var keys_folder = settings.getSetting("keys_folder_path");
+
+            try
+            {
+                var filename = DateTime.Now.ToString("MM-dd-mm-ss") + "-private.asc";
+                File.WriteAllText(keys_folder + "\\" + filename, input);
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+        }
 
         public void ImportPublicKey(RichTextBox rtb)
         {
