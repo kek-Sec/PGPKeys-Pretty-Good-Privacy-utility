@@ -50,7 +50,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
 
         private void on_startup_password_checkbox_CheckedChanged(object sender, EventArgs e)
         {
-            settings.UpdateSetting("on_startup", on_startup_checkbox.Checked);
+            settings.UpdateSetting("Password", on_startup_checkbox.Checked);
         }
 
         private void to_tray_checkbox_CheckedChanged(object sender, EventArgs e)
