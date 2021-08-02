@@ -41,6 +41,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="e"></param>
         private void Main_Form_Load(object sender, EventArgs e)
         {
+            dc.GetVersion(dashboard_version_label);
         }
 
         private void keychain_settings_btn_Click(object sender, EventArgs e)

@@ -8,8 +8,12 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         SelectKey_form select_key_form;
         PGPService pgp = new PGPService();
         HashingService hs = new HashingService();
+        VersionControlService vcs = new VersionControlService();
 
-
+        public void GetVersion(Label version_label)
+        {
+            version_label.Text = "Version: " + vcs.current_version;
+        }
 
         /// <summary>
         /// Calls the hashing service to verify the given hash

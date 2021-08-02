@@ -38,7 +38,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dashboard_version_label = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dashboard_decrypt_button = new System.Windows.Forms.Button();
             this.dashboard_encrypt_button = new System.Windows.Forms.Button();
@@ -228,22 +228,22 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.label2);
+            this.groupBox10.Controls.Add(this.dashboard_version_label);
             this.groupBox10.Location = new System.Drawing.Point(6, 28);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(200, 78);
             this.groupBox10.TabIndex = 1;
             this.groupBox10.TabStop = false;
             // 
-            // label2
+            // dashboard_version_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(6, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 40);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Version: 1.0.0";
+            this.dashboard_version_label.AutoSize = true;
+            this.dashboard_version_label.Font = new System.Drawing.Font("Nirmala UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dashboard_version_label.Location = new System.Drawing.Point(6, 25);
+            this.dashboard_version_label.Name = "dashboard_version_label";
+            this.dashboard_version_label.Size = new System.Drawing.Size(184, 40);
+            this.dashboard_version_label.TabIndex = 0;
+            this.dashboard_version_label.Text = "Version: 1.0.0";
             // 
             // groupBox8
             // 
@@ -1197,7 +1197,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label dashboard_version_label;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button dashboard_decrypt_button;
         private System.Windows.Forms.Button dashboard_encrypt_button;
