@@ -21,8 +21,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             Clipboard.SetText(rtb.Text);
         }
 
-        public void Encrypt(RichTextBox rtb)
+        public void Encrypt(RichTextBox rtb,Timer clipboard_timer)
         {
+            Main_Form.kill_timer = false;
+            clipboard_timer.Start();
             select_key_form = new SelectKey_form();
             select_key_form.Show();
             select_key_form.action_type = 1;
@@ -30,8 +32,10 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
             select_key_form.input = rtb.Text;
         }
 
-        public void Decrypt(RichTextBox rtb)
+        public void Decrypt(RichTextBox rtb,Timer clipboard_timer)
         {
+            Main_Form.kill_timer = false;
+            clipboard_timer.Start();
             select_key_form = new SelectKey_form();
             select_key_form.input = rtb.Text;
             select_key_form.Show();
