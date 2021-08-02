@@ -6,11 +6,20 @@ namespace PGPKeys____Pretty_Good_Privacy_utility.@Controllers
     {
         SelectKey_form select_key_form;
 
+
+        /// <summary>
+        /// Paste to the rtb
+        /// </summary>
+        /// <param name="rtb">The input rich text box</param>
         public void Paste(RichTextBox rtb)
         {
             rtb.Text = Clipboard.GetText();
         }
 
+        /// <summary>
+        /// Copy from the rtb
+        /// </summary>
+        /// <param name="rtb">The input rich text box</param>
         public void Copy(RichTextBox rtb)
         {
             Clipboard.SetText(rtb.Text);
