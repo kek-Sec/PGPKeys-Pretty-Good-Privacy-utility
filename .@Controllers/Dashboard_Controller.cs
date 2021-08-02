@@ -29,6 +29,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
            
             select_key_form = new SelectKey_form();
             select_key_form.Show();
+            select_key_form.on_clipboard = true;
             select_key_form.action_type = 1;
 
         }
@@ -38,6 +39,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             select_key_form = new SelectKey_form();
             select_key_form.Show();
             select_key_form.action_type = 2;
+            select_key_form.on_clipboard = true;
         }
     }
 }

@@ -24,6 +24,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         public int action_type;
 
+        public bool on_clipboard;
+
         List<KeyChainObject> keychain = new List<KeyChainObject>();
 
         #region top view hook
@@ -81,7 +83,14 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             var index = select_key_listbox.SelectedIndex;
             if(index == -1) { return; }
             selected_key = keychain[index];
-            Clipboard.SetText(await sc.resolveActionAsync(action_type, Clipboard.GetText(), selected_key));
+            if (on_clipboard)
+            {
+                Clipboard.SetText(await sc.resolveActionAsync(action_type, Clipboard.GetText(), selected_key));
+            }
+            else
+            {
+                Main_Form.clipboard_content = await sc.resolveActionAsync(action_type, Main_Form.clipboard_input, selected_key);
+            }
             SystemSounds.Beep.Play();
             this.Close();
         }

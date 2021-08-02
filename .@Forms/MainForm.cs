@@ -26,6 +26,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         Generator_Controller gc = new Generator_Controller();
 
         public static string clipboard_content = " ";
+        public static string clipboard_input = " ";
 
         public Main_Form()
         {
@@ -39,6 +40,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="e"></param>
         private void Main_Form_Load(object sender, EventArgs e)
         {
+            clipboard_timer.Start();
         }
 
         private void keychain_settings_btn_Click(object sender, EventArgs e)
