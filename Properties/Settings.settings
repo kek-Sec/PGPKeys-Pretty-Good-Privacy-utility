@@ -17,5 +17,8 @@
     <Setting Name="Sessioning" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -31,6 +31,7 @@
     <Compile Include=".%40Forms\SelectKey_form.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include=".%40Services\VersionControlService.cs" />
     <Compile Include=".@Forms\SelectKey_form.Designer.cs" />
   </ItemGroup>
 
