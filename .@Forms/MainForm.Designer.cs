@@ -29,6 +29,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.MainForm_tabControl = new System.Windows.Forms.TabControl();
             this.Dashboard_page = new System.Windows.Forms.TabPage();
@@ -114,6 +115,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
             this.verifyClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clipboard_timer = new System.Windows.Forms.Timer(this.components);
             this.MainForm_tabControl.SuspendLayout();
             this.Dashboard_page.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -1051,6 +1053,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.verifyClipboardToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
             this.verifyClipboardToolStripMenuItem.Text = "Verify clipboard";
             // 
+            // clipboard_timer
+            // 
+            this.clipboard_timer.Interval = 1000;
+            this.clipboard_timer.Tick += new System.EventHandler(this.clipboard_timer_Tick);
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1194,6 +1201,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ToolStripMenuItem load_folder;
+        private System.Windows.Forms.Timer clipboard_timer;
     }
 }
 

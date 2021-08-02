@@ -24,7 +24,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         Dashboard_Controller dc = new Dashboard_Controller();
         Keychain_Controller kc = new Keychain_Controller();
         Generator_Controller gc = new Generator_Controller();
-        PGP pgp = new PGP();
+
+        public static string clipboard_content = " ";
 
         public Main_Form()
         {
@@ -146,6 +147,11 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private void encryptWithPrivateKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cc.Decrypt(clipboard_rtb);
+        }
+
+        private void clipboard_timer_Tick(object sender, EventArgs e)
+        {
+            clipboard_rtb.Text = clipboard_content;
         }
     }
 }
