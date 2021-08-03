@@ -194,7 +194,15 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
                 Hide();
                 notifyIcon.Visible = true;
                 notifyIcon.ShowBalloonTip(1000);
+                this.notifyIcon.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+                this.notifyIcon.ContextMenuStrip.Items.Add("Exit", null, this.MenuExit_Click);
             }
+        }
+
+        private void MenuExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
