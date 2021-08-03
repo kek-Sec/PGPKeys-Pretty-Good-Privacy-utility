@@ -22,7 +22,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// Calls the hashing service to verify the given hash
         /// </summary>
         /// <param name="input">The input hash</param>
-        public void CheckFileHash(TextBox input,RichTextBox logger)
+        public void CheckFileHash(TextBox input, RichTextBox logger)
         {
             var hash = input.Text;
             if ((hash == string.Empty) || (hash is null))

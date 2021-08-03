@@ -193,7 +193,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         /// <param name="keychain_clipboard_rtb">The clipboard rich text box</param>
         /// <param name="selected_key">The selected key</param>
         /// <returns>awaitable task</returns>
-        public async Task Sign(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key,RichTextBox keychain_logger_rtb)
+        public async Task Sign(RichTextBox keychain_clipboard_rtb, KeyChainObject selected_key, RichTextBox keychain_logger_rtb)
         {
             string privateKey = selected_key.private_key;
             Password_box_Form pbf = new Password_box_Form();

@@ -45,7 +45,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility._Services
             select_key_form.on_clipboard = false;
         }
 
-        public void Verify(RichTextBox rtb,Timer clipboard_timer)
+        public void Verify(RichTextBox rtb, Timer clipboard_timer)
         {
             Main_Form.kill_timer = false;
             clipboard_timer.Start();
