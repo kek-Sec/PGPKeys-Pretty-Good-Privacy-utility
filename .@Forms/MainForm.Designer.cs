@@ -116,6 +116,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.toolStripDropDownButton7 = new System.Windows.Forms.ToolStripDropDownButton();
             this.verifyClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clipboard_timer = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.MainForm_tabControl.SuspendLayout();
             this.Dashboard_page.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -1061,6 +1062,16 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.clipboard_timer.Interval = 1000;
             this.clipboard_timer.Tick += new System.EventHandler(this.clipboard_timer_Tick);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon.BalloonTipText = "PGPKeys has been minimized...";
+            this.notifyIcon.BalloonTipTitle = "PGPKeys";
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "PGPKeys";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1075,6 +1086,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
             this.Text = "PGPKeys";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Form_FormClosing);
             this.Load += new System.EventHandler(this.Main_Form_Load);
+            this.Resize += new System.EventHandler(this.Main_Form_Resize);
             this.MainForm_tabControl.ResumeLayout(false);
             this.Dashboard_page.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
@@ -1206,6 +1218,7 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private System.Windows.Forms.RichTextBox dashboard_logger_rtb;
         private System.Windows.Forms.ToolStripMenuItem load_folder;
         private System.Windows.Forms.Timer clipboard_timer;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

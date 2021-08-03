@@ -161,6 +161,8 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             clipboard_timer.Stop();
+            var to_tray = settings.getSetting("minimize_to_tray", true);
+            if(to_tray) { e.Cancel = true; this.WindowState = FormWindowState.Minimized; }
         }
 
         private void encryptWithPrivateKeyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -182,6 +184,24 @@ namespace PGPKeys____Pretty_Good_Privacy_utility
         private void verifyClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cc.Verify(clipboard_rtb, clipboard_timer);
+        }
+
+        private void Main_Form_Resize(object sender, EventArgs e)
+        {
+            var to_tray = settings.getSetting("minimize_to_tray", true);
+            if (this.WindowState == FormWindowState.Minimized && to_tray)
+            {
+                Hide();
+                notifyIcon.Visible = true;
+                notifyIcon.ShowBalloonTip(1000);
+            }
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon.Visible = false;
         }
     }
 }
